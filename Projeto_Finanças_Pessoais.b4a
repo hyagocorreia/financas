@@ -1,0 +1,101 @@
+﻿Version=3
+IconFile=
+NumberOfModules=9
+Module1=Cadastro
+ModuleVisible1=1
+Module2=Financeiro
+ModuleVisible2=1
+Module3=Creditos
+ModuleVisible3=1
+Module4=Debitos
+ModuleVisible4=0
+Module5=Debito
+ModuleVisible5=1
+Module6=Total
+ModuleVisible6=1
+Module7=Extrato
+ModuleVisible7=1
+Module8=Utilitários
+ModuleVisible8=1
+Module9=Calculadora
+ModuleVisible9=1
+Package=b4a.example
+DoNotOverwriteManifest=False
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
+UserTypesHint=
+NumberOfFiles=9
+File1=Layout_Cadastro.bal
+File2=Layout_Calculadora.bal
+File3=Layout_Creditos.bal
+File4=Layout_Debitos.bal
+File5=Layout_Extrato.bal
+File6=Layout_Financeiro.bal
+File7=Layout_Menu.bal
+File8=Layout_Saldo.bal
+File9=Layout_Utilitarios.bal
+NumberOfLibraries=1
+Library1=core
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Banco Pessoal
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+
+	Dim Button_Cadastro As Button
+	Dim Button_Financeiro As Button
+	Dim Button_sair As Button
+	Dim Button_Utilitarios As Button
+	Dim ImageView_Foto As ImageView
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	Activity.LoadLayout("Layout_Menu")
+
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+
+
+Sub Button_Cadastro_Click
+StartActivity("Cadastro")
+
+End Sub
+Sub Button_Financeiro_Click
+StartActivity("Financeiro")
+	
+End Sub
+Sub Button_sair_Click
+ExitApplication
+
+End Sub
+Sub Button_Utilitarios_Click
+StartActivity("Utilitários")
+	
+End Sub
