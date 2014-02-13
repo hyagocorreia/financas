@@ -1,5 +1,5 @@
 ﻿Type=Activity
-Version=3
+Version=3.2
 @EndOfDesignText@
 #Region  Activity Attributes 
 	#FullScreen: False
