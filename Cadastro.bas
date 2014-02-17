@@ -17,15 +17,15 @@ Sub Globals
 	'These variables can only be accessed from this module.
 
 	Dim Nome As EditText
-	Dim Conta As EditText
-	Dim Telefone As EditText
-	Dim Endereco As EditText
 	Dim Button_Voltar As Button
 	Dim Button_Salvar As Button
+	Private Username As EditText
+	Private Senha As EditText
+	Private Senha_Repetida As EditText
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
-	'Do not forget to load the layout file created with the visual designer. For example:
+	'Do not forget to load the layout File created with the visual designer. For example:
 	Activity.LoadLayout("Layout_Cadastro")
 
 End Sub
@@ -42,10 +42,17 @@ Sub Button_Voltar_Click
 	Activity.Finish
 	
 End Sub
+
 Sub Button_Salvar_Click
-	If Nome.Text = "" OR Conta.Text = "" OR Telefone.Text = "" OR Endereco.Text = "" Then
+	If Nome.Text = "" OR Username.Text = "" OR Senha.Text = "" OR Senha_Repetida.Text = "" Then
 		Msgbox("Campos Obrigatórios não Preenchidos", "Atenção!")
+	Else If Not(Senha.Text = Senha_Repetida.Text) Then
+		Msgbox("Senhas não conferem!", "Atenção!")
 	Else
-	Msgbox("Nome:" & Nome.Text & CRLF & "Conta:" & Conta.Text & CRLF & "Telefone:" & Telefone.Text & CRLF & "Endereco:" & Endereco.Text,"Cadastrado com Sucesso")
+		Dim TextWriter1 As TextWriter
+   		TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, "Logins.txt", False))
+		TextWriter1.WriteLine(Username.Text & Senha.Text)
+    	TextWriter1.Close
+		Msgbox("Nome:" & Nome.Text & CRLF,"Cadastrado com Sucesso")
 	End If
 End Sub

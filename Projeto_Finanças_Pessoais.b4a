@@ -1,6 +1,6 @@
 ﻿Version=3.2
 IconFile=
-NumberOfModules=9
+NumberOfModules=10
 Module1=Cadastro
 ModuleVisible1=1
 Module2=Financeiro
@@ -17,34 +17,36 @@ Module7=Utilitários
 ModuleVisible7=1
 Module8=Calculadora
 ModuleVisible8=1
-Module9=Debitos
-ModuleVisible9=0
-Package=b4a.example
+Module9=Menu
+ModuleVisible9=1
+Module10=Debitos
+ModuleVisible10=0
+Package=Financas.Pessoais
 DoNotOverwriteManifest=False
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
 UserTypesHint=
-NumberOfFiles=9
+NumberOfFiles=10
 File1=Layout_Cadastro.bal
 File2=Layout_Calculadora.bal
 File3=Layout_Creditos.bal
 File4=Layout_Debitos.bal
 File5=Layout_Extrato.bal
 File6=Layout_Financeiro.bal
-File7=Layout_Menu.bal
-File8=Layout_Saldo.bal
-File9=Layout_Utilitarios.bal
+File7=Layout_Login.bal
+File8=Layout_Menu.bal
+File9=Layout_Saldo.bal
+File10=Layout_Utilitarios.bal
 NumberOfLibraries=1
 Library1=core
 @EndOfDesignText@
 #Region  Project Attributes 
-	#ApplicationLabel: Banco Pessoal
+	#ApplicationLabel: Fine
 	#VersionCode: 1
-	#VersionName: 
+	#VersionName: Alpha
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: unspecified
 	#CanInstallToExternalStorage: False
 #End Region
-
 #Region  Activity Attributes 
 	#FullScreen: False
 	#IncludeTitle: True
@@ -58,18 +60,18 @@ End Sub
 
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
-	'These variables can only be accessed from this module.
-
+	'These variables can only be accessed from this module
+	
 	Dim Button_Cadastro As Button
-	Dim Button_Financeiro As Button
-	Dim Button_sair As Button
-	Dim Button_Utilitarios As Button
-	Dim ImageView_Foto As ImageView
+	Dim Login As EditText
+	Dim Senha As EditText
+	Dim Button_Sair As Button
+	Dim Button_entrar As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
-	Activity.LoadLayout("Layout_Menu")
+	Activity.LoadLayout("Layout_Login")
 
 End Sub
 
@@ -80,22 +82,35 @@ End Sub
 Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
-
-
-
 Sub Button_Cadastro_Click
-StartActivity("Cadastro")
+
+	StartActivity("Cadastro")
 
 End Sub
-Sub Button_Financeiro_Click
-StartActivity("Financeiro")
+
+Sub Button_Sair_Click
+
+	Activity.Finish
 	
 End Sub
-Sub Button_sair_Click
-ExitApplication
 
-End Sub
-Sub Button_Utilitarios_Click
-StartActivity("Utilitários")
+Sub Button_entrar_Click
+	If Login.Text = "" OR Senha.Text = "" Then 
+		Msgbox("Campos Obrigatorios não estão preenchidos", "Aviso!" )
+	Else
+		Dim TextReader1 As TextReader
+    	TextReader1.Initialize(File.OpenInput(File.DirRootExternal, "Logins.txt"))
+    	Dim line As String
+    	line = TextReader1.ReadLine    
+    	Do While line <> Null
+        	If line = Login.Text & Senha.Text Then
+				StartActivity("Menu")
+			End If
+        	line = TextReader1.ReadLine
+    	Loop
+    	TextReader1.Close
+	End If
+	
+	Msgbox("Usuario ou senha invalida!", "Aviso!")
 	
 End Sub

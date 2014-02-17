@@ -18,7 +18,7 @@ Sub Globals
 
 	Dim De As EditText
 	Dim Valor As EditText
-	Dim Observacao As EditText
+	Dim Tipo As EditText
 	Dim Button_Creditar As Button
 	Dim Button_Voltar As Button
 	Dim Data As EditText
@@ -44,10 +44,10 @@ End Sub
 
 
 Sub Button_Creditar_Click
-	If De.Text = "" OR Valor.Text = "" OR Observacao.Text = "" Then 
+	If De.Text = "" OR Valor.Text = "" OR Tipo.Text = "" Then 
 		Msgbox("Campos Obrigatorios não estão preenchidos", "Aviso!" )
 	Else
-		Msgbox("Nome:" & De.Text&CRLF&"Valor:"&Valor.Text&CRLF&"Observação:"&CRLF&Observacao.Text&CRLF&"Data:"&Data.Text,"Creditado com Sucesso")
+		Msgbox("Nome:" & De.Text&CRLF&"Valor:"&Valor.Text&CRLF&"Observação:"&CRLF&Tipo.Text&CRLF&"Data:"&Data.Text,"Creditado com Sucesso")
 		
 		'Msgbox(De.Text&CRLF&Valor.Text&CRLF&Observacao.Text&CRLF&Data.Text,"Creditado com sucesso")
 		
@@ -55,7 +55,7 @@ Sub Button_Creditar_Click
 		
 		Financeiro.saldo = Financeiro.saldo + xValor 
 		
-		Dim linha_extrato As String = Data.Text & " " & "(+)" & xValor & "    " & limita_campo(Observacao.Text, 9)
+		Dim linha_extrato As String = Data.Text & " " & "(+)" & xValor & "    " & limita_campo(Tipo.Text, 9)
 		
 		Financeiro.list_Extrato.Add(linha_extrato)
 		
@@ -77,7 +77,4 @@ Sub limita_campo(texto As String, qte_caracteres As Int)
 	End If
 	
 	Return texto
-	
-	
-
 End Sub

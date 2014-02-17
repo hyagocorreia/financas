@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	package="b4a.example"
+	package="Financas.Pessoais"
 	android:versionCode="1"
-	android:versionName=""
+	android:versionName="Alpha"
 	android:installLocation="internalOnly">
 	
 	<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>
@@ -11,18 +11,18 @@
 	    android:normalScreens="true" 
 	    android:smallScreens="true" 
 	    android:anyDensity="true"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.BLUETOOTH"/>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 	<application
 		android:icon="@drawable/icon"
-		android:label="Banco Pessoal">
+		android:label="Fine">
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".main"
-			android:label="Banco Pessoal"
+			android:label="Fine"
 			android:screenOrientation="unspecified">
 			<intent-filter>
 			   <action android:name="android.intent.action.MAIN" />
@@ -34,63 +34,70 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".cadastro"
-			android:label="Banco Pessoal"
+			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".financeiro"
-			android:label="Banco Pessoal"
+			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".creditos"
-			android:label="Banco Pessoal"
+			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".debito"
-			android:label="Banco Pessoal"
+			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".total"
-			android:label="Banco Pessoal"
+			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".extrato"
-			android:label="Banco Pessoal"
+			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".utilitários"
-			android:label="Banco Pessoal"
+			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".calculadora"
-			android:label="Banco Pessoal"
+			android:label="Fine"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".menu"
+			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".debitos"
-			android:label="Banco Pessoal"
+			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
 	</application>
