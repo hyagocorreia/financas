@@ -18,10 +18,10 @@ Sub Globals
 
 	Dim Para As EditText
 	Dim Valor As EditText
-	Dim Observacao As EditText
 	Dim Button_Voltar As Button
 	Dim Button_Debitar As Button
 	Dim Data As EditText
+	Private Tipo As EditText
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -46,14 +46,14 @@ Sub Button_Voltar_Click
 	
 End Sub
 Sub Button_Debitar_Click
-	If Para.Text = "" OR Valor.Text = "" OR Observacao.Text = "" Then
+	If Para.Text = "" OR Valor.Text = "" OR Tipo.Text = "" Then
 		Msgbox("Campos Obrigatórios não Preenchidos", "Atenção!")
 	Else
-		Msgbox("Nome:" & Para.Text& CRLF & "Valor:" &Valor.Text & CRLF & "Observação:" & CRLF&Observacao.Text & CRLF & "Data:" &Data.Text,"Debitado com Sucesso")
+		Msgbox("Nome:" & Para.Text& CRLF & "Valor:" &Valor.Text & CRLF & "Observação:" & CRLF&Tipo.Text & CRLF & "Data:" &Data.Text,"Debitado com Sucesso")
 		Dim xValor As Float = Valor.Text
 		Financeiro.saldo = Financeiro.saldo - xValor 
 		
-		Dim linha_extrato As String = Data.Text & " " & "(-)" & xValor & "    " & limita_campo(Observacao.Text, 9)
+		Dim linha_extrato As String = Data.Text & " " & "(-)" & xValor & "    " & limita_campo(Tipo.Text, 9)
 		
 		Financeiro.list_Extrato.Add(linha_extrato)
 		

@@ -585,7 +585,7 @@ finally {
 
 public static void initializeProcessGlobals() {
     if (mostCurrent != null && mostCurrent.activityBA != null) {
-Debug.StartDebugging(mostCurrent.activityBA, 36954, new int[] {3, 2, 3, 3, 3, 2, 2, 2, 4, 2, 2}, "e962e0ff-afb0-4cdc-8839-b8bd2df5cb1c");}
+Debug.StartDebugging(mostCurrent.activityBA, 7317, new int[] {3, 2, 3, 3, 3, 2, 2, 2, 4, 2, 2}, "19e59b25-4374-4168-acef-c5bba0b64337");}
 
     if (main.processGlobalsRun == false) {
 	    main.processGlobalsRun = true;

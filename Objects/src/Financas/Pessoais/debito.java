@@ -266,10 +266,10 @@ public class debito extends Activity implements B4AActivity{
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _para = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _valor = null;
-public anywheresoftware.b4a.objects.EditTextWrapper _observacao = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _button_voltar = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _button_debitar = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _data = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _tipo = null;
 public Financas.Pessoais.main _main = null;
 public Financas.Pessoais.cadastro _cadastro = null;
 public Financas.Pessoais.financeiro _financeiro = null;
@@ -281,7 +281,7 @@ public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.debitos _debitos = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"Button_Debitar",mostCurrent._button_debitar,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Data",mostCurrent._data,"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Observacao",mostCurrent._observacao,"Para",mostCurrent._para,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class),"Valor",mostCurrent._valor};
+		return new Object[] {"Activity",mostCurrent._activity,"Button_Debitar",mostCurrent._button_debitar,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Data",mostCurrent._data,"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Para",mostCurrent._para,"Tipo",mostCurrent._tipo,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class),"Valor",mostCurrent._valor};
 }
 
 public static void initializeProcessGlobals() {
@@ -361,25 +361,25 @@ float _xvalor = 0f;
 String _linha_extrato = "";
  BA.debugLineNum = 45;BA.debugLine="Sub Button_Debitar_Click";
 Debug.ShouldStop(4096);
- BA.debugLineNum = 46;BA.debugLine="If Para.Text = \"\" OR Valor.Text = \"\" OR Observacao.Text = \"\" Then";
+ BA.debugLineNum = 46;BA.debugLine="If Para.Text = \"\" OR Valor.Text = \"\" OR Tipo.Text = \"\" Then";
 Debug.ShouldStop(8192);
-if ((mostCurrent._para.getText()).equals("") || (mostCurrent._valor.getText()).equals("") || (mostCurrent._observacao.getText()).equals("")) { 
+if ((mostCurrent._para.getText()).equals("") || (mostCurrent._valor.getText()).equals("") || (mostCurrent._tipo.getText()).equals("")) { 
  BA.debugLineNum = 47;BA.debugLine="Msgbox(\"Campos Obrigatórios não Preenchidos\", \"Atenção!\")";
 Debug.ShouldStop(16384);
 anywheresoftware.b4a.keywords.Common.Msgbox("Campos Obrigatórios não Preenchidos","Atenção!",mostCurrent.activityBA);
  }else {
- BA.debugLineNum = 49;BA.debugLine="Msgbox(\"Nome:\" & Para.Text& CRLF & \"Valor:\" &Valor.Text & CRLF & \"Observação:\" & CRLF&Observacao.Text & CRLF & \"Data:\" &Data.Text,\"Debitado com Sucesso\")";
+ BA.debugLineNum = 49;BA.debugLine="Msgbox(\"Nome:\" & Para.Text& CRLF & \"Valor:\" &Valor.Text & CRLF & \"Observação:\" & CRLF&Tipo.Text & CRLF & \"Data:\" &Data.Text,\"Debitado com Sucesso\")";
 Debug.ShouldStop(65536);
-anywheresoftware.b4a.keywords.Common.Msgbox("Nome:"+mostCurrent._para.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Valor:"+mostCurrent._valor.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Observação:"+anywheresoftware.b4a.keywords.Common.CRLF+mostCurrent._observacao.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Data:"+mostCurrent._data.getText(),"Debitado com Sucesso",mostCurrent.activityBA);
+anywheresoftware.b4a.keywords.Common.Msgbox("Nome:"+mostCurrent._para.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Valor:"+mostCurrent._valor.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Observação:"+anywheresoftware.b4a.keywords.Common.CRLF+mostCurrent._tipo.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Data:"+mostCurrent._data.getText(),"Debitado com Sucesso",mostCurrent.activityBA);
  BA.debugLineNum = 50;BA.debugLine="Dim xValor As Float = Valor.Text";
 Debug.ShouldStop(131072);
 _xvalor = (float)(Double.parseDouble(mostCurrent._valor.getText()));Debug.locals.put("xValor", _xvalor);Debug.locals.put("xValor", _xvalor);
  BA.debugLineNum = 51;BA.debugLine="Financeiro.saldo = Financeiro.saldo - xValor";
 Debug.ShouldStop(262144);
 mostCurrent._financeiro._saldo = (float) (mostCurrent._financeiro._saldo-_xvalor);
- BA.debugLineNum = 53;BA.debugLine="Dim linha_extrato As String = Data.Text & \" \" & \"(-)\" & xValor & \"    \" & limita_campo(Observacao.Text, 9)";
+ BA.debugLineNum = 53;BA.debugLine="Dim linha_extrato As String = Data.Text & \" \" & \"(-)\" & xValor & \"    \" & limita_campo(Tipo.Text, 9)";
 Debug.ShouldStop(1048576);
-_linha_extrato = mostCurrent._data.getText()+" "+"(-)"+BA.NumberToString(_xvalor)+"    "+_limita_campo(mostCurrent._observacao.getText(),(int) (9));Debug.locals.put("linha_extrato", _linha_extrato);Debug.locals.put("linha_extrato", _linha_extrato);
+_linha_extrato = mostCurrent._data.getText()+" "+"(-)"+BA.NumberToString(_xvalor)+"    "+_limita_campo(mostCurrent._tipo.getText(),(int) (9));Debug.locals.put("linha_extrato", _linha_extrato);Debug.locals.put("linha_extrato", _linha_extrato);
  BA.debugLineNum = 55;BA.debugLine="Financeiro.list_Extrato.Add(linha_extrato)";
 Debug.ShouldStop(4194304);
 mostCurrent._financeiro._list_extrato.Add((Object)(_linha_extrato));
@@ -420,14 +420,14 @@ public static String  _globals() throws Exception{
 mostCurrent._para = new anywheresoftware.b4a.objects.EditTextWrapper();
  //BA.debugLineNum = 17;BA.debugLine="Dim Valor As EditText";
 mostCurrent._valor = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 18;BA.debugLine="Dim Observacao As EditText";
-mostCurrent._observacao = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Dim Button_Voltar As Button";
+ //BA.debugLineNum = 18;BA.debugLine="Dim Button_Voltar As Button";
 mostCurrent._button_voltar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Dim Button_Debitar As Button";
+ //BA.debugLineNum = 19;BA.debugLine="Dim Button_Debitar As Button";
 mostCurrent._button_debitar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 21;BA.debugLine="Dim Data As EditText";
+ //BA.debugLineNum = 20;BA.debugLine="Dim Data As EditText";
 mostCurrent._data = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 21;BA.debugLine="Private Tipo As EditText";
+mostCurrent._tipo = new anywheresoftware.b4a.objects.EditTextWrapper();
  //BA.debugLineNum = 22;BA.debugLine="End Sub";
 return "";
 }
