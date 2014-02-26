@@ -295,40 +295,36 @@ int _i = 0;
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 20;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
 Debug.ShouldStop(524288);
- BA.debugLineNum = 22;BA.debugLine="Activity.LoadLayout(\"Layout_Extrato\")";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 25;BA.debugLine="Activity.LoadLayout(\"Layout_Extrato\")";
+Debug.ShouldStop(16777216);
 mostCurrent._activity.LoadLayout("Layout_Extrato",mostCurrent.activityBA);
- BA.debugLineNum = 24;BA.debugLine="If FirstTime Then";
-Debug.ShouldStop(8388608);
-if (_firsttime) { 
- BA.debugLineNum = 26;BA.debugLine="Label_SaldoAtual.Text = Financeiro.saldo";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 27;BA.debugLine="Label_SaldoAtual.Text = Financeiro.saldo";
+Debug.ShouldStop(67108864);
 mostCurrent._label_saldoatual.setText((Object)(mostCurrent._financeiro._saldo));
- BA.debugLineNum = 28;BA.debugLine="ListView_Extrato.AddSingleLine(\"  Data      \" & \"  Valor        \" & \"Detalhe       \")";
-Debug.ShouldStop(134217728);
-mostCurrent._listview_extrato.AddSingleLine("  Data      "+"  Valor        "+"Detalhe       ");
- BA.debugLineNum = 29;BA.debugLine="ListView_Extrato.AddSingleLine(\"(-)Debito\" & \"      \" & \"(+)Credito\")";
+ BA.debugLineNum = 29;BA.debugLine="ListView_Extrato.AddSingleLine(\"  Data      \" & \"  Valor        \" & \"Detalhe       \")";
 Debug.ShouldStop(268435456);
+mostCurrent._listview_extrato.AddSingleLine("  Data      "+"  Valor        "+"Detalhe       ");
+ BA.debugLineNum = 30;BA.debugLine="ListView_Extrato.AddSingleLine(\"(-)Debito\" & \"      \" & \"(+)Credito\")";
+Debug.ShouldStop(536870912);
 mostCurrent._listview_extrato.AddSingleLine("(-)Debito"+"      "+"(+)Credito");
- BA.debugLineNum = 31;BA.debugLine="For i = 0 To Financeiro.list_Extrato.Size -1";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 32;BA.debugLine="For i = 0 To Financeiro.list_Extrato.Size -1";
+Debug.ShouldStop(-2147483648);
 {
-final int step13 = 1;
-final int limit13 = (int) (mostCurrent._financeiro._list_extrato.getSize()-1);
-for (_i = (int) (0); (step13 > 0 && _i <= limit13) || (step13 < 0 && _i >= limit13); _i = ((int)(0 + _i + step13))) {
+final int step12 = 1;
+final int limit12 = (int) (mostCurrent._financeiro._list_extrato.getSize()-1);
+for (_i = (int) (0); (step12 > 0 && _i <= limit12) || (step12 < 0 && _i >= limit12); _i = ((int)(0 + _i + step12))) {
 Debug.locals.put("i", _i);
- BA.debugLineNum = 33;BA.debugLine="ListView_Extrato.AddSingleLine(Financeiro.list_Extrato.Get(i))";
-Debug.ShouldStop(1);
-mostCurrent._listview_extrato.AddSingleLine(BA.ObjectToString(mostCurrent._financeiro._list_extrato.Get(_i)));
- BA.debugLineNum = 34;BA.debugLine="ListView_Extrato.FastScrollEnabled = True";
+ BA.debugLineNum = 34;BA.debugLine="ListView_Extrato.AddSingleLine(Financeiro.list_Extrato.Get(i))";
 Debug.ShouldStop(2);
+mostCurrent._listview_extrato.AddSingleLine(BA.ObjectToString(mostCurrent._financeiro._list_extrato.Get(_i)));
+ BA.debugLineNum = 35;BA.debugLine="ListView_Extrato.FastScrollEnabled = True";
+Debug.ShouldStop(4);
 mostCurrent._listview_extrato.setFastScrollEnabled(anywheresoftware.b4a.keywords.Common.True);
  }
 }Debug.locals.put("i", _i);
 ;
- };
- BA.debugLineNum = 42;BA.debugLine="End Sub";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 43;BA.debugLine="End Sub";
+Debug.ShouldStop(1024);
 return "";
 }
 catch (Exception e) {
@@ -342,10 +338,10 @@ public static String  _activity_pause(boolean _userclosed) throws Exception{
 		Debug.PushSubsStack("Activity_Pause (extrato) ","extrato",6,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 48;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 50;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 49;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(65536);
+ BA.debugLineNum = 51;BA.debugLine="End Sub";
+Debug.ShouldStop(262144);
 return "";
 }
 catch (Exception e) {
@@ -358,10 +354,10 @@ finally {
 public static String  _activity_resume() throws Exception{
 		Debug.PushSubsStack("Activity_Resume (extrato) ","extrato",6,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 44;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(2048);
- BA.debugLineNum = 46;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 45;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(4096);
+ BA.debugLineNum = 47;BA.debugLine="End Sub";
+Debug.ShouldStop(16384);
 return "";
 }
 catch (Exception e) {
@@ -374,13 +370,13 @@ finally {
 public static String  _button_voltar_click() throws Exception{
 		Debug.PushSubsStack("Button_Voltar_Click (extrato) ","extrato",6,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 54;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 55;BA.debugLine="Activity.Finish";
+ BA.debugLineNum = 55;BA.debugLine="Sub Button_Voltar_Click";
 Debug.ShouldStop(4194304);
+ BA.debugLineNum = 56;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(8388608);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 57;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 58;BA.debugLine="End Sub";
+Debug.ShouldStop(33554432);
 return "";
 }
 catch (Exception e) {

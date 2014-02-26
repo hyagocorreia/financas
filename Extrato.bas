@@ -22,14 +22,15 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
-	Activity.LoadLayout("Layout_Extrato") 
+	 
+	 'If FirstTime Then
+		
+		Activity.LoadLayout("Layout_Extrato")
 	
-	If FirstTime Then
+		Label_SaldoAtual.Text = Financeiro.saldo
 	
-	Label_SaldoAtual.Text = Financeiro.saldo
-	
-	ListView_Extrato.AddSingleLine("  Data      " & "  Valor        " & "Detalhe       ")
-	ListView_Extrato.AddSingleLine("(-)Debito" & "      " & "(+)Credito")
+		ListView_Extrato.AddSingleLine("  Data      " & "  Valor        " & "Detalhe       ")
+		ListView_Extrato.AddSingleLine("(-)Debito" & "      " & "(+)Credito")
 	
 		For i = 0 To Financeiro.list_Extrato.Size -1
 			
@@ -38,7 +39,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 		Next
 		
-	End If
+	'End If
 	
 	
    
