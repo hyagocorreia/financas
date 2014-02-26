@@ -63,7 +63,7 @@ Sub Globals
 	'These variables can only be accessed from this module
 	
 	Dim Button_Cadastro As Button
-	Dim Login As EditText
+	Dim Username As EditText
 	Dim Senha As EditText
 	Dim Button_Sair As Button
 	Dim Button_entrar As Button
@@ -82,8 +82,8 @@ End Sub
 Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
-Sub Button_Cadastro_Click
 
+Sub Button_Cadastro_Click
 	StartActivity("Cadastro")
 
 End Sub
@@ -95,7 +95,7 @@ Sub Button_Sair_Click
 End Sub
 
 Sub Button_entrar_Click
-	If Login.Text = "" OR Senha.Text = "" Then 
+	If Username.Text = "" OR Senha.Text = "" Then 
 		Msgbox("Campos Obrigatorios não estão preenchidos", "Aviso!" )
 	Else
 		Dim TextReader1 As TextReader
@@ -103,7 +103,7 @@ Sub Button_entrar_Click
     	Dim line As String
     	line = TextReader1.ReadLine    
     	Do While line <> Null
-        	If line = Login.Text & Senha.Text Then
+        	If line = Username.Text & Senha.Text Then
 				StartActivity("Menu")
 			End If
         	line = TextReader1.ReadLine
