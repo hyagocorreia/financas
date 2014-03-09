@@ -18,7 +18,7 @@ Sub Globals
 	Dim Button_Financeiro As Button
 	Dim Button_sair As Button
 	Dim Button_Utilitarios As Button
-	Dim ImageView_Foto As ImageView
+	Private Button_ExcluirConta As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -36,14 +36,19 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Sub Button_Financeiro_Click
-StartActivity("Financeiro")
+	StartActivity("Financeiro")
 	
 End Sub
-Sub Button_sair_Click
-ExitApplication
 
+Sub Button_sair_Click
+	Activity.Finish
 End Sub
+
 Sub Button_Utilitarios_Click
-StartActivity("Utilitários")
+	StartActivity("Utilitários")
 	
+End Sub
+
+Sub Button_ExcluirConta_Click
+	StartActivity("Excluir")
 End Sub

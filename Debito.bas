@@ -16,12 +16,13 @@ Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
 
-	Dim Para As EditText
+	Dim result As Int
 	Dim Valor As EditText
 	Dim Button_Voltar As Button
 	Dim Button_Debitar As Button
 	Dim Data As EditText
 	Private Referente As EditText
+	Private Categoria As Spinner
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -46,20 +47,36 @@ Sub Button_Voltar_Click
 	
 End Sub
 Sub Button_Debitar_Click
-	 If Valor.Text = "" OR Referente.Text = "" Then
-		Msgbox("Campos Obrigatórios não Preenchidos", "Atenção!")
-	Else
-		Msgbox("Valor:" &Valor.Text & CRLF & "Observação:" & CRLF&Referente.Text & CRLF & "Data:" &Data.Text,"Debitado com Sucesso")
-		Dim xValor As Float = Valor.Text
-		Financeiro.saldo = Financeiro.saldo - xValor 
+	
+	 	If Valor.Text = "" OR Referente.Text = "" Then
+			Msgbox("Campos Obrigatórios não Preenchidos", "Atenção!")
+			
+		Else
 		
-		Dim linha_extrato As String = Data.Text & " " & "(-)" & xValor & "    " & limita_campo(Referente.Text, 9)
+			Msgbox("Valor:" &Valor.Text & CRLF & "Observação:" & CRLF&Referente.Text & CRLF & "Data:" &Data.Text,"Debitado com Sucesso")
 		
-		Financeiro.list_Extrato.Add(linha_extrato)
+			Dim xValor As Float = Valor.Text
+		
+			Financeiro.saldo = Financeiro.saldo - xValor 
+		
+			Dim linha_extrato As String = Data.Text & " " & "(-)" & xValor & "    " & limita_campo(Referente.Text, 9)
+		
+			Financeiro.list_Extrato.Add(linha_extrato)
+		
+		
+				result = Msgbox2("Deseja fazer outra operação?","Aviso!","Sim","","Nao",Null)
+			
+				If result = DialogResponse.POSITIVE Then
+					StartActivity("Debito")
+			
+				Else
+					StartActivity("Financeiro")			
+	
+				End If
 		
 		
 		
-	End If
+		End If
 	
 End Sub
 
@@ -74,3 +91,8 @@ Sub limita_campo(texto As String, qte_caracteres As Int)
 
 End Sub
 
+
+Sub Categoria_ItemClicliclick (Position As Int, Value As Object)
+	
+	
+End Sub

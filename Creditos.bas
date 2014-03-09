@@ -16,12 +16,15 @@ Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
 
-	Dim De As EditText
+	'Dim De As EditText
+	Dim result As Int
 	Dim Valor As EditText
 	Dim Button_Creditar As Button
 	Dim Button_Voltar As Button
 	Dim Data As EditText
 	Private Referente As EditText
+	Private Categoria As Spinner
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -30,7 +33,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	DateTime.DateFormat = "dd/MM/yy"
 	Dim Data_hoje As  String = DateTime.Date(DateTime.Now)
 	Data.Text = Data_hoje
-
+	
 End Sub
 
 Sub Activity_Resume
@@ -47,7 +50,7 @@ Sub Button_Creditar_Click
 	If Valor.Text = "" OR Referente.Text = "" Then 
 		Msgbox("Campos Obrigatorios não estão preenchidos", "Aviso!" )
 	Else
-		Msgbox("Valor:"&Valor.Text&CRLF&"Referente:"&CRLF&Referente.Text&CRLF&"Data:"&Data.Text,"Creditado com Sucesso")
+		Msgbox("Valor: "&Valor.Text&CRLF&"Referente: "&CRLF&Referente.Text&CRLF&"Data: "&Data.Text,"Creditado com Sucesso!")
 		
 		'Msgbox(De.Text&CRLF&Valor.Text&CRLF&Observacao.Text&CRLF&Data.Text,"Creditado com sucesso")
 		
@@ -55,14 +58,21 @@ Sub Button_Creditar_Click
 		
 		Financeiro.saldo = Financeiro.saldo + xValor 
 		
-		Dim linha_extrato As String = Data.Text & " " & "(+)" & xValor & "    " & limita_campo(Referente.Text, 9)
+		Dim linha_extrato As String = Data.Text & " " & "(+)" & xValor & "    " & Limita_campo(Referente.Text, 9)
 		
 		Financeiro.list_Extrato.Add(linha_extrato)
 		
+		result = Msgbox2("Deseja fazer outra operação?","Aviso!","Sim","","Nao",Null)
+			
+			If result = DialogResponse.POSITIVE Then
+				StartActivity("Creditos")
+			
+			Else
+				StartActivity("Financeiro")			
+	
+			End If
+	
 	End If
-	
-	
-	
 		
 	
 End Sub
@@ -71,10 +81,18 @@ Sub Button_Voltar_Click
 	
 End Sub
 
-Sub limita_campo(texto As String, qte_caracteres As Int)
+Sub Limita_campo(texto As String, qte_caracteres As Int)
 	If texto.Length > qte_caracteres Then
 		texto = texto.SubString2(1,qte_caracteres)	
 	End If
 	
 	Return texto
+	
 End Sub
+
+Sub Categoria_ItemClick (Position As Int, Value As Object)
+	
+	Categoria.AddAll(Array As String("Água", "Gás", "Luz", "Combustível", "Vestuário", "Alimentação", "Móveis", "Materiais De Consatrução"))
+
+End Sub
+	

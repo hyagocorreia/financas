@@ -282,12 +282,13 @@ public Financas.Pessoais.financeiro _financeiro = null;
 public Financas.Pessoais.creditos _creditos = null;
 public Financas.Pessoais.debito _debito = null;
 public Financas.Pessoais.total _total = null;
-public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.utilitários _utilitários = null;
+public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.menu _menu = null;
+public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.debitos _debitos = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"Button_Divisao",mostCurrent._button_divisao,"Button_igual",mostCurrent._button_igual,"Button_Multiplicacao",mostCurrent._button_multiplicacao,"Button_soma",mostCurrent._button_soma,"Button_subtracao",mostCurrent._button_subtracao,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"numero1",mostCurrent._numero1,"numero2",mostCurrent._numero2,"operacao",mostCurrent._operacao,"resultado",mostCurrent._resultado,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class),"valor1",_valor1,"valor2",_valor2};
+		return new Object[] {"Activity",mostCurrent._activity,"Button_Divisao",mostCurrent._button_divisao,"Button_igual",mostCurrent._button_igual,"Button_Multiplicacao",mostCurrent._button_multiplicacao,"Button_soma",mostCurrent._button_soma,"Button_subtracao",mostCurrent._button_subtracao,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"numero1",mostCurrent._numero1,"numero2",mostCurrent._numero2,"operacao",mostCurrent._operacao,"resultado",mostCurrent._resultado,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class),"valor1",_valor1,"valor2",_valor2};
 }
 
 public static void initializeProcessGlobals() {
@@ -298,7 +299,7 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Create (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 29;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -318,7 +319,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Pause (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 39;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -335,7 +336,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Resume (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 35;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(4);
@@ -351,7 +352,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_divisao_click() throws Exception{
-		Debug.PushSubsStack("Button_Divisao_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Divisao_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 64;BA.debugLine="Sub Button_Divisao_Click";
 Debug.ShouldStop(-2147483648);
@@ -373,7 +374,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_igual_click() throws Exception{
-		Debug.PushSubsStack("Button_igual_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_igual_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 75;BA.debugLine="Sub Button_igual_Click";
 Debug.ShouldStop(1024);
@@ -464,7 +465,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_multiplicacao_click() throws Exception{
-		Debug.PushSubsStack("Button_Multiplicacao_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Multiplicacao_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 50;BA.debugLine="Sub Button_Multiplicacao_Click";
 Debug.ShouldStop(131072);
@@ -486,7 +487,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_soma_click() throws Exception{
-		Debug.PushSubsStack("Button_soma_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_soma_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 43;BA.debugLine="Sub Button_soma_Click";
 Debug.ShouldStop(1024);
@@ -508,7 +509,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_subtracao_click() throws Exception{
-		Debug.PushSubsStack("Button_subtracao_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_subtracao_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 57;BA.debugLine="Sub Button_subtracao_Click";
 Debug.ShouldStop(16777216);
@@ -530,7 +531,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Voltar_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 120;BA.debugLine="Sub Button_Voltar_Click";
 Debug.ShouldStop(8388608);

@@ -29,9 +29,9 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 		Label_SaldoAtual.Text = Financeiro.saldo
 	
-		ListView_Extrato.AddSingleLine("  Data      " & "  Valor        " & "Detalhe       ")
-		ListView_Extrato.AddSingleLine("(-)Debito" & "      " & "(+)Credito")
-	
+		ListView_Extrato.AddSingleLine("    (-)Debito" & "      " & "(+)Credito")
+		ListView_Extrato.AddSingleLine("| Data |  " & " | Valor |  " & " | Detalhe |")
+		
 		For i = 0 To Financeiro.list_Extrato.Size -1
 			
 			ListView_Extrato.AddSingleLine(Financeiro.list_Extrato.Get(i))

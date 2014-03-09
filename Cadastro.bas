@@ -50,9 +50,10 @@ Sub Button_Salvar_Click
 		Msgbox("Senhas não conferem!", "Atenção!")
 	Else
 		Dim TextWriter1 As TextWriter
-   		TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, "Logins.txt", False))
+   		TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, "Logins.txt", True))
 		TextWriter1.WriteLine(Username.Text & Senha.Text)
     	TextWriter1.Close
 		Msgbox("Nome:" & Nome.Text & CRLF,"Cadastrado com Sucesso")
+		Activity.Finish
 	End If
 End Sub

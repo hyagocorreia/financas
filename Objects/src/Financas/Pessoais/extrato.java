@@ -274,11 +274,12 @@ public Financas.Pessoais.creditos _creditos = null;
 public Financas.Pessoais.debito _debito = null;
 public Financas.Pessoais.total _total = null;
 public Financas.Pessoais.utilitários _utilitários = null;
-public Financas.Pessoais.calculadora _calculadora = null;
+public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.menu _menu = null;
+public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.debitos _debitos = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Label_SaldoAtual",mostCurrent._label_saldoatual,"ListView_Extrato",mostCurrent._listview_extrato,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Label_SaldoAtual",mostCurrent._label_saldoatual,"ListView_Extrato",mostCurrent._listview_extrato,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -289,7 +290,7 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (extrato) ","extrato",6,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Create (extrato) ","extrato",10,mostCurrent.activityBA,mostCurrent);
 try {
 int _i = 0;
 Debug.locals.put("FirstTime", _firsttime);
@@ -301,12 +302,12 @@ mostCurrent._activity.LoadLayout("Layout_Extrato",mostCurrent.activityBA);
  BA.debugLineNum = 27;BA.debugLine="Label_SaldoAtual.Text = Financeiro.saldo";
 Debug.ShouldStop(67108864);
 mostCurrent._label_saldoatual.setText((Object)(mostCurrent._financeiro._saldo));
- BA.debugLineNum = 29;BA.debugLine="ListView_Extrato.AddSingleLine(\"  Data      \" & \"  Valor        \" & \"Detalhe       \")";
+ BA.debugLineNum = 29;BA.debugLine="ListView_Extrato.AddSingleLine(\"    (-)Debito\" & \"      \" & \"(+)Credito\")";
 Debug.ShouldStop(268435456);
-mostCurrent._listview_extrato.AddSingleLine("  Data      "+"  Valor        "+"Detalhe       ");
- BA.debugLineNum = 30;BA.debugLine="ListView_Extrato.AddSingleLine(\"(-)Debito\" & \"      \" & \"(+)Credito\")";
+mostCurrent._listview_extrato.AddSingleLine("    (-)Debito"+"      "+"(+)Credito");
+ BA.debugLineNum = 30;BA.debugLine="ListView_Extrato.AddSingleLine(\"| Data |  \" & \" | Valor |  \" & \" | Detalhe |\")";
 Debug.ShouldStop(536870912);
-mostCurrent._listview_extrato.AddSingleLine("(-)Debito"+"      "+"(+)Credito");
+mostCurrent._listview_extrato.AddSingleLine("| Data |  "+" | Valor |  "+" | Detalhe |");
  BA.debugLineNum = 32;BA.debugLine="For i = 0 To Financeiro.list_Extrato.Size -1";
 Debug.ShouldStop(-2147483648);
 {
@@ -335,7 +336,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (extrato) ","extrato",6,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Pause (extrato) ","extrato",10,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 49;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -352,7 +353,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (extrato) ","extrato",6,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Resume (extrato) ","extrato",10,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 45;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(4096);
@@ -368,7 +369,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (extrato) ","extrato",6,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Voltar_Click (extrato) ","extrato",10,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 55;BA.debugLine="Sub Button_Voltar_Click";
 Debug.ShouldStop(4194304);

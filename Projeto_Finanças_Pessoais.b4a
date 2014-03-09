@@ -1,6 +1,6 @@
 ﻿Version=3.2
 IconFile=
-NumberOfModules=10
+NumberOfModules=11
 Module1=Cadastro
 ModuleVisible1=1
 Module2=Financeiro
@@ -11,33 +11,37 @@ Module4=Debito
 ModuleVisible4=1
 Module5=Total
 ModuleVisible5=1
-Module6=Extrato
+Module6=Utilitários
 ModuleVisible6=1
-Module7=Utilitários
+Module7=Excluir
 ModuleVisible7=1
-Module8=Calculadora
+Module8=Menu
 ModuleVisible8=1
-Module9=Menu
+Module9=Calculadora
 ModuleVisible9=1
-Module10=Debitos
-ModuleVisible10=0
+Module10=Extrato
+ModuleVisible10=1
+Module11=Debitos
+ModuleVisible11=0
 Package=Financas.Pessoais
 DoNotOverwriteManifest=False
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
 UserTypesHint=
-NumberOfFiles=10
+NumberOfFiles=11
 File1=Layout_Cadastro.bal
 File2=Layout_Calculadora.bal
 File3=Layout_Creditos.bal
 File4=Layout_Debitos.bal
-File5=Layout_Extrato.bal
-File6=Layout_Financeiro.bal
-File7=Layout_Login.bal
-File8=Layout_Menu.bal
-File9=Layout_Saldo.bal
-File10=Layout_Utilitarios.bal
-NumberOfLibraries=1
+File5=Layout_Excluir.bal
+File6=Layout_Extrato.bal
+File7=Layout_Financeiro.bal
+File8=Layout_Login.bal
+File9=Layout_Menu.bal
+File10=Layout_Saldo.bal
+File11=Layout_Utilitarios.bal
+NumberOfLibraries=2
 Library1=core
+Library2=sql
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: Fine
@@ -98,17 +102,23 @@ Sub Button_entrar_Click
 	If Username.Text = "" OR Senha.Text = "" Then 
 		Msgbox("Campos Obrigatorios não estão preenchidos", "Aviso!" )
 	Else
-		Dim TextReader1 As TextReader
-    	TextReader1.Initialize(File.OpenInput(File.DirRootExternal, "Logins.txt"))
-    	Dim line As String
-    	line = TextReader1.ReadLine    
-    	Do While line <> Null
-        	If line = Username.Text & Senha.Text Then
-				StartActivity("Menu")
-			End If
-        	line = TextReader1.ReadLine
-    	Loop
-    	TextReader1.Close
+		If Not(File.Exists(File.DirRootExternal, "Logins.txt")) Then
+			Dim TextWriter1 As TextWriter
+   			TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, "Logins.txt", False))
+			TextWriter1.Close
+		Else
+			Dim TextReader1 As TextReader
+	    	TextReader1.Initialize(File.OpenInput(File.DirRootExternal, "Logins.txt"))
+	    	Dim line As String
+	    	line = TextReader1.ReadLine    
+	    	Do While line <> Null
+	        	If line = Username.Text & Senha.Text Then
+					StartActivity("Menu")
+				End If
+	        	line = TextReader1.ReadLine
+	    	Loop
+	    	TextReader1.Close
+		End If
 	End If
 	
 	Msgbox("Usuario ou senha invalida!", "Aviso!")

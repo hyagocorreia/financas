@@ -275,13 +275,14 @@ public Financas.Pessoais.financeiro _financeiro = null;
 public Financas.Pessoais.creditos _creditos = null;
 public Financas.Pessoais.debito _debito = null;
 public Financas.Pessoais.total _total = null;
-public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.utilitários _utilitários = null;
-public Financas.Pessoais.calculadora _calculadora = null;
+public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.menu _menu = null;
+public Financas.Pessoais.calculadora _calculadora = null;
+public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.debitos _debitos = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"Button_Salvar",mostCurrent._button_salvar,"Button_Voltar",mostCurrent._button_voltar,"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Nome",mostCurrent._nome,"Senha",mostCurrent._senha,"Senha_Repetida",mostCurrent._senha_repetida,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Username",mostCurrent._username,"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"Button_Salvar",mostCurrent._button_salvar,"Button_Voltar",mostCurrent._button_voltar,"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Nome",mostCurrent._nome,"Senha",mostCurrent._senha,"Senha_Repetida",mostCurrent._senha_repetida,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Username",mostCurrent._username,"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -367,9 +368,9 @@ anywheresoftware.b4a.keywords.Common.Msgbox("Senhas não conferem!","Atenção!"
  BA.debugLineNum = 49;BA.debugLine="Dim TextWriter1 As TextWriter";
 Debug.ShouldStop(65536);
 _textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();Debug.locals.put("TextWriter1", _textwriter1);
- BA.debugLineNum = 50;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, \"Logins.txt\", False))";
+ BA.debugLineNum = 50;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, \"Logins.txt\", True))";
 Debug.ShouldStop(131072);
-_textwriter1.Initialize((java.io.OutputStream)(anywheresoftware.b4a.keywords.Common.File.OpenOutput(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Logins.txt",anywheresoftware.b4a.keywords.Common.False).getObject()));
+_textwriter1.Initialize((java.io.OutputStream)(anywheresoftware.b4a.keywords.Common.File.OpenOutput(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Logins.txt",anywheresoftware.b4a.keywords.Common.True).getObject()));
  BA.debugLineNum = 51;BA.debugLine="TextWriter1.WriteLine(Username.Text & Senha.Text)";
 Debug.ShouldStop(262144);
 _textwriter1.WriteLine(mostCurrent._username.getText()+mostCurrent._senha.getText());
@@ -379,9 +380,12 @@ _textwriter1.Close();
  BA.debugLineNum = 53;BA.debugLine="Msgbox(\"Nome:\" & Nome.Text & CRLF,\"Cadastrado com Sucesso\")";
 Debug.ShouldStop(1048576);
 anywheresoftware.b4a.keywords.Common.Msgbox("Nome:"+mostCurrent._nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF,"Cadastrado com Sucesso",mostCurrent.activityBA);
+ BA.debugLineNum = 54;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(2097152);
+mostCurrent._activity.Finish();
  }};
- BA.debugLineNum = 55;BA.debugLine="End Sub";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 56;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return "";
 }
 catch (Exception e) {

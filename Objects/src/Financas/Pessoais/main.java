@@ -274,13 +274,14 @@ public Financas.Pessoais.financeiro _financeiro = null;
 public Financas.Pessoais.creditos _creditos = null;
 public Financas.Pessoais.debito _debito = null;
 public Financas.Pessoais.total _total = null;
-public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.utilitários _utilitários = null;
-public Financas.Pessoais.calculadora _calculadora = null;
+public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.menu _menu = null;
+public Financas.Pessoais.calculadora _calculadora = null;
+public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.debitos _debitos = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"Button_Cadastro",mostCurrent._button_cadastro,"Button_entrar",mostCurrent._button_entrar,"Button_Sair",mostCurrent._button_sair,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Senha",mostCurrent._senha,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Username",mostCurrent._username,"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"Button_Cadastro",mostCurrent._button_cadastro,"Button_entrar",mostCurrent._button_entrar,"Button_Sair",mostCurrent._button_sair,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Senha",mostCurrent._senha,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Username",mostCurrent._username,"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
 }
 
 public static boolean isAnyActivityVisible() {
@@ -291,10 +292,11 @@ vis = vis | (financeiro.mostCurrent != null);
 vis = vis | (creditos.mostCurrent != null);
 vis = vis | (debito.mostCurrent != null);
 vis = vis | (total.mostCurrent != null);
-vis = vis | (extrato.mostCurrent != null);
 vis = vis | (utilitários.mostCurrent != null);
-vis = vis | (calculadora.mostCurrent != null);
+vis = vis | (excluir.mostCurrent != null);
 vis = vis | (menu.mostCurrent != null);
+vis = vis | (calculadora.mostCurrent != null);
+vis = vis | (extrato.mostCurrent != null);
 vis = vis | (debitos.mostCurrent != null);
 return vis;}
 
@@ -373,11 +375,11 @@ public static void killProgram() {
 
  {
             Activity __a = null;
-            if (extrato.previousOne != null) {
-				__a = extrato.previousOne.get();
+            if (utilitários.previousOne != null) {
+				__a = utilitários.previousOne.get();
 			}
             else {
-                BA ba = extrato.mostCurrent.processBA.sharedProcessBA.activityBA.get();
+                BA ba = utilitários.mostCurrent.processBA.sharedProcessBA.activityBA.get();
                 if (ba != null) __a = ba.activity;
             }
             if (__a != null)
@@ -385,11 +387,23 @@ public static void killProgram() {
 
  {
             Activity __a = null;
-            if (utilitários.previousOne != null) {
-				__a = utilitários.previousOne.get();
+            if (excluir.previousOne != null) {
+				__a = excluir.previousOne.get();
 			}
             else {
-                BA ba = utilitários.mostCurrent.processBA.sharedProcessBA.activityBA.get();
+                BA ba = excluir.mostCurrent.processBA.sharedProcessBA.activityBA.get();
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (menu.previousOne != null) {
+				__a = menu.previousOne.get();
+			}
+            else {
+                BA ba = menu.mostCurrent.processBA.sharedProcessBA.activityBA.get();
                 if (ba != null) __a = ba.activity;
             }
             if (__a != null)
@@ -409,11 +423,11 @@ public static void killProgram() {
 
  {
             Activity __a = null;
-            if (menu.previousOne != null) {
-				__a = menu.previousOne.get();
+            if (extrato.previousOne != null) {
+				__a = extrato.previousOne.get();
 			}
             else {
-                BA ba = menu.mostCurrent.processBA.sharedProcessBA.activityBA.get();
+                BA ba = extrato.mostCurrent.processBA.sharedProcessBA.activityBA.get();
                 if (ba != null) __a = ba.activity;
             }
             if (__a != null)
@@ -507,6 +521,7 @@ finally {
 public static String  _button_entrar_click() throws Exception{
 		Debug.PushSubsStack("Button_entrar_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent);
 try {
+anywheresoftware.b4a.objects.streams.File.TextWriterWrapper _textwriter1 = null;
 anywheresoftware.b4a.objects.streams.File.TextReaderWrapper _textreader1 = null;
 String _line = "";
  BA.debugLineNum = 56;BA.debugLine="Sub Button_entrar_Click";
@@ -518,42 +533,56 @@ if ((mostCurrent._username.getText()).equals("") || (mostCurrent._senha.getText(
 Debug.ShouldStop(33554432);
 anywheresoftware.b4a.keywords.Common.Msgbox("Campos Obrigatorios não estão preenchidos","Aviso!",mostCurrent.activityBA);
  }else {
- BA.debugLineNum = 60;BA.debugLine="Dim TextReader1 As TextReader";
+ BA.debugLineNum = 60;BA.debugLine="If Not(File.Exists(File.DirRootExternal, \"Logins.txt\")) Then";
 Debug.ShouldStop(134217728);
-_textreader1 = new anywheresoftware.b4a.objects.streams.File.TextReaderWrapper();Debug.locals.put("TextReader1", _textreader1);
- BA.debugLineNum = 61;BA.debugLine="TextReader1.Initialize(File.OpenInput(File.DirRootExternal, \"Logins.txt\"))";
+if (anywheresoftware.b4a.keywords.Common.Not(anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Logins.txt"))) { 
+ BA.debugLineNum = 61;BA.debugLine="Dim TextWriter1 As TextWriter";
 Debug.ShouldStop(268435456);
-_textreader1.Initialize((java.io.InputStream)(anywheresoftware.b4a.keywords.Common.File.OpenInput(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Logins.txt").getObject()));
- BA.debugLineNum = 62;BA.debugLine="Dim line As String";
+_textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();Debug.locals.put("TextWriter1", _textwriter1);
+ BA.debugLineNum = 62;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, \"Logins.txt\", False))";
 Debug.ShouldStop(536870912);
-_line = "";Debug.locals.put("line", _line);
- BA.debugLineNum = 63;BA.debugLine="line = TextReader1.ReadLine";
+_textwriter1.Initialize((java.io.OutputStream)(anywheresoftware.b4a.keywords.Common.File.OpenOutput(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Logins.txt",anywheresoftware.b4a.keywords.Common.False).getObject()));
+ BA.debugLineNum = 63;BA.debugLine="TextWriter1.Close";
 Debug.ShouldStop(1073741824);
-_line = _textreader1.ReadLine();Debug.locals.put("line", _line);
- BA.debugLineNum = 64;BA.debugLine="Do While line <> Null";
-Debug.ShouldStop(-2147483648);
-while (_line!= null) {
- BA.debugLineNum = 65;BA.debugLine="If line = Username.Text & Senha.Text Then";
+_textwriter1.Close();
+ }else {
+ BA.debugLineNum = 65;BA.debugLine="Dim TextReader1 As TextReader";
 Debug.ShouldStop(1);
-if ((_line).equals(mostCurrent._username.getText()+mostCurrent._senha.getText())) { 
- BA.debugLineNum = 66;BA.debugLine="StartActivity(\"Menu\")";
+_textreader1 = new anywheresoftware.b4a.objects.streams.File.TextReaderWrapper();Debug.locals.put("TextReader1", _textreader1);
+ BA.debugLineNum = 66;BA.debugLine="TextReader1.Initialize(File.OpenInput(File.DirRootExternal, \"Logins.txt\"))";
 Debug.ShouldStop(2);
-anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
- };
+_textreader1.Initialize((java.io.InputStream)(anywheresoftware.b4a.keywords.Common.File.OpenInput(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Logins.txt").getObject()));
+ BA.debugLineNum = 67;BA.debugLine="Dim line As String";
+Debug.ShouldStop(4);
+_line = "";Debug.locals.put("line", _line);
  BA.debugLineNum = 68;BA.debugLine="line = TextReader1.ReadLine";
 Debug.ShouldStop(8);
 _line = _textreader1.ReadLine();Debug.locals.put("line", _line);
+ BA.debugLineNum = 69;BA.debugLine="Do While line <> Null";
+Debug.ShouldStop(16);
+while (_line!= null) {
+ BA.debugLineNum = 70;BA.debugLine="If line = Username.Text & Senha.Text Then";
+Debug.ShouldStop(32);
+if ((_line).equals(mostCurrent._username.getText()+mostCurrent._senha.getText())) { 
+ BA.debugLineNum = 71;BA.debugLine="StartActivity(\"Menu\")";
+Debug.ShouldStop(64);
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
+ };
+ BA.debugLineNum = 73;BA.debugLine="line = TextReader1.ReadLine";
+Debug.ShouldStop(256);
+_line = _textreader1.ReadLine();Debug.locals.put("line", _line);
  }
 ;
- BA.debugLineNum = 70;BA.debugLine="TextReader1.Close";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 75;BA.debugLine="TextReader1.Close";
+Debug.ShouldStop(1024);
 _textreader1.Close();
  };
- BA.debugLineNum = 73;BA.debugLine="Msgbox(\"Usuario ou senha invalida!\", \"Aviso!\")";
-Debug.ShouldStop(256);
+ };
+ BA.debugLineNum = 79;BA.debugLine="Msgbox(\"Usuario ou senha invalida!\", \"Aviso!\")";
+Debug.ShouldStop(16384);
 anywheresoftware.b4a.keywords.Common.Msgbox("Usuario ou senha invalida!","Aviso!",mostCurrent.activityBA);
- BA.debugLineNum = 75;BA.debugLine="End Sub";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 81;BA.debugLine="End Sub";
+Debug.ShouldStop(65536);
 return "";
 }
 catch (Exception e) {
@@ -585,7 +614,7 @@ finally {
 
 public static void initializeProcessGlobals() {
     if (mostCurrent != null && mostCurrent.activityBA != null) {
-Debug.StartDebugging(mostCurrent.activityBA, 9887, new int[] {3, 2, 3, 3, 3, 2, 2, 2, 4, 2, 2}, "5f32f6c8-1ac6-42d8-aa48-c720f7470c19");}
+Debug.StartDebugging(mostCurrent.activityBA, 26529, new int[] {3, 2, 3, 3, 3, 2, 2, 3, 2, 4, 2, 2}, "6fd744ec-83d6-4be8-891f-fdfafd34651f");}
 
     if (main.processGlobalsRun == false) {
 	    main.processGlobalsRun = true;
@@ -596,10 +625,11 @@ financeiro._process_globals();
 creditos._process_globals();
 debito._process_globals();
 total._process_globals();
-extrato._process_globals();
 utilitários._process_globals();
-calculadora._process_globals();
+excluir._process_globals();
 menu._process_globals();
+calculadora._process_globals();
+extrato._process_globals();
 debitos._process_globals();
 		
         } catch (Exception e) {
