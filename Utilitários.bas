@@ -55,6 +55,5 @@ Sub Button_Excluir_Click
 	
 End Sub
 Sub Button_Voltar_Click
-Activity.Finish
-	
+	Activity.Finish	
 End Sub

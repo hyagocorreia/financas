@@ -430,15 +430,39 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
-public static String  _categoria_itemclicliclick(int _position,Object _value) throws Exception{
-		Debug.PushSubsStack("Categoria_ItemClicliclick (debito) ","debito",4,mostCurrent.activityBA,mostCurrent);
+public static String  _categoria_itemclick(int _position,Object _value) throws Exception{
+		Debug.PushSubsStack("Categoria_ItemClick (debito) ","debito",4,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
- BA.debugLineNum = 92;BA.debugLine="Sub Categoria_ItemClicliclick (Position As Int, Value As Object)";
+ BA.debugLineNum = 87;BA.debugLine="Sub Categoria_ItemClick (Position As Int, Value As Object)";
+Debug.ShouldStop(4194304);
+ BA.debugLineNum = 88;BA.debugLine="Categoria.Add(\"Água\")";
+Debug.ShouldStop(8388608);
+mostCurrent._categoria.Add("Água");
+ BA.debugLineNum = 89;BA.debugLine="Categoria.Add(\"Gás\")";
+Debug.ShouldStop(16777216);
+mostCurrent._categoria.Add("Gás");
+ BA.debugLineNum = 90;BA.debugLine="Categoria.Add(\"Luz\")";
+Debug.ShouldStop(33554432);
+mostCurrent._categoria.Add("Luz");
+ BA.debugLineNum = 91;BA.debugLine="Categoria.Add(\"Combustível\")";
+Debug.ShouldStop(67108864);
+mostCurrent._categoria.Add("Combustível");
+ BA.debugLineNum = 92;BA.debugLine="Categoria.Add(\"Vestuário\")";
 Debug.ShouldStop(134217728);
- BA.debugLineNum = 95;BA.debugLine="End Sub";
+mostCurrent._categoria.Add("Vestuário");
+ BA.debugLineNum = 93;BA.debugLine="Categoria.Add(\"Alimentação\")";
+Debug.ShouldStop(268435456);
+mostCurrent._categoria.Add("Alimentação");
+ BA.debugLineNum = 94;BA.debugLine="Categoria.Add(\"Móveis\")";
+Debug.ShouldStop(536870912);
+mostCurrent._categoria.Add("Móveis");
+ BA.debugLineNum = 95;BA.debugLine="Categoria.Add(\"Materiais De Consatrução\")";
 Debug.ShouldStop(1073741824);
+mostCurrent._categoria.Add("Materiais De Consatrução");
+ BA.debugLineNum = 96;BA.debugLine="End Sub";
+Debug.ShouldStop(-2147483648);
 return "";
 }
 catch (Exception e) {
@@ -484,8 +508,8 @@ _texto = _texto.substring((int) (1),_qte_caracteres);Debug.locals.put("texto", _
  BA.debugLineNum = 85;BA.debugLine="Return texto";
 Debug.ShouldStop(1048576);
 if (true) return _texto;
- BA.debugLineNum = 89;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 86;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
 return "";
 }
 catch (Exception e) {

@@ -16,7 +16,6 @@ Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
 
-	'Dim De As EditText
 	Dim result As Int
 	Dim Valor As EditText
 	Dim Button_Creditar As Button
@@ -24,7 +23,6 @@ Sub Globals
 	Dim Data As EditText
 	Private Referente As EditText
 	Private Categoria As Spinner
-	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -51,9 +49,7 @@ Sub Button_Creditar_Click
 		Msgbox("Campos Obrigatorios não estão preenchidos", "Aviso!" )
 	Else
 		Msgbox("Valor: "&Valor.Text&CRLF&"Referente: "&CRLF&Referente.Text&CRLF&"Data: "&Data.Text,"Creditado com Sucesso!")
-		
-		'Msgbox(De.Text&CRLF&Valor.Text&CRLF&Observacao.Text&CRLF&Data.Text,"Creditado com sucesso")
-		
+	
 		Dim xValor As Float = Valor.Text
 		
 		Financeiro.saldo = Financeiro.saldo + xValor 
@@ -91,8 +87,13 @@ Sub Limita_campo(texto As String, qte_caracteres As Int)
 End Sub
 
 Sub Categoria_ItemClick (Position As Int, Value As Object)
-	
-	Categoria.AddAll(Array As String("Água", "Gás", "Luz", "Combustível", "Vestuário", "Alimentação", "Móveis", "Materiais De Consatrução"))
-
+	StartActivity(Categoria)
+	Categoria.Add("Água")
+	Categoria.Add("Gás")
+	Categoria.Add("Luz")
+	Categoria.Add("Combustível")
+	Categoria.Add("Vestuário")
+	Categoria.Add("Alimentação")
+	Categoria.Add("Móveis")
+	Categoria.Add("Materiais De Consatrução")
 End Sub
-	

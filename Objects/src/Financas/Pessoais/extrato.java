@@ -299,9 +299,6 @@ Debug.ShouldStop(524288);
  BA.debugLineNum = 25;BA.debugLine="Activity.LoadLayout(\"Layout_Extrato\")";
 Debug.ShouldStop(16777216);
 mostCurrent._activity.LoadLayout("Layout_Extrato",mostCurrent.activityBA);
- BA.debugLineNum = 27;BA.debugLine="Label_SaldoAtual.Text = Financeiro.saldo";
-Debug.ShouldStop(67108864);
-mostCurrent._label_saldoatual.setText((Object)(mostCurrent._financeiro._saldo));
  BA.debugLineNum = 29;BA.debugLine="ListView_Extrato.AddSingleLine(\"    (-)Debito\" & \"      \" & \"(+)Credito\")";
 Debug.ShouldStop(268435456);
 mostCurrent._listview_extrato.AddSingleLine("    (-)Debito"+"      "+"(+)Credito");
@@ -311,9 +308,9 @@ mostCurrent._listview_extrato.AddSingleLine("| Data |  "+" | Valor |  "+" | Deta
  BA.debugLineNum = 32;BA.debugLine="For i = 0 To Financeiro.list_Extrato.Size -1";
 Debug.ShouldStop(-2147483648);
 {
-final int step12 = 1;
-final int limit12 = (int) (mostCurrent._financeiro._list_extrato.getSize()-1);
-for (_i = (int) (0); (step12 > 0 && _i <= limit12) || (step12 < 0 && _i >= limit12); _i = ((int)(0 + _i + step12))) {
+final int step11 = 1;
+final int limit11 = (int) (mostCurrent._financeiro._list_extrato.getSize()-1);
+for (_i = (int) (0); (step11 > 0 && _i <= limit11) || (step11 < 0 && _i >= limit11); _i = ((int)(0 + _i + step11))) {
 Debug.locals.put("i", _i);
  BA.debugLineNum = 34;BA.debugLine="ListView_Extrato.AddSingleLine(Financeiro.list_Extrato.Get(i))";
 Debug.ShouldStop(2);
@@ -371,13 +368,13 @@ finally {
 public static String  _button_voltar_click() throws Exception{
 		Debug.PushSubsStack("Button_Voltar_Click (extrato) ","extrato",10,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 55;BA.debugLine="Sub Button_Voltar_Click";
+ BA.debugLineNum = 54;BA.debugLine="Sub Button_Voltar_Click";
+Debug.ShouldStop(2097152);
+ BA.debugLineNum = 55;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(4194304);
- BA.debugLineNum = 56;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(8388608);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 58;BA.debugLine="End Sub";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 56;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return "";
 }
 catch (Exception e) {
@@ -398,6 +395,34 @@ mostCurrent._label_saldoatual = new anywheresoftware.b4a.objects.LabelWrapper();
  //BA.debugLineNum = 18;BA.debugLine="End Sub";
 return "";
 }
+public static String  _listview_extrato_itemlongclick(int _position,Object _value) throws Exception{
+		Debug.PushSubsStack("ListView_Extrato_ItemLongClick (extrato) ","extrato",10,mostCurrent.activityBA,mostCurrent);
+try {
+Debug.locals.put("Position", _position);
+Debug.locals.put("Value", _value);
+ BA.debugLineNum = 58;BA.debugLine="Sub ListView_Extrato_ItemLongClick (Position As Int, Value As Object)";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 59;BA.debugLine="If Msgbox2(\"Deseja excluir a transação?\", \"Excluir\", \"Sim\", \"\", \"Não\", Null) = DialogResponse.POSITIVE Then";
+Debug.ShouldStop(67108864);
+if (anywheresoftware.b4a.keywords.Common.Msgbox2("Deseja excluir a transação?","Excluir","Sim","","Não",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null),mostCurrent.activityBA)==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
+ BA.debugLineNum = 60;BA.debugLine="Financeiro.list_Extrato.RemoveAt(Position-2)";
+Debug.ShouldStop(134217728);
+mostCurrent._financeiro._list_extrato.RemoveAt((int) (_position-2));
+ BA.debugLineNum = 61;BA.debugLine="ListView_Extrato.RemoveAt(Position)";
+Debug.ShouldStop(268435456);
+mostCurrent._listview_extrato.RemoveAt(_position);
+ };
+ BA.debugLineNum = 63;BA.debugLine="End Sub";
+Debug.ShouldStop(1073741824);
+return "";
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
  //BA.debugLineNum = 10;BA.debugLine="End Sub";

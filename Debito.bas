@@ -86,13 +86,14 @@ Sub limita_campo(texto As String, qte_caracteres As Int)
 	End If
 	
 	Return texto
-	
-	
-
 End Sub
-
-
-Sub Categoria_ItemClicliclick (Position As Int, Value As Object)
-	
-	
+Sub Categoria_ItemClick (Position As Int, Value As Object)
+	Categoria.Add("Água")
+	Categoria.Add("Gás")
+	Categoria.Add("Luz")
+	Categoria.Add("Combustível")
+	Categoria.Add("Vestuário")
+	Categoria.Add("Alimentação")
+	Categoria.Add("Móveis")
+	Categoria.Add("Materiais De Consatrução")	
 End Sub

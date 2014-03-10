@@ -27,7 +27,7 @@ Sub Activity_Create(FirstTime As Boolean)
 		
 		Activity.LoadLayout("Layout_Extrato")
 	
-		Label_SaldoAtual.Text = Financeiro.saldo
+		'Label_SaldoAtual.Text = Financeiro.saldo
 	
 		ListView_Extrato.AddSingleLine("    (-)Debito" & "      " & "(+)Credito")
 		ListView_Extrato.AddSingleLine("| Data |  " & " | Valor |  " & " | Detalhe |")
@@ -54,8 +54,13 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 
-
 Sub Button_Voltar_Click
 	Activity.Finish
-	
+End Sub
+
+Sub ListView_Extrato_ItemLongClick (Position As Int, Value As Object)
+	If Msgbox2("Deseja excluir a transação?", "Excluir", "Sim", "", "Não", Null) = DialogResponse.POSITIVE Then
+		Financeiro.list_Extrato.RemoveAt(Position-2)
+		ListView_Extrato.RemoveAt(Position)
+	End If
 End Sub

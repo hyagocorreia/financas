@@ -408,8 +408,8 @@ Debug.ShouldStop(2097152);
  BA.debugLineNum = 55;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(4194304);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 57;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 56;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return "";
 }
 catch (Exception e) {

@@ -347,13 +347,13 @@ finally {
 public static String  _button_voltar_click() throws Exception{
 		Debug.PushSubsStack("Button_Voltar_Click (total) ","total",5,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 37;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(16);
- BA.debugLineNum = 38;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 35;BA.debugLine="Sub Button_Voltar_Click";
+Debug.ShouldStop(4);
+ BA.debugLineNum = 36;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(8);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 40;BA.debugLine="End Sub";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 38;BA.debugLine="End Sub";
+Debug.ShouldStop(32);
 return "";
 }
 catch (Exception e) {

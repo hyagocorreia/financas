@@ -53,7 +53,7 @@ Sub Button_Excluir_Click
 					TextWriter1.WriteList(texto)
     				TextWriter1.Close
 					TextReader1.Close
-					Activity.Finish
+					StartActivity("Main")
 				End If
 			Else
 				texto.Add(line)

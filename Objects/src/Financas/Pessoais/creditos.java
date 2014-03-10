@@ -298,22 +298,22 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 try {
 String _data_hoje = "";
 Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 26;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(33554432);
- BA.debugLineNum = 28;BA.debugLine="Activity.LoadLayout(\"Layout_Creditos\")";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 25;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+Debug.ShouldStop(16777216);
+ BA.debugLineNum = 27;BA.debugLine="Activity.LoadLayout(\"Layout_Creditos\")";
+Debug.ShouldStop(67108864);
 mostCurrent._activity.LoadLayout("Layout_Creditos",mostCurrent.activityBA);
- BA.debugLineNum = 29;BA.debugLine="DateTime.DateFormat = \"dd/MM/yy\"";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 28;BA.debugLine="DateTime.DateFormat = \"dd/MM/yy\"";
+Debug.ShouldStop(134217728);
 anywheresoftware.b4a.keywords.Common.DateTime.setDateFormat("dd/MM/yy");
- BA.debugLineNum = 30;BA.debugLine="Dim Data_hoje As  String = DateTime.Date(DateTime.Now)";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 29;BA.debugLine="Dim Data_hoje As  String = DateTime.Date(DateTime.Now)";
+Debug.ShouldStop(268435456);
 _data_hoje = anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow());Debug.locals.put("Data_hoje", _data_hoje);Debug.locals.put("Data_hoje", _data_hoje);
- BA.debugLineNum = 31;BA.debugLine="Data.Text = Data_hoje";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 30;BA.debugLine="Data.Text = Data_hoje";
+Debug.ShouldStop(536870912);
 mostCurrent._data.setText((Object)(_data_hoje));
- BA.debugLineNum = 33;BA.debugLine="End Sub";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 32;BA.debugLine="End Sub";
+Debug.ShouldStop(-2147483648);
 return "";
 }
 catch (Exception e) {
@@ -327,10 +327,10 @@ public static String  _activity_pause(boolean _userclosed) throws Exception{
 		Debug.PushSubsStack("Activity_Pause (creditos) ","creditos",3,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 39;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(64);
- BA.debugLineNum = 41;BA.debugLine="End Sub";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 38;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(32);
+ BA.debugLineNum = 40;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return "";
 }
 catch (Exception e) {
@@ -343,10 +343,10 @@ finally {
 public static String  _activity_resume() throws Exception{
 		Debug.PushSubsStack("Activity_Resume (creditos) ","creditos",3,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 35;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(4);
- BA.debugLineNum = 37;BA.debugLine="End Sub";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 34;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(2);
+ BA.debugLineNum = 36;BA.debugLine="End Sub";
+Debug.ShouldStop(8);
 return "";
 }
 catch (Exception e) {
@@ -361,47 +361,47 @@ public static String  _button_creditar_click() throws Exception{
 try {
 float _xvalor = 0f;
 String _linha_extrato = "";
- BA.debugLineNum = 45;BA.debugLine="Sub Button_Creditar_Click";
+ BA.debugLineNum = 44;BA.debugLine="Sub Button_Creditar_Click";
+Debug.ShouldStop(2048);
+ BA.debugLineNum = 45;BA.debugLine="If Valor.Text = \"\" OR Referente.Text = \"\" Then";
 Debug.ShouldStop(4096);
- BA.debugLineNum = 46;BA.debugLine="If Valor.Text = \"\" OR Referente.Text = \"\" Then";
-Debug.ShouldStop(8192);
 if ((mostCurrent._valor.getText()).equals("") || (mostCurrent._referente.getText()).equals("")) { 
- BA.debugLineNum = 47;BA.debugLine="Msgbox(\"Campos Obrigatorios não estão preenchidos\", \"Aviso!\" )";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 46;BA.debugLine="Msgbox(\"Campos Obrigatorios não estão preenchidos\", \"Aviso!\" )";
+Debug.ShouldStop(8192);
 anywheresoftware.b4a.keywords.Common.Msgbox("Campos Obrigatorios não estão preenchidos","Aviso!",mostCurrent.activityBA);
  }else {
- BA.debugLineNum = 49;BA.debugLine="Msgbox(\"Valor:\"&Valor.Text&CRLF&\"Referente:\"&CRLF&Referente.Text&CRLF&\"Data:\"&Data.Text,\"Creditado com Sucesso\")";
-Debug.ShouldStop(65536);
-anywheresoftware.b4a.keywords.Common.Msgbox("Valor:"+mostCurrent._valor.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Referente:"+anywheresoftware.b4a.keywords.Common.CRLF+mostCurrent._referente.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Data:"+mostCurrent._data.getText(),"Creditado com Sucesso",mostCurrent.activityBA);
- BA.debugLineNum = 53;BA.debugLine="Dim xValor As Float = Valor.Text";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 48;BA.debugLine="Msgbox(\"Valor: \"&Valor.Text&CRLF&\"Referente: \"&CRLF&Referente.Text&CRLF&\"Data: \"&Data.Text,\"Creditado com Sucesso!\")";
+Debug.ShouldStop(32768);
+anywheresoftware.b4a.keywords.Common.Msgbox("Valor: "+mostCurrent._valor.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Referente: "+anywheresoftware.b4a.keywords.Common.CRLF+mostCurrent._referente.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Data: "+mostCurrent._data.getText(),"Creditado com Sucesso!",mostCurrent.activityBA);
+ BA.debugLineNum = 50;BA.debugLine="Dim xValor As Float = Valor.Text";
+Debug.ShouldStop(131072);
 _xvalor = (float)(Double.parseDouble(mostCurrent._valor.getText()));Debug.locals.put("xValor", _xvalor);Debug.locals.put("xValor", _xvalor);
- BA.debugLineNum = 55;BA.debugLine="Financeiro.saldo = Financeiro.saldo + xValor";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 52;BA.debugLine="Financeiro.saldo = Financeiro.saldo + xValor";
+Debug.ShouldStop(524288);
 mostCurrent._financeiro._saldo = (float) (mostCurrent._financeiro._saldo+_xvalor);
- BA.debugLineNum = 57;BA.debugLine="Dim linha_extrato As String = Data.Text & \" \" & \"(+)\" & xValor & \"    \" & limita_campo(Referente.Text, 9)";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 54;BA.debugLine="Dim linha_extrato As String = Data.Text & \" \" & \"(+)\" & xValor & \"    \" & Limita_campo(Referente.Text, 9)";
+Debug.ShouldStop(2097152);
 _linha_extrato = mostCurrent._data.getText()+" "+"(+)"+BA.NumberToString(_xvalor)+"    "+_limita_campo(mostCurrent._referente.getText(),(int) (9));Debug.locals.put("linha_extrato", _linha_extrato);Debug.locals.put("linha_extrato", _linha_extrato);
- BA.debugLineNum = 59;BA.debugLine="Financeiro.list_Extrato.Add(linha_extrato)";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 56;BA.debugLine="Financeiro.list_Extrato.Add(linha_extrato)";
+Debug.ShouldStop(8388608);
 mostCurrent._financeiro._list_extrato.Add((Object)(_linha_extrato));
- BA.debugLineNum = 61;BA.debugLine="result = Msgbox2(\"Deseja fazer outra operação?\",\"Aviso!\",\"Sim\",\"\",\"Nao\",Null)";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 58;BA.debugLine="result = Msgbox2(\"Deseja fazer outra operação?\",\"Aviso!\",\"Sim\",\"\",\"Nao\",Null)";
+Debug.ShouldStop(33554432);
 _result = anywheresoftware.b4a.keywords.Common.Msgbox2("Deseja fazer outra operação?","Aviso!","Sim","","Nao",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null),mostCurrent.activityBA);
- BA.debugLineNum = 63;BA.debugLine="If result = DialogResponse.POSITIVE Then";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 60;BA.debugLine="If result = DialogResponse.POSITIVE Then";
+Debug.ShouldStop(134217728);
 if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
- BA.debugLineNum = 64;BA.debugLine="StartActivity(\"Creditos\")";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 61;BA.debugLine="StartActivity(\"Creditos\")";
+Debug.ShouldStop(268435456);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Creditos"));
  }else {
- BA.debugLineNum = 67;BA.debugLine="StartActivity(\"Financeiro\")";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 64;BA.debugLine="StartActivity(\"Financeiro\")";
+Debug.ShouldStop(-2147483648);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Financeiro"));
  };
  };
- BA.debugLineNum = 74;BA.debugLine="End Sub";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 71;BA.debugLine="End Sub";
+Debug.ShouldStop(64);
 return "";
 }
 catch (Exception e) {
@@ -414,13 +414,13 @@ finally {
 public static String  _button_voltar_click() throws Exception{
 		Debug.PushSubsStack("Button_Voltar_Click (creditos) ","creditos",3,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 75;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 76;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 72;BA.debugLine="Sub Button_Voltar_Click";
+Debug.ShouldStop(128);
+ BA.debugLineNum = 73;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(256);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 78;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 75;BA.debugLine="End Sub";
+Debug.ShouldStop(1024);
 return "";
 }
 catch (Exception e) {
@@ -435,13 +435,37 @@ public static String  _categoria_itemclick(int _position,Object _value) throws E
 try {
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
- BA.debugLineNum = 88;BA.debugLine="Sub Categoria_ItemClick (Position As Int, Value As Object)";
+ BA.debugLineNum = 86;BA.debugLine="Sub Categoria_ItemClick (Position As Int, Value As Object)";
+Debug.ShouldStop(2097152);
+ BA.debugLineNum = 87;BA.debugLine="StartActivity(Categoria)";
+Debug.ShouldStop(4194304);
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)(mostCurrent._categoria.getObject()));
+ BA.debugLineNum = 88;BA.debugLine="Categoria.Add(\"Água\")";
 Debug.ShouldStop(8388608);
- BA.debugLineNum = 90;BA.debugLine="Categoria.AddAll(Array As String(\"Água\", \"Gás\", \"Luz\", \"Combustível\", \"Vestuário\", \"Alimentação\", \"Móveis\", \"Materiais De Consatrução\"))";
+mostCurrent._categoria.Add("Água");
+ BA.debugLineNum = 89;BA.debugLine="Categoria.Add(\"Gás\")";
+Debug.ShouldStop(16777216);
+mostCurrent._categoria.Add("Gás");
+ BA.debugLineNum = 90;BA.debugLine="Categoria.Add(\"Luz\")";
 Debug.ShouldStop(33554432);
-mostCurrent._categoria.AddAll(anywheresoftware.b4a.keywords.Common.ArrayToList(new String[]{"Água","Gás","Luz","Combustível","Vestuário","Alimentação","Móveis","Materiais De Consatrução"}));
- BA.debugLineNum = 92;BA.debugLine="End Sub";
+mostCurrent._categoria.Add("Luz");
+ BA.debugLineNum = 91;BA.debugLine="Categoria.Add(\"Combustível\")";
+Debug.ShouldStop(67108864);
+mostCurrent._categoria.Add("Combustível");
+ BA.debugLineNum = 92;BA.debugLine="Categoria.Add(\"Vestuário\")";
 Debug.ShouldStop(134217728);
+mostCurrent._categoria.Add("Vestuário");
+ BA.debugLineNum = 93;BA.debugLine="Categoria.Add(\"Alimentação\")";
+Debug.ShouldStop(268435456);
+mostCurrent._categoria.Add("Alimentação");
+ BA.debugLineNum = 94;BA.debugLine="Categoria.Add(\"Móveis\")";
+Debug.ShouldStop(536870912);
+mostCurrent._categoria.Add("Móveis");
+ BA.debugLineNum = 95;BA.debugLine="Categoria.Add(\"Materiais De Consatrução\")";
+Debug.ShouldStop(1073741824);
+mostCurrent._categoria.Add("Materiais De Consatrução");
+ BA.debugLineNum = 96;BA.debugLine="End Sub";
+Debug.ShouldStop(-2147483648);
 return "";
 }
 catch (Exception e) {
@@ -453,42 +477,42 @@ finally {
 		}}
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 17;BA.debugLine="Dim result As Int";
+ //BA.debugLineNum = 16;BA.debugLine="Dim result As Int";
 _result = 0;
- //BA.debugLineNum = 18;BA.debugLine="Dim Valor As EditText";
+ //BA.debugLineNum = 17;BA.debugLine="Dim Valor As EditText";
 mostCurrent._valor = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Dim Button_Creditar As Button";
+ //BA.debugLineNum = 18;BA.debugLine="Dim Button_Creditar As Button";
 mostCurrent._button_creditar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Dim Button_Voltar As Button";
+ //BA.debugLineNum = 19;BA.debugLine="Dim Button_Voltar As Button";
 mostCurrent._button_voltar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 21;BA.debugLine="Dim Data As EditText";
+ //BA.debugLineNum = 20;BA.debugLine="Dim Data As EditText";
 mostCurrent._data = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 22;BA.debugLine="Private Referente As EditText";
+ //BA.debugLineNum = 21;BA.debugLine="Private Referente As EditText";
 mostCurrent._referente = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 23;BA.debugLine="Private Categoria As Spinner";
+ //BA.debugLineNum = 22;BA.debugLine="Private Categoria As Spinner";
 mostCurrent._categoria = new anywheresoftware.b4a.objects.SpinnerWrapper();
- //BA.debugLineNum = 24;BA.debugLine="End Sub";
+ //BA.debugLineNum = 23;BA.debugLine="End Sub";
 return "";
 }
 public static String  _limita_campo(String _texto,int _qte_caracteres) throws Exception{
-		Debug.PushSubsStack("limita_campo (creditos) ","creditos",3,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Limita_campo (creditos) ","creditos",3,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("texto", _texto);
 Debug.locals.put("qte_caracteres", _qte_caracteres);
- BA.debugLineNum = 80;BA.debugLine="Sub limita_campo(texto As String, qte_caracteres As Int)";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 81;BA.debugLine="If texto.Length > qte_caracteres Then";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 77;BA.debugLine="Sub Limita_campo(texto As String, qte_caracteres As Int)";
+Debug.ShouldStop(4096);
+ BA.debugLineNum = 78;BA.debugLine="If texto.Length > qte_caracteres Then";
+Debug.ShouldStop(8192);
 if (_texto.length()>_qte_caracteres) { 
- BA.debugLineNum = 82;BA.debugLine="texto = texto.SubString2(1,qte_caracteres)";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 79;BA.debugLine="texto = texto.SubString2(1,qte_caracteres)";
+Debug.ShouldStop(16384);
 _texto = _texto.substring((int) (1),_qte_caracteres);Debug.locals.put("texto", _texto);
  };
- BA.debugLineNum = 85;BA.debugLine="Return texto";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 82;BA.debugLine="Return texto";
+Debug.ShouldStop(131072);
 if (true) return _texto;
- BA.debugLineNum = 86;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 84;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return "";
 }
 catch (Exception e) {

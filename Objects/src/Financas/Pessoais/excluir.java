@@ -404,9 +404,9 @@ _textwriter1.Close();
  BA.debugLineNum = 52;BA.debugLine="TextReader1.Close";
 Debug.ShouldStop(524288);
 _textreader1.Close();
- BA.debugLineNum = 53;BA.debugLine="Activity.Finish";
+ BA.debugLineNum = 53;BA.debugLine="StartActivity(\"Main\")";
 Debug.ShouldStop(1048576);
-mostCurrent._activity.Finish();
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Main"));
  };
  }else {
  BA.debugLineNum = 56;BA.debugLine="texto.Add(line)";

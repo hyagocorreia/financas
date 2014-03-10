@@ -35,8 +35,6 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
-
-
 Sub Button_Voltar_Click
 	Activity.Finish
 	

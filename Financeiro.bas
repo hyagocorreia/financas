@@ -30,7 +30,6 @@ Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout_Financeiro")
 	If list_Extrato.IsInitialized = False Then
 		list_Extrato.Initialize()
-		
 	End If
 	
 End Sub
@@ -48,11 +47,11 @@ Sub Button_Creditos_Click
 	StartActivity("Creditos")
 
 End Sub
-Sub Button_Debitos_Click
 
+Sub Button_Debitos_Click
 	StartActivity("Debito")
-	
 End Sub
+
 Sub Button_Voltar_Click
 
 	Activity.Finish	
