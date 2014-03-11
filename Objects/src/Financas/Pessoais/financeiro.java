@@ -297,20 +297,20 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 		Debug.PushSubsStack("Activity_Create (financeiro) ","financeiro",2,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 25;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(16777216);
- BA.debugLineNum = 27;BA.debugLine="Activity.LoadLayout(\"Layout_Financeiro\")";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 19;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+Debug.ShouldStop(262144);
+ BA.debugLineNum = 20;BA.debugLine="Activity.LoadLayout(\"Layout_Financeiro\")";
+Debug.ShouldStop(524288);
 mostCurrent._activity.LoadLayout("Layout_Financeiro",mostCurrent.activityBA);
- BA.debugLineNum = 28;BA.debugLine="If list_Extrato.IsInitialized = False Then";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 21;BA.debugLine="If list_Extrato.IsInitialized = False Then";
+Debug.ShouldStop(1048576);
 if (_list_extrato.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
- BA.debugLineNum = 29;BA.debugLine="list_Extrato.Initialize()";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 22;BA.debugLine="list_Extrato.Initialize()";
+Debug.ShouldStop(2097152);
 _list_extrato.Initialize();
  };
- BA.debugLineNum = 32;BA.debugLine="End Sub";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 24;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return "";
 }
 catch (Exception e) {
@@ -324,10 +324,10 @@ public static String  _activity_pause(boolean _userclosed) throws Exception{
 		Debug.PushSubsStack("Activity_Pause (financeiro) ","financeiro",2,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 38;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(32);
- BA.debugLineNum = 40;BA.debugLine="End Sub";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 30;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(536870912);
+ BA.debugLineNum = 32;BA.debugLine="End Sub";
+Debug.ShouldStop(-2147483648);
 return "";
 }
 catch (Exception e) {
@@ -340,10 +340,10 @@ finally {
 public static String  _activity_resume() throws Exception{
 		Debug.PushSubsStack("Activity_Resume (financeiro) ","financeiro",2,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 34;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(2);
- BA.debugLineNum = 36;BA.debugLine="End Sub";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 26;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 28;BA.debugLine="End Sub";
+Debug.ShouldStop(134217728);
 return "";
 }
 catch (Exception e) {
@@ -356,13 +356,13 @@ finally {
 public static String  _button_creditos_click() throws Exception{
 		Debug.PushSubsStack("Button_Creditos_Click (financeiro) ","financeiro",2,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 42;BA.debugLine="Sub Button_Creditos_Click";
-Debug.ShouldStop(512);
- BA.debugLineNum = 44;BA.debugLine="StartActivity(\"Creditos\")";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 34;BA.debugLine="Sub Button_Creditos_Click";
+Debug.ShouldStop(2);
+ BA.debugLineNum = 35;BA.debugLine="StartActivity(\"Creditos\")";
+Debug.ShouldStop(4);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Creditos"));
- BA.debugLineNum = 46;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 36;BA.debugLine="End Sub";
+Debug.ShouldStop(8);
 return "";
 }
 catch (Exception e) {
@@ -375,13 +375,13 @@ finally {
 public static String  _button_debitos_click() throws Exception{
 		Debug.PushSubsStack("Button_Debitos_Click (financeiro) ","financeiro",2,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 48;BA.debugLine="Sub Button_Debitos_Click";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 49;BA.debugLine="StartActivity(\"Debito\")";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 38;BA.debugLine="Sub Button_Debitos_Click";
+Debug.ShouldStop(32);
+ BA.debugLineNum = 39;BA.debugLine="StartActivity(\"Debito\")";
+Debug.ShouldStop(64);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Debito"));
- BA.debugLineNum = 50;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 40;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return "";
 }
 catch (Exception e) {
@@ -394,13 +394,13 @@ finally {
 public static String  _button_extrato_click() throws Exception{
 		Debug.PushSubsStack("Button_Extrato_Click (financeiro) ","financeiro",2,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 61;BA.debugLine="Sub Button_Extrato_Click";
-Debug.ShouldStop(268435456);
- BA.debugLineNum = 62;BA.debugLine="StartActivity(\"Extrato\")";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 51;BA.debugLine="Sub Button_Extrato_Click";
+Debug.ShouldStop(262144);
+ BA.debugLineNum = 52;BA.debugLine="StartActivity(\"Extrato\")";
+Debug.ShouldStop(524288);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Extrato"));
- BA.debugLineNum = 64;BA.debugLine="End Sub";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 53;BA.debugLine="End Sub";
+Debug.ShouldStop(1048576);
 return "";
 }
 catch (Exception e) {
@@ -413,13 +413,13 @@ finally {
 public static String  _button_total_click() throws Exception{
 		Debug.PushSubsStack("Button_total_Click (financeiro) ","financeiro",2,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 57;BA.debugLine="Sub Button_total_Click";
-Debug.ShouldStop(16777216);
- BA.debugLineNum = 58;BA.debugLine="StartActivity(\"Total\")";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 46;BA.debugLine="Sub Button_total_Click";
+Debug.ShouldStop(8192);
+ BA.debugLineNum = 47;BA.debugLine="StartActivity(\"Total\")";
+Debug.ShouldStop(16384);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Total"));
- BA.debugLineNum = 60;BA.debugLine="End Sub";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 49;BA.debugLine="End Sub";
+Debug.ShouldStop(65536);
 return "";
 }
 catch (Exception e) {
@@ -432,13 +432,13 @@ finally {
 public static String  _button_voltar_click() throws Exception{
 		Debug.PushSubsStack("Button_Voltar_Click (financeiro) ","financeiro",2,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 52;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 54;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 42;BA.debugLine="Sub Button_Voltar_Click";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 43;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(1024);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 56;BA.debugLine="End Sub";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 44;BA.debugLine="End Sub";
+Debug.ShouldStop(2048);
 return "";
 }
 catch (Exception e) {
@@ -449,27 +449,27 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 14;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 18;BA.debugLine="Dim Button_Creditos As Button";
+ //BA.debugLineNum = 11;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 12;BA.debugLine="Dim Button_Creditos As Button";
 mostCurrent._button_creditos = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Dim Button_Debitos As Button";
+ //BA.debugLineNum = 13;BA.debugLine="Dim Button_Debitos As Button";
 mostCurrent._button_debitos = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Dim Button_Voltar As Button";
+ //BA.debugLineNum = 14;BA.debugLine="Dim Button_Voltar As Button";
 mostCurrent._button_voltar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 21;BA.debugLine="Dim Button_total As Button";
+ //BA.debugLineNum = 15;BA.debugLine="Dim Button_total As Button";
 mostCurrent._button_total = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 22;BA.debugLine="Dim Button_Extrato As Button";
+ //BA.debugLineNum = 16;BA.debugLine="Dim Button_Extrato As Button";
 mostCurrent._button_extrato = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 23;BA.debugLine="End Sub";
+ //BA.debugLineNum = 17;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 9;BA.debugLine="Dim saldo As Float";
+ //BA.debugLineNum = 7;BA.debugLine="Dim saldo As Float";
 _saldo = 0f;
- //BA.debugLineNum = 10;BA.debugLine="Dim list_Extrato As List";
+ //BA.debugLineNum = 8;BA.debugLine="Dim list_Extrato As List";
 _list_extrato = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 12;BA.debugLine="End Sub";
+ //BA.debugLineNum = 9;BA.debugLine="End Sub";
 return "";
 }
 }

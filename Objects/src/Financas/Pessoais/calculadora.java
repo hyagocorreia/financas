@@ -302,13 +302,13 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 		Debug.PushSubsStack("Activity_Create (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 29;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(268435456);
- BA.debugLineNum = 31;BA.debugLine="Activity.LoadLayout(\"Layout_Calculadora\")";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 25;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+Debug.ShouldStop(16777216);
+ BA.debugLineNum = 26;BA.debugLine="Activity.LoadLayout(\"Layout_Calculadora\")";
+Debug.ShouldStop(33554432);
 mostCurrent._activity.LoadLayout("Layout_Calculadora",mostCurrent.activityBA);
- BA.debugLineNum = 33;BA.debugLine="End Sub";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 27;BA.debugLine="End Sub";
+Debug.ShouldStop(67108864);
 return "";
 }
 catch (Exception e) {
@@ -322,10 +322,10 @@ public static String  _activity_pause(boolean _userclosed) throws Exception{
 		Debug.PushSubsStack("Activity_Pause (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 39;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(64);
- BA.debugLineNum = 41;BA.debugLine="End Sub";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 33;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(1);
+ BA.debugLineNum = 35;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
 return "";
 }
 catch (Exception e) {
@@ -338,10 +338,10 @@ finally {
 public static String  _activity_resume() throws Exception{
 		Debug.PushSubsStack("Activity_Resume (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 35;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(4);
- BA.debugLineNum = 37;BA.debugLine="End Sub";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 29;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(268435456);
+ BA.debugLineNum = 31;BA.debugLine="End Sub";
+Debug.ShouldStop(1073741824);
 return "";
 }
 catch (Exception e) {
@@ -354,16 +354,16 @@ finally {
 public static String  _button_divisao_click() throws Exception{
 		Debug.PushSubsStack("Button_Divisao_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 64;BA.debugLine="Sub Button_Divisao_Click";
-Debug.ShouldStop(-2147483648);
- BA.debugLineNum = 66;BA.debugLine="Button_Divisao.Color = Colors.Blue";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 58;BA.debugLine="Sub Button_Divisao_Click";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 60;BA.debugLine="Button_Divisao.Color = Colors.Blue";
+Debug.ShouldStop(134217728);
 mostCurrent._button_divisao.setColor(anywheresoftware.b4a.keywords.Common.Colors.Blue);
- BA.debugLineNum = 68;BA.debugLine="operacao = \"divisao\"";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 62;BA.debugLine="operacao = \"divisao\"";
+Debug.ShouldStop(536870912);
 mostCurrent._operacao = "divisao";
- BA.debugLineNum = 72;BA.debugLine="End Sub";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 64;BA.debugLine="End Sub";
+Debug.ShouldStop(-2147483648);
 return "";
 }
 catch (Exception e) {
@@ -376,85 +376,85 @@ finally {
 public static String  _button_igual_click() throws Exception{
 		Debug.PushSubsStack("Button_igual_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 75;BA.debugLine="Sub Button_igual_Click";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 77;BA.debugLine="If numero1.Text <> \"\" AND numero2.Text <> \"\" Then";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 66;BA.debugLine="Sub Button_igual_Click";
+Debug.ShouldStop(2);
+ BA.debugLineNum = 68;BA.debugLine="If numero1.Text <> \"\" AND numero2.Text <> \"\" Then";
+Debug.ShouldStop(8);
 if ((mostCurrent._numero1.getText()).equals("") == false && (mostCurrent._numero2.getText()).equals("") == false) { 
- BA.debugLineNum = 81;BA.debugLine="If operacao = \"soma\" Then";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 72;BA.debugLine="If operacao = \"soma\" Then";
+Debug.ShouldStop(128);
 if ((mostCurrent._operacao).equals("soma")) { 
- BA.debugLineNum = 82;BA.debugLine="valor1 = numero1.Text";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 73;BA.debugLine="valor1 = numero1.Text";
+Debug.ShouldStop(256);
 _valor1 = (float)(Double.parseDouble(mostCurrent._numero1.getText()));
- BA.debugLineNum = 83;BA.debugLine="valor2 = numero2.Text";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 74;BA.debugLine="valor2 = numero2.Text";
+Debug.ShouldStop(512);
 _valor2 = (float)(Double.parseDouble(mostCurrent._numero2.getText()));
- BA.debugLineNum = 85;BA.debugLine="resultado.Text = valor1 + valor2";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 76;BA.debugLine="resultado.Text = valor1 + valor2";
+Debug.ShouldStop(2048);
 mostCurrent._resultado.setText((Object)(_valor1+_valor2));
- BA.debugLineNum = 86;BA.debugLine="Button_soma.Color = Colors.DarkGray";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 77;BA.debugLine="Button_soma.Color = Colors.DarkGray";
+Debug.ShouldStop(4096);
 mostCurrent._button_soma.setColor(anywheresoftware.b4a.keywords.Common.Colors.DarkGray);
  }else 
-{ BA.debugLineNum = 88;BA.debugLine="Else If operacao = \"subtracao\" Then";
-Debug.ShouldStop(8388608);
+{ BA.debugLineNum = 79;BA.debugLine="Else If operacao = \"subtracao\" Then";
+Debug.ShouldStop(16384);
 if ((mostCurrent._operacao).equals("subtracao")) { 
- BA.debugLineNum = 89;BA.debugLine="valor1 = numero1.Text";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 80;BA.debugLine="valor1 = numero1.Text";
+Debug.ShouldStop(32768);
 _valor1 = (float)(Double.parseDouble(mostCurrent._numero1.getText()));
- BA.debugLineNum = 90;BA.debugLine="valor2 = numero2.Text";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 81;BA.debugLine="valor2 = numero2.Text";
+Debug.ShouldStop(65536);
 _valor2 = (float)(Double.parseDouble(mostCurrent._numero2.getText()));
- BA.debugLineNum = 92;BA.debugLine="resultado.Text = valor1 - valor2";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 83;BA.debugLine="resultado.Text = valor1 - valor2";
+Debug.ShouldStop(262144);
 mostCurrent._resultado.setText((Object)(_valor1-_valor2));
- BA.debugLineNum = 93;BA.debugLine="Button_subtracao.Color = Colors.DarkGray";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 84;BA.debugLine="Button_subtracao.Color = Colors.DarkGray";
+Debug.ShouldStop(524288);
 mostCurrent._button_subtracao.setColor(anywheresoftware.b4a.keywords.Common.Colors.DarkGray);
  }else 
-{ BA.debugLineNum = 95;BA.debugLine="Else If operacao = \"multiplicacao\" Then";
-Debug.ShouldStop(1073741824);
+{ BA.debugLineNum = 86;BA.debugLine="Else If operacao = \"multiplicacao\" Then";
+Debug.ShouldStop(2097152);
 if ((mostCurrent._operacao).equals("multiplicacao")) { 
- BA.debugLineNum = 96;BA.debugLine="valor1 = numero1.Text";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 87;BA.debugLine="valor1 = numero1.Text";
+Debug.ShouldStop(4194304);
 _valor1 = (float)(Double.parseDouble(mostCurrent._numero1.getText()));
- BA.debugLineNum = 97;BA.debugLine="valor2 = numero2.Text";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 88;BA.debugLine="valor2 = numero2.Text";
+Debug.ShouldStop(8388608);
 _valor2 = (float)(Double.parseDouble(mostCurrent._numero2.getText()));
- BA.debugLineNum = 99;BA.debugLine="resultado.Text = valor1 * valor2";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 90;BA.debugLine="resultado.Text = valor1 * valor2";
+Debug.ShouldStop(33554432);
 mostCurrent._resultado.setText((Object)(_valor1*_valor2));
- BA.debugLineNum = 100;BA.debugLine="Button_Multiplicacao.Color = Colors.DarkGray";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 91;BA.debugLine="Button_Multiplicacao.Color = Colors.DarkGray";
+Debug.ShouldStop(67108864);
 mostCurrent._button_multiplicacao.setColor(anywheresoftware.b4a.keywords.Common.Colors.DarkGray);
  }else {
- BA.debugLineNum = 104;BA.debugLine="valor1 = numero1.Text";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 95;BA.debugLine="valor1 = numero1.Text";
+Debug.ShouldStop(1073741824);
 _valor1 = (float)(Double.parseDouble(mostCurrent._numero1.getText()));
- BA.debugLineNum = 105;BA.debugLine="valor2 = numero2.Text";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 96;BA.debugLine="valor2 = numero2.Text";
+Debug.ShouldStop(-2147483648);
 _valor2 = (float)(Double.parseDouble(mostCurrent._numero2.getText()));
- BA.debugLineNum = 107;BA.debugLine="resultado.Text = valor1 / valor2";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 98;BA.debugLine="resultado.Text = valor1 / valor2";
+Debug.ShouldStop(2);
 mostCurrent._resultado.setText((Object)(_valor1/(double)_valor2));
- BA.debugLineNum = 108;BA.debugLine="Button_Divisao.Color = Colors.DarkGray";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 99;BA.debugLine="Button_Divisao.Color = Colors.DarkGray";
+Debug.ShouldStop(4);
 mostCurrent._button_divisao.setColor(anywheresoftware.b4a.keywords.Common.Colors.DarkGray);
  }}};
  }else {
- BA.debugLineNum = 113;BA.debugLine="Msgbox(\"Digite os valores\", \"Atenção!\")";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 104;BA.debugLine="Msgbox(\"Digite os valores\", \"Atenção!\")";
+Debug.ShouldStop(128);
 anywheresoftware.b4a.keywords.Common.Msgbox("Digite os valores","Atenção!",mostCurrent.activityBA);
  };
- BA.debugLineNum = 116;BA.debugLine="numero1.Text = \"\"";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 107;BA.debugLine="numero1.Text = \"\"";
+Debug.ShouldStop(1024);
 mostCurrent._numero1.setText((Object)(""));
- BA.debugLineNum = 117;BA.debugLine="numero2.Text = \"\"";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 108;BA.debugLine="numero2.Text = \"\"";
+Debug.ShouldStop(2048);
 mostCurrent._numero2.setText((Object)(""));
- BA.debugLineNum = 119;BA.debugLine="End Sub";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 110;BA.debugLine="End Sub";
+Debug.ShouldStop(8192);
 return "";
 }
 catch (Exception e) {
@@ -467,16 +467,16 @@ finally {
 public static String  _button_multiplicacao_click() throws Exception{
 		Debug.PushSubsStack("Button_Multiplicacao_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 50;BA.debugLine="Sub Button_Multiplicacao_Click";
-Debug.ShouldStop(131072);
- BA.debugLineNum = 52;BA.debugLine="Button_Multiplicacao.Color = Colors.Blue";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 44;BA.debugLine="Sub Button_Multiplicacao_Click";
+Debug.ShouldStop(2048);
+ BA.debugLineNum = 46;BA.debugLine="Button_Multiplicacao.Color = Colors.Blue";
+Debug.ShouldStop(8192);
 mostCurrent._button_multiplicacao.setColor(anywheresoftware.b4a.keywords.Common.Colors.Blue);
- BA.debugLineNum = 54;BA.debugLine="operacao = \"multiplicacao\"";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 48;BA.debugLine="operacao = \"multiplicacao\"";
+Debug.ShouldStop(32768);
 mostCurrent._operacao = "multiplicacao";
- BA.debugLineNum = 56;BA.debugLine="End Sub";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 50;BA.debugLine="End Sub";
+Debug.ShouldStop(131072);
 return "";
 }
 catch (Exception e) {
@@ -489,16 +489,16 @@ finally {
 public static String  _button_soma_click() throws Exception{
 		Debug.PushSubsStack("Button_soma_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 43;BA.debugLine="Sub Button_soma_Click";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 45;BA.debugLine="Button_soma.Color = Colors.Blue";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 37;BA.debugLine="Sub Button_soma_Click";
+Debug.ShouldStop(16);
+ BA.debugLineNum = 39;BA.debugLine="Button_soma.Color = Colors.Blue";
+Debug.ShouldStop(64);
 mostCurrent._button_soma.setColor(anywheresoftware.b4a.keywords.Common.Colors.Blue);
- BA.debugLineNum = 47;BA.debugLine="operacao = \"soma\"";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 41;BA.debugLine="operacao = \"soma\"";
+Debug.ShouldStop(256);
 mostCurrent._operacao = "soma";
- BA.debugLineNum = 49;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 43;BA.debugLine="End Sub";
+Debug.ShouldStop(1024);
 return "";
 }
 catch (Exception e) {
@@ -511,16 +511,16 @@ finally {
 public static String  _button_subtracao_click() throws Exception{
 		Debug.PushSubsStack("Button_subtracao_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 57;BA.debugLine="Sub Button_subtracao_Click";
-Debug.ShouldStop(16777216);
- BA.debugLineNum = 59;BA.debugLine="Button_subtracao.Color = Colors.Blue";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 51;BA.debugLine="Sub Button_subtracao_Click";
+Debug.ShouldStop(262144);
+ BA.debugLineNum = 53;BA.debugLine="Button_subtracao.Color = Colors.Blue";
+Debug.ShouldStop(1048576);
 mostCurrent._button_subtracao.setColor(anywheresoftware.b4a.keywords.Common.Colors.Blue);
- BA.debugLineNum = 61;BA.debugLine="operacao = \"subtracao\"";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 55;BA.debugLine="operacao = \"subtracao\"";
+Debug.ShouldStop(4194304);
 mostCurrent._operacao = "subtracao";
- BA.debugLineNum = 63;BA.debugLine="End Sub";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 57;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 return "";
 }
 catch (Exception e) {
@@ -533,13 +533,13 @@ finally {
 public static String  _button_voltar_click() throws Exception{
 		Debug.PushSubsStack("Button_Voltar_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 120;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 122;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 112;BA.debugLine="Sub Button_Voltar_Click";
+Debug.ShouldStop(32768);
+ BA.debugLineNum = 113;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(65536);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 124;BA.debugLine="End Sub";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 114;BA.debugLine="End Sub";
+Debug.ShouldStop(131072);
 return "";
 }
 catch (Exception e) {
@@ -550,37 +550,37 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 15;BA.debugLine="Dim operacao As String";
+ //BA.debugLineNum = 10;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 11;BA.debugLine="Dim operacao As String";
 mostCurrent._operacao = "";
- //BA.debugLineNum = 16;BA.debugLine="Dim Button_soma As Button";
+ //BA.debugLineNum = 12;BA.debugLine="Dim Button_soma As Button";
 mostCurrent._button_soma = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 17;BA.debugLine="Dim Button_Multiplicacao As Button";
+ //BA.debugLineNum = 13;BA.debugLine="Dim Button_Multiplicacao As Button";
 mostCurrent._button_multiplicacao = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 18;BA.debugLine="Dim Button_subtracao As Button";
+ //BA.debugLineNum = 14;BA.debugLine="Dim Button_subtracao As Button";
 mostCurrent._button_subtracao = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Dim Button_Divisao As Button";
+ //BA.debugLineNum = 15;BA.debugLine="Dim Button_Divisao As Button";
 mostCurrent._button_divisao = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Dim Button_igual As Button";
+ //BA.debugLineNum = 16;BA.debugLine="Dim Button_igual As Button";
 mostCurrent._button_igual = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 21;BA.debugLine="Dim numero1 As EditText";
+ //BA.debugLineNum = 17;BA.debugLine="Dim numero1 As EditText";
 mostCurrent._numero1 = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 22;BA.debugLine="Dim numero2 As EditText";
+ //BA.debugLineNum = 18;BA.debugLine="Dim numero2 As EditText";
 mostCurrent._numero2 = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 23;BA.debugLine="Dim resultado As Label";
+ //BA.debugLineNum = 19;BA.debugLine="Dim resultado As Label";
 mostCurrent._resultado = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 24;BA.debugLine="Dim valor1 As Float";
+ //BA.debugLineNum = 20;BA.debugLine="Dim valor1 As Float";
 _valor1 = 0f;
- //BA.debugLineNum = 25;BA.debugLine="Dim valor2 As Float";
+ //BA.debugLineNum = 21;BA.debugLine="Dim valor2 As Float";
 _valor2 = 0f;
- //BA.debugLineNum = 26;BA.debugLine="Dim Button_Voltar As Button";
+ //BA.debugLineNum = 22;BA.debugLine="Dim Button_Voltar As Button";
 mostCurrent._button_voltar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 27;BA.debugLine="End Sub";
+ //BA.debugLineNum = 23;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8;BA.debugLine="End Sub";
 return "";
 }
 }

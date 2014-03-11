@@ -292,16 +292,16 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 		Debug.PushSubsStack("Activity_Create (total) ","total",5,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 20;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 22;BA.debugLine="Activity.LoadLayout(\"Layout_Saldo\")";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 15;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 16;BA.debugLine="Activity.LoadLayout(\"Layout_Saldo\")";
+Debug.ShouldStop(32768);
 mostCurrent._activity.LoadLayout("Layout_Saldo",mostCurrent.activityBA);
- BA.debugLineNum = 23;BA.debugLine="Label_Total.Text = Label_Total.Text &\" \"& Financeiro.saldo";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 17;BA.debugLine="Label_Total.Text = Label_Total.Text &\" \"& Financeiro.saldo";
+Debug.ShouldStop(65536);
 mostCurrent._label_total.setText((Object)(mostCurrent._label_total.getText()+" "+BA.NumberToString(mostCurrent._financeiro._saldo)));
- BA.debugLineNum = 25;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 18;BA.debugLine="End Sub";
+Debug.ShouldStop(131072);
 return "";
 }
 catch (Exception e) {
@@ -315,10 +315,10 @@ public static String  _activity_pause(boolean _userclosed) throws Exception{
 		Debug.PushSubsStack("Activity_Pause (total) ","total",5,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 31;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(1073741824);
- BA.debugLineNum = 33;BA.debugLine="End Sub";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 24;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(8388608);
+ BA.debugLineNum = 26;BA.debugLine="End Sub";
+Debug.ShouldStop(33554432);
 return "";
 }
 catch (Exception e) {
@@ -331,10 +331,10 @@ finally {
 public static String  _activity_resume() throws Exception{
 		Debug.PushSubsStack("Activity_Resume (total) ","total",5,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 27;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(67108864);
- BA.debugLineNum = 29;BA.debugLine="End Sub";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 20;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(524288);
+ BA.debugLineNum = 22;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
 return "";
 }
 catch (Exception e) {
@@ -347,13 +347,13 @@ finally {
 public static String  _button_voltar_click() throws Exception{
 		Debug.PushSubsStack("Button_Voltar_Click (total) ","total",5,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 35;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(4);
- BA.debugLineNum = 36;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 28;BA.debugLine="Sub Button_Voltar_Click";
+Debug.ShouldStop(134217728);
+ BA.debugLineNum = 29;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(268435456);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 38;BA.debugLine="End Sub";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 30;BA.debugLine="End Sub";
+Debug.ShouldStop(536870912);
 return "";
 }
 catch (Exception e) {
@@ -364,17 +364,17 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 16;BA.debugLine="Dim Button_Voltar As Button";
+ //BA.debugLineNum = 10;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 11;BA.debugLine="Dim Button_Voltar As Button";
 mostCurrent._button_voltar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 17;BA.debugLine="Dim Label_Total As Label";
+ //BA.debugLineNum = 12;BA.debugLine="Dim Label_Total As Label";
 mostCurrent._label_total = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 18;BA.debugLine="End Sub";
+ //BA.debugLineNum = 13;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8;BA.debugLine="End Sub";
 return "";
 }
 }

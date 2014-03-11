@@ -296,13 +296,13 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 		Debug.PushSubsStack("Activity_Create (cadastro) ","cadastro",1,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 24;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 26;BA.debugLine="Activity.LoadLayout(\"Layout_Cadastro\")";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 19;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+Debug.ShouldStop(262144);
+ BA.debugLineNum = 20;BA.debugLine="Activity.LoadLayout(\"Layout_Cadastro\")";
+Debug.ShouldStop(524288);
 mostCurrent._activity.LoadLayout("Layout_Cadastro",mostCurrent.activityBA);
- BA.debugLineNum = 28;BA.debugLine="End Sub";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 21;BA.debugLine="End Sub";
+Debug.ShouldStop(1048576);
 return "";
 }
 catch (Exception e) {
@@ -316,10 +316,10 @@ public static String  _activity_pause(boolean _userclosed) throws Exception{
 		Debug.PushSubsStack("Activity_Pause (cadastro) ","cadastro",1,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 34;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(2);
- BA.debugLineNum = 36;BA.debugLine="End Sub";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 27;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(67108864);
+ BA.debugLineNum = 29;BA.debugLine="End Sub";
+Debug.ShouldStop(268435456);
 return "";
 }
 catch (Exception e) {
@@ -332,10 +332,10 @@ finally {
 public static String  _activity_resume() throws Exception{
 		Debug.PushSubsStack("Activity_Resume (cadastro) ","cadastro",1,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 30;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(536870912);
- BA.debugLineNum = 32;BA.debugLine="End Sub";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 23;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(4194304);
+ BA.debugLineNum = 25;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 return "";
 }
 catch (Exception e) {
@@ -348,44 +348,23 @@ finally {
 public static String  _button_salvar_click() throws Exception{
 		Debug.PushSubsStack("Button_Salvar_Click (cadastro) ","cadastro",1,mostCurrent.activityBA,mostCurrent);
 try {
-anywheresoftware.b4a.objects.streams.File.TextWriterWrapper _textwriter1 = null;
- BA.debugLineNum = 43;BA.debugLine="Sub Button_Salvar_Click";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 44;BA.debugLine="If Nome.Text = \"\" OR Username.Text = \"\" OR Senha.Text = \"\" OR Senha_Repetida.Text = \"\" Then";
-Debug.ShouldStop(2048);
-if ((mostCurrent._nome.getText()).equals("") || (mostCurrent._username.getText()).equals("") || (mostCurrent._senha.getText()).equals("") || (mostCurrent._senha_repetida.getText()).equals("")) { 
- BA.debugLineNum = 45;BA.debugLine="Msgbox(\"Campos Obrigatórios não Preenchidos\", \"Atenção!\")";
-Debug.ShouldStop(4096);
-anywheresoftware.b4a.keywords.Common.Msgbox("Campos Obrigatórios não Preenchidos","Atenção!",mostCurrent.activityBA);
- }else 
-{ BA.debugLineNum = 46;BA.debugLine="Else If Not(Senha.Text = Senha_Repetida.Text) Then";
-Debug.ShouldStop(8192);
-if (anywheresoftware.b4a.keywords.Common.Not((mostCurrent._senha.getText()).equals(mostCurrent._senha_repetida.getText()))) { 
- BA.debugLineNum = 47;BA.debugLine="Msgbox(\"Senhas não conferem!\", \"Atenção!\")";
-Debug.ShouldStop(16384);
-anywheresoftware.b4a.keywords.Common.Msgbox("Senhas não conferem!","Atenção!",mostCurrent.activityBA);
- }else {
- BA.debugLineNum = 49;BA.debugLine="Dim TextWriter1 As TextWriter";
-Debug.ShouldStop(65536);
-_textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();Debug.locals.put("TextWriter1", _textwriter1);
- BA.debugLineNum = 50;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, \"Logins.txt\", True))";
-Debug.ShouldStop(131072);
-_textwriter1.Initialize((java.io.OutputStream)(anywheresoftware.b4a.keywords.Common.File.OpenOutput(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Logins.txt",anywheresoftware.b4a.keywords.Common.True).getObject()));
- BA.debugLineNum = 51;BA.debugLine="TextWriter1.WriteLine(Username.Text & Senha.Text)";
-Debug.ShouldStop(262144);
-_textwriter1.WriteLine(mostCurrent._username.getText()+mostCurrent._senha.getText());
- BA.debugLineNum = 52;BA.debugLine="TextWriter1.Close";
-Debug.ShouldStop(524288);
-_textwriter1.Close();
- BA.debugLineNum = 53;BA.debugLine="Msgbox(\"Nome:\" & Nome.Text & CRLF,\"Cadastrado com Sucesso\")";
-Debug.ShouldStop(1048576);
-anywheresoftware.b4a.keywords.Common.Msgbox("Nome:"+mostCurrent._nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF,"Cadastrado com Sucesso",mostCurrent.activityBA);
- BA.debugLineNum = 54;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 35;BA.debugLine="Sub Button_Salvar_Click";
+Debug.ShouldStop(4);
+ BA.debugLineNum = 36;BA.debugLine="Main.Pers.Initialize";
+Debug.ShouldStop(8);
+mostCurrent._main._pers._initialize(processBA);
+ BA.debugLineNum = 37;BA.debugLine="If Main.Pers.Criar_Login(Nome.Text, Username.Text, Senha.Text, Senha_Repetida.Text) Then";
+Debug.ShouldStop(16);
+if (mostCurrent._main._pers._criar_login(mostCurrent._nome.getText(),mostCurrent._username.getText(),mostCurrent._senha.getText(),mostCurrent._senha_repetida.getText())) { 
+ BA.debugLineNum = 38;BA.debugLine="Msgbox(\"Nome: \" & Nome.Text & CRLF & \"Username: \" & Username.Text,\"Cadastrado com Sucesso\")";
+Debug.ShouldStop(32);
+anywheresoftware.b4a.keywords.Common.Msgbox("Nome: "+mostCurrent._nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Username: "+mostCurrent._username.getText(),"Cadastrado com Sucesso",mostCurrent.activityBA);
+ BA.debugLineNum = 39;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(64);
 mostCurrent._activity.Finish();
- }};
- BA.debugLineNum = 56;BA.debugLine="End Sub";
-Debug.ShouldStop(8388608);
+ };
+ BA.debugLineNum = 41;BA.debugLine="End Sub";
+Debug.ShouldStop(256);
 return "";
 }
 catch (Exception e) {
@@ -398,13 +377,13 @@ finally {
 public static String  _button_voltar_click() throws Exception{
 		Debug.PushSubsStack("Button_Voltar_Click (cadastro) ","cadastro",1,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 38;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(32);
- BA.debugLineNum = 39;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 31;BA.debugLine="Sub Button_Voltar_Click";
+Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 32;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(-2147483648);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 41;BA.debugLine="End Sub";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 33;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return "";
 }
 catch (Exception e) {
@@ -415,25 +394,25 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 16;BA.debugLine="Dim Nome As EditText";
+ //BA.debugLineNum = 10;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 11;BA.debugLine="Dim Nome As EditText";
 mostCurrent._nome = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 17;BA.debugLine="Dim Button_Voltar As Button";
+ //BA.debugLineNum = 12;BA.debugLine="Dim Button_Voltar As Button";
 mostCurrent._button_voltar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 18;BA.debugLine="Dim Button_Salvar As Button";
+ //BA.debugLineNum = 13;BA.debugLine="Dim Button_Salvar As Button";
 mostCurrent._button_salvar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Private Username As EditText";
+ //BA.debugLineNum = 14;BA.debugLine="Private Username As EditText";
 mostCurrent._username = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Private Senha As EditText";
+ //BA.debugLineNum = 15;BA.debugLine="Private Senha As EditText";
 mostCurrent._senha = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 21;BA.debugLine="Private Senha_Repetida As EditText";
+ //BA.debugLineNum = 16;BA.debugLine="Private Senha_Repetida As EditText";
 mostCurrent._senha_repetida = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 22;BA.debugLine="End Sub";
+ //BA.debugLineNum = 17;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8;BA.debugLine="End Sub";
 return "";
 }
 }

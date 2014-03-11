@@ -7,14 +7,10 @@ Version=3.2
 #End Region
 
 Sub Process_Globals
-	'These global variables will be declared once when the application starts.
-	'These variables can be accessed from all modules.
 
 End Sub
 
 Sub Globals
-	'These global variables will be redeclared each time the activity is created.
-	'These variables can only be accessed from this module.
 	Dim operacao As String
 	Dim Button_soma As Button
 	Dim Button_Multiplicacao As Button
@@ -30,9 +26,7 @@ Sub Globals
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
-	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("Layout_Calculadora")
-
 End Sub
 
 Sub Activity_Resume
@@ -69,11 +63,8 @@ Sub Button_Divisao_Click
 Button_Divisao.Color = Colors.Blue
 
 operacao = "divisao"
-
-
 	
 End Sub
-
 
 Sub Button_igual_Click
 
@@ -120,8 +111,7 @@ Else
 	numero2.Text = ""
 	
 End Sub
-Sub Button_Voltar_Click
 
+Sub Button_Voltar_Click
 	Activity.Finish
-	
 End Sub

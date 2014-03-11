@@ -294,13 +294,13 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 		Debug.PushSubsStack("Activity_Create (excluir) ","excluir",7,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 22;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 23;BA.debugLine="Activity.LoadLayout(\"Layout_Excluir\")";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 17;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+Debug.ShouldStop(65536);
+ BA.debugLineNum = 18;BA.debugLine="Activity.LoadLayout(\"Layout_Excluir\")";
+Debug.ShouldStop(131072);
 mostCurrent._activity.LoadLayout("Layout_Excluir",mostCurrent.activityBA);
- BA.debugLineNum = 24;BA.debugLine="End Sub";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 19;BA.debugLine="End Sub";
+Debug.ShouldStop(262144);
 return "";
 }
 catch (Exception e) {
@@ -314,10 +314,10 @@ public static String  _activity_pause(boolean _userclosed) throws Exception{
 		Debug.PushSubsStack("Activity_Pause (excluir) ","excluir",7,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 30;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(536870912);
- BA.debugLineNum = 32;BA.debugLine="End Sub";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 25;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(16777216);
+ BA.debugLineNum = 27;BA.debugLine="End Sub";
+Debug.ShouldStop(67108864);
 return "";
 }
 catch (Exception e) {
@@ -330,10 +330,10 @@ finally {
 public static String  _activity_resume() throws Exception{
 		Debug.PushSubsStack("Activity_Resume (excluir) ","excluir",7,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 26;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(33554432);
- BA.debugLineNum = 28;BA.debugLine="End Sub";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 21;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(1048576);
+ BA.debugLineNum = 23;BA.debugLine="End Sub";
+Debug.ShouldStop(4194304);
 return "";
 }
 catch (Exception e) {
@@ -346,81 +346,20 @@ finally {
 public static String  _button_excluir_click() throws Exception{
 		Debug.PushSubsStack("Button_Excluir_Click (excluir) ","excluir",7,mostCurrent.activityBA,mostCurrent);
 try {
-anywheresoftware.b4a.objects.streams.File.TextReaderWrapper _textreader1 = null;
-String _line = "";
-anywheresoftware.b4a.objects.collections.List _texto = null;
-anywheresoftware.b4a.objects.streams.File.TextWriterWrapper _textwriter1 = null;
- BA.debugLineNum = 34;BA.debugLine="Sub Button_Excluir_Click";
-Debug.ShouldStop(2);
- BA.debugLineNum = 35;BA.debugLine="If Username.Text = \"\" OR Senha.Text = \"\" Then";
-Debug.ShouldStop(4);
-if ((mostCurrent._username.getText()).equals("") || (mostCurrent._senha.getText()).equals("")) { 
- BA.debugLineNum = 36;BA.debugLine="Msgbox(\"Campos Obrigatórios não Preenchidos\", \"Atenção!\")";
-Debug.ShouldStop(8);
-anywheresoftware.b4a.keywords.Common.Msgbox("Campos Obrigatórios não Preenchidos","Atenção!",mostCurrent.activityBA);
- }else {
- BA.debugLineNum = 38;BA.debugLine="Dim TextReader1 As TextReader";
-Debug.ShouldStop(32);
-_textreader1 = new anywheresoftware.b4a.objects.streams.File.TextReaderWrapper();Debug.locals.put("TextReader1", _textreader1);
- BA.debugLineNum = 39;BA.debugLine="TextReader1.Initialize(File.OpenInput(File.DirRootExternal, \"Logins.txt\"))";
-Debug.ShouldStop(64);
-_textreader1.Initialize((java.io.InputStream)(anywheresoftware.b4a.keywords.Common.File.OpenInput(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Logins.txt").getObject()));
- BA.debugLineNum = 40;BA.debugLine="Dim line As String";
-Debug.ShouldStop(128);
-_line = "";Debug.locals.put("line", _line);
- BA.debugLineNum = 41;BA.debugLine="Dim texto As List";
-Debug.ShouldStop(256);
-_texto = new anywheresoftware.b4a.objects.collections.List();Debug.locals.put("texto", _texto);
- BA.debugLineNum = 42;BA.debugLine="texto.Initialize";
-Debug.ShouldStop(512);
-_texto.Initialize();
- BA.debugLineNum = 43;BA.debugLine="line = TextReader1.ReadLine";
-Debug.ShouldStop(1024);
-_line = _textreader1.ReadLine();Debug.locals.put("line", _line);
- BA.debugLineNum = 44;BA.debugLine="Do While line <> Null";
-Debug.ShouldStop(2048);
-while (_line!= null) {
- BA.debugLineNum = 45;BA.debugLine="If line = Username.Text & Senha.Text Then";
-Debug.ShouldStop(4096);
-if ((_line).equals(mostCurrent._username.getText()+mostCurrent._senha.getText())) { 
- BA.debugLineNum = 46;BA.debugLine="If File.Delete(File.DirRootExternal, \"Logins.txt\") Then";
-Debug.ShouldStop(8192);
-if (anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Logins.txt")) { 
- BA.debugLineNum = 47;BA.debugLine="Msgbox(\"\",\"Deletado com sucesso!\")";
-Debug.ShouldStop(16384);
-anywheresoftware.b4a.keywords.Common.Msgbox("","Deletado com sucesso!",mostCurrent.activityBA);
- BA.debugLineNum = 48;BA.debugLine="Dim TextWriter1 As TextWriter";
-Debug.ShouldStop(32768);
-_textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();Debug.locals.put("TextWriter1", _textwriter1);
- BA.debugLineNum = 49;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, \"Logins.txt\", True))";
-Debug.ShouldStop(65536);
-_textwriter1.Initialize((java.io.OutputStream)(anywheresoftware.b4a.keywords.Common.File.OpenOutput(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Logins.txt",anywheresoftware.b4a.keywords.Common.True).getObject()));
- BA.debugLineNum = 50;BA.debugLine="TextWriter1.WriteList(texto)";
-Debug.ShouldStop(131072);
-_textwriter1.WriteList(_texto);
- BA.debugLineNum = 51;BA.debugLine="TextWriter1.Close";
-Debug.ShouldStop(262144);
-_textwriter1.Close();
- BA.debugLineNum = 52;BA.debugLine="TextReader1.Close";
-Debug.ShouldStop(524288);
-_textreader1.Close();
- BA.debugLineNum = 53;BA.debugLine="StartActivity(\"Main\")";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 29;BA.debugLine="Sub Button_Excluir_Click";
+Debug.ShouldStop(268435456);
+ BA.debugLineNum = 30;BA.debugLine="If Main.Pers.Excluir_Login(Username.Text, Senha.Text) Then";
+Debug.ShouldStop(536870912);
+if (mostCurrent._main._pers._excluir_login(mostCurrent._username.getText(),mostCurrent._senha.getText())) { 
+ BA.debugLineNum = 31;BA.debugLine="Msgbox(\"Excluido com sucesso\",\"Atenção\")";
+Debug.ShouldStop(1073741824);
+anywheresoftware.b4a.keywords.Common.Msgbox("Excluido com sucesso","Atenção",mostCurrent.activityBA);
+ BA.debugLineNum = 32;BA.debugLine="StartActivity(\"Main\")";
+Debug.ShouldStop(-2147483648);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Main"));
  };
- }else {
- BA.debugLineNum = 56;BA.debugLine="texto.Add(line)";
-Debug.ShouldStop(8388608);
-_texto.Add((Object)(_line));
- BA.debugLineNum = 57;BA.debugLine="line = TextReader1.ReadLine";
-Debug.ShouldStop(16777216);
-_line = _textreader1.ReadLine();Debug.locals.put("line", _line);
- };
- }
-;
- };
- BA.debugLineNum = 61;BA.debugLine="End Sub";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 34;BA.debugLine="End Sub";
+Debug.ShouldStop(2);
 return "";
 }
 catch (Exception e) {
@@ -433,13 +372,13 @@ finally {
 public static String  _button_voltar_click() throws Exception{
 		Debug.PushSubsStack("Button_Voltar_Click (excluir) ","excluir",7,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 63;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(1073741824);
- BA.debugLineNum = 64;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 36;BA.debugLine="Sub Button_Voltar_Click";
+Debug.ShouldStop(8);
+ BA.debugLineNum = 37;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(16);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 65;BA.debugLine="End Sub";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 38;BA.debugLine="End Sub";
+Debug.ShouldStop(32);
 return "";
 }
 catch (Exception e) {
@@ -450,21 +389,21 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 16;BA.debugLine="Private Username As EditText";
+ //BA.debugLineNum = 10;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 11;BA.debugLine="Private Username As EditText";
 mostCurrent._username = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 17;BA.debugLine="Private Senha As EditText";
+ //BA.debugLineNum = 12;BA.debugLine="Private Senha As EditText";
 mostCurrent._senha = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 18;BA.debugLine="Private Button_Excluir As Button";
+ //BA.debugLineNum = 13;BA.debugLine="Private Button_Excluir As Button";
 mostCurrent._button_excluir = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Private Button_Voltar As Button";
+ //BA.debugLineNum = 14;BA.debugLine="Private Button_Voltar As Button";
 mostCurrent._button_voltar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 20;BA.debugLine="End Sub";
+ //BA.debugLineNum = 15;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8;BA.debugLine="End Sub";
 return "";
 }
 }
