@@ -5,6 +5,8 @@ Module1=Cadastro
 ModuleVisible1=1
 Module2=Financeiro
 ModuleVisible2=1
+Module3=Persistencia
+ModuleVisible3=1
 Module4=Creditos
 ModuleVisible4=1
 Module5=Debito
@@ -13,18 +15,16 @@ Module6=Total
 ModuleVisible6=1
 Module7=Utilitários
 ModuleVisible7=1
-Module11=Excluir
-ModuleVisible11=1
 Module8=Menu
 ModuleVisible8=1
 Module9=Calculadora
 ModuleVisible9=1
 Module10=Extrato
 ModuleVisible10=1
+Module11=Excluir
+ModuleVisible11=1
 Module12=Debitos
 ModuleVisible12=0
-Module3=Persistencia
-ModuleVisible3=1
 Package=Financas.Pessoais
 DoNotOverwriteManifest=False
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
@@ -95,6 +95,8 @@ End Sub
 Sub Button_entrar_Click
 	Pers.Initialize
 	If Pers.Fazer_Login(Username.Text, Senha.Text) Then
+		StartActivity("Menu")
+	Else
 		Msgbox("Usuario ou senha invalida!", "Aviso!")
 	End If
 End Sub

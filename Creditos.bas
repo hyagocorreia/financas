@@ -16,8 +16,8 @@ Sub Globals
 	Dim Button_Creditar As Button
 	Dim Button_Voltar As Button
 	Dim Data As EditText
-	Private Referente As EditText
-	Private Categoria As Spinner
+	Dim Referente As EditText
+	Dim Categoria As Spinner
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -35,8 +35,6 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
-
-
 Sub Button_Creditar_Click
 	If Valor.Text = "" OR Referente.Text = "" Then 
 		Msgbox("Campos Obrigatorios não estão preenchidos", "Aviso!" )
@@ -53,14 +51,11 @@ Sub Button_Creditar_Click
 		
 		result = Msgbox2("Deseja fazer outra operação?","Aviso!","Sim","","Nao",Null)
 			
-			If result = DialogResponse.POSITIVE Then
-				StartActivity("Creditos")
-			
-			Else
-				StartActivity("Financeiro")			
-	
-			End If
-	
+		If result = DialogResponse.POSITIVE Then
+			StartActivity("Creditos")
+		Else
+			StartActivity("Financeiro")			
+		End If
 	End If
 End Sub
 
@@ -76,7 +71,7 @@ Sub Limita_Campo(texto As String, qte_caracteres As Int) As String
 End Sub
 
 Sub Categoria_ItemClick (Position As Int, Value As Object)
-	StartActivity(Categoria)
+	Categoria.Initialize("Categoria")
 	Categoria.Add("Água")
 	Categoria.Add("Gás")
 	Categoria.Add("Luz")

@@ -276,10 +276,10 @@ public Financas.Pessoais.creditos _creditos = null;
 public Financas.Pessoais.debito _debito = null;
 public Financas.Pessoais.total _total = null;
 public Financas.Pessoais.utilitários _utilitários = null;
-public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
+public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.debitos _debitos = null;
   public Object[] GetGlobals() {
 		return new Object[] {"Activity",mostCurrent._activity,"Button_Salvar",mostCurrent._button_salvar,"Button_Voltar",mostCurrent._button_voltar,"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Nome",mostCurrent._nome,"Senha",mostCurrent._senha,"Senha_Repetida",mostCurrent._senha_repetida,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Username",mostCurrent._username,"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};

@@ -25,7 +25,7 @@ Public Sub Fazer_Login (Username As String, Senha As String) As Boolean
 	    	line = TextReader1.ReadLine    
 	    	Do While line <> Null
 	        	If line = Username & Senha Then
-					StartActivity("Menu")
+					Return True
 				End If
 	        	line = TextReader1.ReadLine
 	    	Loop

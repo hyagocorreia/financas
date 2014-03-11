@@ -291,7 +291,7 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (excluir) ","excluir",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Create (excluir) ","excluir",11,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 17;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -311,7 +311,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (excluir) ","excluir",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Pause (excluir) ","excluir",11,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 25;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -328,7 +328,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (excluir) ","excluir",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Resume (excluir) ","excluir",11,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 21;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(1048576);
@@ -344,7 +344,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_excluir_click() throws Exception{
-		Debug.PushSubsStack("Button_Excluir_Click (excluir) ","excluir",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Excluir_Click (excluir) ","excluir",11,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 29;BA.debugLine="Sub Button_Excluir_Click";
 Debug.ShouldStop(268435456);
@@ -370,7 +370,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (excluir) ","excluir",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Voltar_Click (excluir) ","excluir",11,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 36;BA.debugLine="Sub Button_Voltar_Click";
 Debug.ShouldStop(8);

@@ -277,10 +277,10 @@ public Financas.Pessoais.financeiro _financeiro = null;
 public Financas.Pessoais.creditos _creditos = null;
 public Financas.Pessoais.total _total = null;
 public Financas.Pessoais.utilitários _utilitários = null;
-public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
+public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.debitos _debitos = null;
   public Object[] GetGlobals() {
 		return new Object[] {"Activity",mostCurrent._activity,"Button_Debitar",mostCurrent._button_debitar,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Categoria",mostCurrent._categoria,"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Data",mostCurrent._data,"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Referente",mostCurrent._referente,"result",_result,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class),"Valor",mostCurrent._valor};
@@ -294,7 +294,7 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (debito) ","debito",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Create (debito) ","debito",5,mostCurrent.activityBA,mostCurrent);
 try {
 String _data_hoje = "";
 Debug.locals.put("FirstTime", _firsttime);
@@ -324,7 +324,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (debito) ","debito",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Pause (debito) ","debito",5,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 31;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -341,7 +341,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (debito) ","debito",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Resume (debito) ","debito",5,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 27;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(67108864);
@@ -357,7 +357,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_debitar_click() throws Exception{
-		Debug.PushSubsStack("Button_Debitar_Click (debito) ","debito",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Debitar_Click (debito) ","debito",5,mostCurrent.activityBA,mostCurrent);
 try {
 float _xvalor = 0f;
 String _linha_extrato = "";
@@ -412,7 +412,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (debito) ","debito",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Voltar_Click (debito) ","debito",5,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 35;BA.debugLine="Sub Button_Voltar_Click";
 Debug.ShouldStop(4);
@@ -431,7 +431,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _categoria_itemclick(int _position,Object _value) throws Exception{
-		Debug.PushSubsStack("Categoria_ItemClick (debito) ","debito",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Categoria_ItemClick (debito) ","debito",5,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
@@ -492,7 +492,7 @@ mostCurrent._categoria = new anywheresoftware.b4a.objects.SpinnerWrapper();
 return "";
 }
 public static String  _limita_campo(String _texto,int _qte_caracteres) throws Exception{
-		Debug.PushSubsStack("limita_campo (debito) ","debito",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("limita_campo (debito) ","debito",5,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("texto", _texto);
 Debug.locals.put("qte_caracteres", _qte_caracteres);

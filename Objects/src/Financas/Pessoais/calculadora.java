@@ -283,9 +283,9 @@ public Financas.Pessoais.creditos _creditos = null;
 public Financas.Pessoais.debito _debito = null;
 public Financas.Pessoais.total _total = null;
 public Financas.Pessoais.utilitários _utilitários = null;
-public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.extrato _extrato = null;
+public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.debitos _debitos = null;
   public Object[] GetGlobals() {
 		return new Object[] {"Activity",mostCurrent._activity,"Button_Divisao",mostCurrent._button_divisao,"Button_igual",mostCurrent._button_igual,"Button_Multiplicacao",mostCurrent._button_multiplicacao,"Button_soma",mostCurrent._button_soma,"Button_subtracao",mostCurrent._button_subtracao,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"numero1",mostCurrent._numero1,"numero2",mostCurrent._numero2,"operacao",mostCurrent._operacao,"resultado",mostCurrent._resultado,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class),"valor1",_valor1,"valor2",_valor2};

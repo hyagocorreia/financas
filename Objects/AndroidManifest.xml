@@ -12,6 +12,9 @@
 	    android:smallScreens="true" 
 	    android:anyDensity="true"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 	<application
 		android:icon="@drawable/icon"
 		android:label="Fine">
@@ -72,13 +75,6 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".excluir"
-			android:label="Fine"
-			android:screenOrientation="unspecified">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
 			android:name=".menu"
 			android:label="Fine"
 			android:screenOrientation="unspecified">
@@ -94,6 +90,13 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".extrato"
+			android:label="Fine"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".excluir"
 			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
