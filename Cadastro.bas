@@ -38,7 +38,7 @@ End Sub
 Sub Button_Salvar_Click
 	Main.Pers.Initialize
 	If Main.Pers.Criar_Login(Nome.Text, Username.Text, Senha.Text, Senha_Repetida.Text) Then
-		Msgbox("Nome: " & Nome.Text & CRLF & "Username: " & Username.Text,"Cadastrado com Sucesso")
+		Msgbox("Nome: " & Nome.Text & CRLF & "Username: " & Username.Text,"Cadastrado com Sucesso!")
 		Activity.Finish
 	End If
 End Sub

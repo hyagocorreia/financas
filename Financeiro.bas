@@ -7,7 +7,6 @@ Version=3.2
 #End Region
 
 Sub Process_Globals
-	Dim saldo As Float
 	Dim list_Extrato As List
 End Sub
 
@@ -17,6 +16,8 @@ Sub Globals
 	Dim Button_Voltar As Button
 	Dim Button_total As Button
 	Dim Button_Extrato As Button
+	Private Button_AddCategoria As Button
+	Private Button_RemCategoria As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -53,4 +54,12 @@ End Sub
 
 Sub Button_Extrato_Click
 	StartActivity("Extrato")
+End Sub
+
+Sub Button_AddCategoria_Click
+	StartActivity("AddCategoria")	
+End Sub
+
+Sub Button_RemCategoria_Click
+	StartActivity("Remover_Categoria")
 End Sub

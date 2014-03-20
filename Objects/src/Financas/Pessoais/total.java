@@ -276,9 +276,12 @@ public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
+public Financas.Pessoais.addcategoria _addcategoria = null;
+public Financas.Pessoais.lista _lista = null;
 public Financas.Pessoais.debitos _debitos = null;
+public Financas.Pessoais.remover_categoria _remover_categoria = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Label_Total",mostCurrent._label_total,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Label_Total",mostCurrent._label_total,"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -297,9 +300,9 @@ Debug.ShouldStop(16384);
  BA.debugLineNum = 16;BA.debugLine="Activity.LoadLayout(\"Layout_Saldo\")";
 Debug.ShouldStop(32768);
 mostCurrent._activity.LoadLayout("Layout_Saldo",mostCurrent.activityBA);
- BA.debugLineNum = 17;BA.debugLine="Label_Total.Text = Label_Total.Text &\" \"& Financeiro.saldo";
+ BA.debugLineNum = 17;BA.debugLine="Label_Total.Text = Label_Total.Text &\" \"& NumberFormat(Main.Pers.Saldo,1,2)";
 Debug.ShouldStop(65536);
-mostCurrent._label_total.setText((Object)(mostCurrent._label_total.getText()+" "+BA.NumberToString(mostCurrent._financeiro._saldo)));
+mostCurrent._label_total.setText((Object)(mostCurrent._label_total.getText()+" "+anywheresoftware.b4a.keywords.Common.NumberFormat(mostCurrent._main._pers._saldo,(int) (1),(int) (2))));
  BA.debugLineNum = 18;BA.debugLine="End Sub";
 Debug.ShouldStop(131072);
 return "";

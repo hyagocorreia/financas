@@ -280,9 +280,12 @@ public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
+public Financas.Pessoais.addcategoria _addcategoria = null;
+public Financas.Pessoais.lista _lista = null;
 public Financas.Pessoais.debitos _debitos = null;
+public Financas.Pessoais.remover_categoria _remover_categoria = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"Button_Cadastro",mostCurrent._button_cadastro,"Button_entrar",mostCurrent._button_entrar,"Button_Sair",mostCurrent._button_sair,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Pers",_pers,"Senha",mostCurrent._senha,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Username",mostCurrent._username,"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Cadastro",mostCurrent._button_cadastro,"Button_entrar",mostCurrent._button_entrar,"Button_Sair",mostCurrent._button_sair,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Pers",_pers,"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Senha",mostCurrent._senha,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Username",mostCurrent._username,"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
 }
 
 public static boolean isAnyActivityVisible() {
@@ -298,7 +301,9 @@ vis = vis | (menu.mostCurrent != null);
 vis = vis | (calculadora.mostCurrent != null);
 vis = vis | (extrato.mostCurrent != null);
 vis = vis | (excluir.mostCurrent != null);
+vis = vis | (addcategoria.mostCurrent != null);
 vis = vis | (debitos.mostCurrent != null);
+vis = vis | (remover_categoria.mostCurrent != null);
 return vis;}
 
 public static void killProgram() {
@@ -436,6 +441,18 @@ public static void killProgram() {
 
  {
             Activity __a = null;
+            if (addcategoria.previousOne != null) {
+				__a = addcategoria.previousOne.get();
+			}
+            else {
+                BA ba = addcategoria.mostCurrent.processBA.sharedProcessBA.activityBA.get();
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
             if (debitos.previousOne != null) {
 				__a = debitos.previousOne.get();
 			}
@@ -446,18 +463,30 @@ public static void killProgram() {
             if (__a != null)
 				__a.finish();}
 
+ {
+            Activity __a = null;
+            if (remover_categoria.previousOne != null) {
+				__a = remover_categoria.previousOne.get();
+			}
+            else {
+                BA ba = remover_categoria.mostCurrent.processBA.sharedProcessBA.activityBA.get();
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
 		Debug.PushSubsStack("Activity_Create (main) ","main",0,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 26;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(33554432);
- BA.debugLineNum = 28;BA.debugLine="Activity.LoadLayout(\"Layout_Login\")";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 27;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+Debug.ShouldStop(67108864);
+ BA.debugLineNum = 29;BA.debugLine="Activity.LoadLayout(\"Layout_Login\")";
+Debug.ShouldStop(268435456);
 mostCurrent._activity.LoadLayout("Layout_Login",mostCurrent.activityBA);
- BA.debugLineNum = 30;BA.debugLine="End Sub";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 31;BA.debugLine="End Sub";
+Debug.ShouldStop(1073741824);
 return "";
 }
 catch (Exception e) {
@@ -471,10 +500,10 @@ public static String  _activity_pause(boolean _userclosed) throws Exception{
 		Debug.PushSubsStack("Activity_Pause (main) ","main",0,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 36;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(8);
- BA.debugLineNum = 38;BA.debugLine="End Sub";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 37;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(16);
+ BA.debugLineNum = 39;BA.debugLine="End Sub";
+Debug.ShouldStop(64);
 return "";
 }
 catch (Exception e) {
@@ -487,10 +516,10 @@ finally {
 public static String  _activity_resume() throws Exception{
 		Debug.PushSubsStack("Activity_Resume (main) ","main",0,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 32;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(-2147483648);
- BA.debugLineNum = 34;BA.debugLine="End Sub";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 33;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(1);
+ BA.debugLineNum = 35;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
 return "";
 }
 catch (Exception e) {
@@ -503,13 +532,13 @@ finally {
 public static String  _button_cadastro_click() throws Exception{
 		Debug.PushSubsStack("Button_Cadastro_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 40;BA.debugLine="Sub Button_Cadastro_Click";
-Debug.ShouldStop(128);
- BA.debugLineNum = 41;BA.debugLine="StartActivity(\"Cadastro\")";
+ BA.debugLineNum = 41;BA.debugLine="Sub Button_Cadastro_Click";
 Debug.ShouldStop(256);
-anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Cadastro"));
- BA.debugLineNum = 42;BA.debugLine="End Sub";
+ BA.debugLineNum = 42;BA.debugLine="StartActivity(\"Cadastro\")";
 Debug.ShouldStop(512);
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Cadastro"));
+ BA.debugLineNum = 43;BA.debugLine="End Sub";
+Debug.ShouldStop(1024);
 return "";
 }
 catch (Exception e) {
@@ -522,24 +551,24 @@ finally {
 public static String  _button_entrar_click() throws Exception{
 		Debug.PushSubsStack("Button_entrar_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 48;BA.debugLine="Sub Button_entrar_Click";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 49;BA.debugLine="Pers.Initialize";
+ BA.debugLineNum = 49;BA.debugLine="Sub Button_entrar_Click";
 Debug.ShouldStop(65536);
-_pers._initialize(processBA);
- BA.debugLineNum = 50;BA.debugLine="If Pers.Fazer_Login(Username.Text, Senha.Text) Then";
+ BA.debugLineNum = 50;BA.debugLine="Pers.Initialize";
 Debug.ShouldStop(131072);
-if (_pers._fazer_login(mostCurrent._username.getText(),mostCurrent._senha.getText())) { 
- BA.debugLineNum = 51;BA.debugLine="StartActivity(\"Menu\")";
+_pers._initialize(processBA);
+ BA.debugLineNum = 51;BA.debugLine="If Pers.Fazer_Login(Username.Text, Senha.Text) Then";
 Debug.ShouldStop(262144);
+if (_pers._fazer_login(mostCurrent._username.getText(),mostCurrent._senha.getText())) { 
+ BA.debugLineNum = 52;BA.debugLine="StartActivity(\"Menu\")";
+Debug.ShouldStop(524288);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
  }else {
- BA.debugLineNum = 53;BA.debugLine="Msgbox(\"Usuario ou senha invalida!\", \"Aviso!\")";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 54;BA.debugLine="Msgbox(\"Usuario ou senha invalida!\", \"Aviso!\")";
+Debug.ShouldStop(2097152);
 anywheresoftware.b4a.keywords.Common.Msgbox("Usuario ou senha invalida!","Aviso!",mostCurrent.activityBA);
  };
- BA.debugLineNum = 55;BA.debugLine="End Sub";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 56;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return "";
 }
 catch (Exception e) {
@@ -552,13 +581,13 @@ finally {
 public static String  _button_sair_click() throws Exception{
 		Debug.PushSubsStack("Button_Sair_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 44;BA.debugLine="Sub Button_Sair_Click";
-Debug.ShouldStop(2048);
- BA.debugLineNum = 45;BA.debugLine="Activity.Finish";
+ BA.debugLineNum = 45;BA.debugLine="Sub Button_Sair_Click";
 Debug.ShouldStop(4096);
-mostCurrent._activity.Finish();
- BA.debugLineNum = 46;BA.debugLine="End Sub";
+ BA.debugLineNum = 46;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(8192);
+mostCurrent._activity.Finish();
+ BA.debugLineNum = 47;BA.debugLine="End Sub";
+Debug.ShouldStop(16384);
 return "";
 }
 catch (Exception e) {
@@ -571,7 +600,7 @@ finally {
 
 public static void initializeProcessGlobals() {
     if (mostCurrent != null && mostCurrent.activityBA != null) {
-Debug.StartDebugging(mostCurrent.activityBA, 8109, new int[] {2, 2, 2, 3, 3, 3, 1, 2, 2, 4, 2, 2, 2}, "55e89052-ca88-4aa0-a8b5-c4300e5a013b");}
+Debug.StartDebugging(mostCurrent.activityBA, 13398, new int[] {2, 2, 2, 4, 3, 3, 1, 2, 2, 4, 2, 2, 4, 2, 1, 2, 2}, "7373d372-e439-4409-bf18-696bc5f18dd3");}
 
     if (main.processGlobalsRun == false) {
 	    main.processGlobalsRun = true;
@@ -587,32 +616,35 @@ menu._process_globals();
 calculadora._process_globals();
 extrato._process_globals();
 excluir._process_globals();
+addcategoria._process_globals();
+lista._process_globals();
 debitos._process_globals();
+remover_categoria._process_globals();
 		
         } catch (Exception e) {
 			throw new RuntimeException(e);
 		}
     }
 }public static String  _globals() throws Exception{
- //BA.debugLineNum = 18;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 19;BA.debugLine="Dim Button_Cadastro As Button";
+ //BA.debugLineNum = 19;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 20;BA.debugLine="Dim Button_Cadastro As Button";
 mostCurrent._button_cadastro = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Dim Username As EditText";
+ //BA.debugLineNum = 21;BA.debugLine="Dim Username As EditText";
 mostCurrent._username = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 21;BA.debugLine="Dim Senha As EditText";
+ //BA.debugLineNum = 22;BA.debugLine="Dim Senha As EditText";
 mostCurrent._senha = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 22;BA.debugLine="Dim Button_Sair As Button";
+ //BA.debugLineNum = 23;BA.debugLine="Dim Button_Sair As Button";
 mostCurrent._button_sair = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 23;BA.debugLine="Dim Button_entrar As Button";
+ //BA.debugLineNum = 24;BA.debugLine="Dim Button_entrar As Button";
 mostCurrent._button_entrar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 24;BA.debugLine="End Sub";
+ //BA.debugLineNum = 25;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 14;BA.debugLine="Sub Process_Globals";
  //BA.debugLineNum = 15;BA.debugLine="Dim Pers As Persistencia";
 _pers = new Financas.Pessoais.persistencia();
- //BA.debugLineNum = 16;BA.debugLine="End Sub";
+ //BA.debugLineNum = 17;BA.debugLine="End Sub";
 return "";
 }
 }

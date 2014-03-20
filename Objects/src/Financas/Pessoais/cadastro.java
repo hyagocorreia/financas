@@ -280,9 +280,12 @@ public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
+public Financas.Pessoais.addcategoria _addcategoria = null;
+public Financas.Pessoais.lista _lista = null;
 public Financas.Pessoais.debitos _debitos = null;
+public Financas.Pessoais.remover_categoria _remover_categoria = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"Button_Salvar",mostCurrent._button_salvar,"Button_Voltar",mostCurrent._button_voltar,"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Nome",mostCurrent._nome,"Senha",mostCurrent._senha,"Senha_Repetida",mostCurrent._senha_repetida,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Username",mostCurrent._username,"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Salvar",mostCurrent._button_salvar,"Button_Voltar",mostCurrent._button_voltar,"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Nome",mostCurrent._nome,"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Senha",mostCurrent._senha,"Senha_Repetida",mostCurrent._senha_repetida,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Username",mostCurrent._username,"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -356,9 +359,9 @@ mostCurrent._main._pers._initialize(processBA);
  BA.debugLineNum = 37;BA.debugLine="If Main.Pers.Criar_Login(Nome.Text, Username.Text, Senha.Text, Senha_Repetida.Text) Then";
 Debug.ShouldStop(16);
 if (mostCurrent._main._pers._criar_login(mostCurrent._nome.getText(),mostCurrent._username.getText(),mostCurrent._senha.getText(),mostCurrent._senha_repetida.getText())) { 
- BA.debugLineNum = 38;BA.debugLine="Msgbox(\"Nome: \" & Nome.Text & CRLF & \"Username: \" & Username.Text,\"Cadastrado com Sucesso\")";
+ BA.debugLineNum = 38;BA.debugLine="Msgbox(\"Nome: \" & Nome.Text & CRLF & \"Username: \" & Username.Text,\"Cadastrado com Sucesso!\")";
 Debug.ShouldStop(32);
-anywheresoftware.b4a.keywords.Common.Msgbox("Nome: "+mostCurrent._nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Username: "+mostCurrent._username.getText(),"Cadastrado com Sucesso",mostCurrent.activityBA);
+anywheresoftware.b4a.keywords.Common.Msgbox("Nome: "+mostCurrent._nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Username: "+mostCurrent._username.getText(),"Cadastrado com Sucesso!",mostCurrent.activityBA);
  BA.debugLineNum = 39;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(64);
 mostCurrent._activity.Finish();

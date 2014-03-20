@@ -3,11 +3,13 @@ Version=3.2
 @EndOfDesignText@
 
 Sub Class_Globals
-	
+	Dim Lista_Extrato As List
+	Lista_Extrato.Initialize
+	Dim Saldo As Float
 End Sub
 
 Public Sub Initialize
-
+	
 End Sub
 
 Public Sub Fazer_Login (Username As String, Senha As String) As Boolean
@@ -80,4 +82,35 @@ Public Sub Excluir_Login(Username As String, Senha As String) As Boolean
 	End If
 	
 	Return False
+End Sub
+
+Private Sub Atualizar_Saldo(Valor As Float)
+	Saldo = Saldo + Valor
+End Sub
+
+Public Sub Salvar_Transacao (Valor As Float, Data As String, Categoria As String, Tipo As String) As Boolean
+	
+	If Tipo = "Crédito" Then
+		Atualizar_Saldo(Valor)
+	Else
+		Valor = Valor * (-1)
+		Atualizar_Saldo(Valor)
+	End If
+	Lista_Extrato.Add(NumberFormat(Valor,1,2) & "|" & Data & "|" & Categoria)
+
+	Return True
+End Sub
+
+Public Sub Remover_Transacao (Pos As Int)
+	Dim Linha As String = Lista_Extrato.Get(Pos)
+	Dim i As Int = Linha.IndexOf("|")
+	Dim Valor As Float = Linha.SubString2(0,i)
+	
+	Saldo = Saldo - Valor
+
+	Lista_Extrato.RemoveAt(Pos)
+End Sub
+
+Public Sub Remover_Categoria(Pos As Int)
+	
 End Sub

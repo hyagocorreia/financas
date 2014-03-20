@@ -16,8 +16,8 @@ Sub Globals
 	Dim Button_Creditar As Button
 	Dim Button_Voltar As Button
 	Dim Data As EditText
-	Dim Referente As EditText
-	Dim Categoria As Spinner
+	Private Button_add As Button
+	Private Categoria As Spinner
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -25,6 +25,14 @@ Sub Activity_Create(FirstTime As Boolean)
 	DateTime.DateFormat = "dd/MM/yy"
 	Dim Data_hoje As  String = DateTime.Date(DateTime.Now)
 	Data.Text = Data_hoje
+	'Lista.Lista_Categorias.Initialize
+
+	Categoria.AddAll(Lista.Lista_Categorias)
+
+'	If Lista.Lista_Categorias.Size > 1 Then
+'		
+'	End If
+	
 End Sub
 
 Sub Activity_Resume
@@ -36,25 +44,23 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Sub Button_Creditar_Click
-	If Valor.Text = "" OR Referente.Text = "" Then 
+	If Valor.Text = "" Then 
 		Msgbox("Campos Obrigatorios não estão preenchidos", "Aviso!" )
 	Else
-		Msgbox("Valor: "&Valor.Text&CRLF&"Referente: "&CRLF&Referente.Text&CRLF&"Data: "&Data.Text,"Creditado com Sucesso!")
-	
-		Dim xValor As Float = Valor.Text
+		Dim Valor_final As Float
+		Valor_final = Valor.Text
 		
-		Financeiro.saldo = Financeiro.saldo + xValor 
+		Msgbox("Valor: " & NumberFormat(Valor_final,1,2) & CRLF& "Categoria: "& CRLF & Categoria.SelectedItem & CRLF & "Data: " & Data.Text,"Creditado com Sucesso!")
 		
-		Dim linha_extrato As String = Data.Text & " " & "(+)" & xValor & "    " & Limita_Campo(Referente.Text, 9)
-		
-		Financeiro.list_Extrato.Add(linha_extrato)
+		Main.Pers.Salvar_Transacao(NumberFormat(Valor_final,1,2), Data.Text, Categoria.SelectedItem, "Crédito")
 		
 		result = Msgbox2("Deseja fazer outra operação?","Aviso!","Sim","","Nao",Null)
 			
 		If result = DialogResponse.POSITIVE Then
 			StartActivity("Creditos")
 		Else
-			StartActivity("Financeiro")			
+			StartActivity("Financeiro")
+			Activity.Finish
 		End If
 	End If
 End Sub
@@ -63,21 +69,17 @@ Sub Button_Voltar_Click
 	Activity.Finish	
 End Sub
 
-Sub Limita_Campo(texto As String, qte_caracteres As Int) As String
-	If texto.Length > qte_caracteres Then
-		texto = texto.SubString2(1,qte_caracteres)	
-	End If
-	Return texto
-End Sub
+'Sub Limita_Campo(texto As String, qte_caracteres As Int) As String
+'	If texto.Length > qte_caracteres Then
+'		texto = texto.SubString2(1,qte_caracteres)	
+'	End If
+'	Return texto
+'End Sub
 
-Sub Categoria_ItemClick (Position As Int, Value As Object)
-	Categoria.Initialize("Categoria")
-	Categoria.Add("Água")
-	Categoria.Add("Gás")
-	Categoria.Add("Luz")
-	Categoria.Add("Combustível")
-	Categoria.Add("Vestuário")
-	Categoria.Add("Alimentação")
-	Categoria.Add("Móveis")
-	Categoria.Add("Materiais De Consatrução")
+
+Sub Button_add_Click
+	Activity.Finish
+	AddCategoria.nome_classe = "crédito"
+	StartActivity("AddCategoria")
+	
 End Sub

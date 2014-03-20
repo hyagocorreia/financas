@@ -1,6 +1,6 @@
 ﻿Version=3.2
 IconFile=
-NumberOfModules=12
+NumberOfModules=16
 Module1=Cadastro
 ModuleVisible1=1
 Module2=Financeiro
@@ -23,27 +23,38 @@ Module10=Extrato
 ModuleVisible10=1
 Module11=Excluir
 ModuleVisible11=1
-Module12=Debitos
-ModuleVisible12=0
+Module15=SearchView
+ModuleVisible15=1
+Module12=AddCategoria
+ModuleVisible12=1
+Module14=Lista
+ModuleVisible14=1
+Module16=Debitos
+ModuleVisible16=0
+Module13=Remover_Categoria
+ModuleVisible13=1
 Package=Financas.Pessoais
 DoNotOverwriteManifest=False
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
-UserTypesHint=Persistencia
-NumberOfFiles=11
-File1=Layout_Cadastro.bal
-File2=Layout_Calculadora.bal
-File3=Layout_Creditos.bal
-File4=Layout_Debitos.bal
-File5=Layout_Excluir.bal
-File6=Layout_Extrato.bal
-File7=Layout_Financeiro.bal
-File8=Layout_Login.bal
-File9=Layout_Menu.bal
-File10=Layout_Saldo.bal
-File11=Layout_Utilitarios.bal
-NumberOfLibraries=2
+UserTypesHint=SearchView,Persistencia
+NumberOfFiles=13
+File1=Layout_AddCategoria.bal
+File2=Layout_Cadastro.bal
+File3=Layout_Calculadora.bal
+File4=Layout_Creditos.bal
+File5=Layout_Debitos.bal
+File6=Layout_Excluir.bal
+File7=Layout_Extrato.bal
+File8=Layout_Financeiro.bal
+File9=Layout_Login.bal
+File10=Layout_Menu.bal
+File11=Layout_Remover_Categoria.bal
+File12=Layout_Saldo.bal
+File13=Layout_Utilitarios.bal
+NumberOfLibraries=3
 Library1=core
-Library2=sql
+Library2=ime
+Library3=sql
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: Fine
@@ -59,7 +70,8 @@ Library2=sql
 #End Region
 
 Sub Process_Globals
-	Dim Pers As Persistencia
+	Dim Pers As Persistencia	
+	
 End Sub
 
 Sub Globals

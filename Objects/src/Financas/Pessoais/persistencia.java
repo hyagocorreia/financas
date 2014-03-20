@@ -23,6 +23,8 @@ public class persistencia extends B4AClass.ImplB4AClass implements BA.SubDelegat
     }
 
  public anywheresoftware.b4a.keywords.Common __c = null;
+public anywheresoftware.b4a.objects.collections.List _lista_extrato = null;
+public float _saldo = 0f;
 public Financas.Pessoais.main _main = null;
 public Financas.Pessoais.cadastro _cadastro = null;
 public Financas.Pessoais.financeiro _financeiro = null;
@@ -34,13 +36,42 @@ public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
+public Financas.Pessoais.addcategoria _addcategoria = null;
+public Financas.Pessoais.lista _lista = null;
 public Financas.Pessoais.debitos _debitos = null;
+public Financas.Pessoais.remover_categoria _remover_categoria = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
+		return new Object[] {"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Lista_Extrato",_lista_extrato,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Saldo",_saldo,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
 }
+public String  _atualizar_saldo(float _valor) throws Exception{
+		Debug.PushSubsStack("Atualizar_Saldo (persistencia) ","persistencia",3,ba,this);
+try {
+Debug.locals.put("Valor", _valor);
+ BA.debugLineNum = 84;BA.debugLine="Private Sub Atualizar_Saldo(Valor As Float)";
+Debug.ShouldStop(524288);
+ BA.debugLineNum = 85;BA.debugLine="Saldo = Saldo + Valor";
+Debug.ShouldStop(1048576);
+_saldo = (float) (_saldo+_valor);
+ BA.debugLineNum = 86;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
+return "";
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 2;BA.debugLine="Sub Class_Globals";
- //BA.debugLineNum = 4;BA.debugLine="End Sub";
+ //BA.debugLineNum = 3;BA.debugLine="Dim Lista_Extrato As List";
+_lista_extrato = new anywheresoftware.b4a.objects.collections.List();
+ //BA.debugLineNum = 4;BA.debugLine="Lista_Extrato.Initialize";
+_lista_extrato.Initialize();
+ //BA.debugLineNum = 5;BA.debugLine="Dim Saldo As Float";
+_saldo = 0f;
+ //BA.debugLineNum = 6;BA.debugLine="End Sub";
 return "";
 }
 public boolean  _criar_login(String _nome,String _username,String _senha,String _senha_repetida) throws Exception{
@@ -51,43 +82,43 @@ Debug.locals.put("Nome", _nome);
 Debug.locals.put("Username", _username);
 Debug.locals.put("Senha", _senha);
 Debug.locals.put("Senha_Repetida", _senha_repetida);
- BA.debugLineNum = 37;BA.debugLine="Public Sub Criar_Login(Nome As String, Username As String, Senha As String, Senha_Repetida As String) As Boolean";
-Debug.ShouldStop(16);
- BA.debugLineNum = 38;BA.debugLine="If Nome = \"\" OR Username = \"\" OR Senha = \"\" OR Senha_Repetida = \"\" Then";
-Debug.ShouldStop(32);
-if ((_nome).equals("") || (_username).equals("") || (_senha).equals("") || (_senha_repetida).equals("")) { 
- BA.debugLineNum = 39;BA.debugLine="Msgbox(\"Campos Obrigatórios não Preenchidos\", \"Atenção!\")";
+ BA.debugLineNum = 39;BA.debugLine="Public Sub Criar_Login(Nome As String, Username As String, Senha As String, Senha_Repetida As String) As Boolean";
 Debug.ShouldStop(64);
+ BA.debugLineNum = 40;BA.debugLine="If Nome = \"\" OR Username = \"\" OR Senha = \"\" OR Senha_Repetida = \"\" Then";
+Debug.ShouldStop(128);
+if ((_nome).equals("") || (_username).equals("") || (_senha).equals("") || (_senha_repetida).equals("")) { 
+ BA.debugLineNum = 41;BA.debugLine="Msgbox(\"Campos Obrigatórios não Preenchidos\", \"Atenção!\")";
+Debug.ShouldStop(256);
 __c.Msgbox("Campos Obrigatórios não Preenchidos","Atenção!",getActivityBA());
  }else 
-{ BA.debugLineNum = 40;BA.debugLine="Else If Not(Senha = Senha_Repetida) Then";
-Debug.ShouldStop(128);
+{ BA.debugLineNum = 42;BA.debugLine="Else If Not(Senha = Senha_Repetida) Then";
+Debug.ShouldStop(512);
 if (__c.Not((_senha).equals(_senha_repetida))) { 
- BA.debugLineNum = 41;BA.debugLine="Msgbox(\"Senhas não conferem!\", \"Atenção!\")";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 43;BA.debugLine="Msgbox(\"Senhas não conferem!\", \"Atenção!\")";
+Debug.ShouldStop(1024);
 __c.Msgbox("Senhas não conferem!","Atenção!",getActivityBA());
  }else {
- BA.debugLineNum = 43;BA.debugLine="Dim TextWriter1 As TextWriter";
-Debug.ShouldStop(1024);
-_textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();Debug.locals.put("TextWriter1", _textwriter1);
- BA.debugLineNum = 44;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, \"Logins.txt\", True))";
-Debug.ShouldStop(2048);
-_textwriter1.Initialize((java.io.OutputStream)(__c.File.OpenOutput(__c.File.getDirRootExternal(),"Logins.txt",__c.True).getObject()));
- BA.debugLineNum = 45;BA.debugLine="TextWriter1.WriteLine(Username & Senha)";
+ BA.debugLineNum = 45;BA.debugLine="Dim TextWriter1 As TextWriter";
 Debug.ShouldStop(4096);
-_textwriter1.WriteLine(_username+_senha);
- BA.debugLineNum = 46;BA.debugLine="TextWriter1.Close";
+_textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();Debug.locals.put("TextWriter1", _textwriter1);
+ BA.debugLineNum = 46;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, \"Logins.txt\", True))";
 Debug.ShouldStop(8192);
-_textwriter1.Close();
- BA.debugLineNum = 47;BA.debugLine="Return True";
+_textwriter1.Initialize((java.io.OutputStream)(__c.File.OpenOutput(__c.File.getDirRootExternal(),"Logins.txt",__c.True).getObject()));
+ BA.debugLineNum = 47;BA.debugLine="TextWriter1.WriteLine(Username & Senha)";
 Debug.ShouldStop(16384);
+_textwriter1.WriteLine(_username+_senha);
+ BA.debugLineNum = 48;BA.debugLine="TextWriter1.Close";
+Debug.ShouldStop(32768);
+_textwriter1.Close();
+ BA.debugLineNum = 49;BA.debugLine="Return True";
+Debug.ShouldStop(65536);
 if (true) return __c.True;
  }};
- BA.debugLineNum = 49;BA.debugLine="Return False";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 51;BA.debugLine="Return False";
+Debug.ShouldStop(262144);
 if (true) return __c.False;
- BA.debugLineNum = 50;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 52;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return false;
 }
 catch (Exception e) {
@@ -106,77 +137,77 @@ anywheresoftware.b4a.objects.collections.List _texto = null;
 anywheresoftware.b4a.objects.streams.File.TextWriterWrapper _textwriter1 = null;
 Debug.locals.put("Username", _username);
 Debug.locals.put("Senha", _senha);
- BA.debugLineNum = 52;BA.debugLine="Public Sub Excluir_Login(Username As String, Senha As String) As Boolean";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 53;BA.debugLine="If Username = \"\" OR Senha = \"\" Then";
-Debug.ShouldStop(1048576);
-if ((_username).equals("") || (_senha).equals("")) { 
- BA.debugLineNum = 54;BA.debugLine="Msgbox(\"Campos Obrigatórios não Preenchidos\", \"Atenção!\")";
+ BA.debugLineNum = 54;BA.debugLine="Public Sub Excluir_Login(Username As String, Senha As String) As Boolean";
 Debug.ShouldStop(2097152);
+ BA.debugLineNum = 55;BA.debugLine="If Username = \"\" OR Senha = \"\" Then";
+Debug.ShouldStop(4194304);
+if ((_username).equals("") || (_senha).equals("")) { 
+ BA.debugLineNum = 56;BA.debugLine="Msgbox(\"Campos Obrigatórios não Preenchidos\", \"Atenção!\")";
+Debug.ShouldStop(8388608);
 __c.Msgbox("Campos Obrigatórios não Preenchidos","Atenção!",getActivityBA());
  }else {
- BA.debugLineNum = 56;BA.debugLine="Dim TextReader1 As TextReader";
-Debug.ShouldStop(8388608);
-_textreader1 = new anywheresoftware.b4a.objects.streams.File.TextReaderWrapper();Debug.locals.put("TextReader1", _textreader1);
- BA.debugLineNum = 57;BA.debugLine="TextReader1.Initialize(File.OpenInput(File.DirRootExternal, \"Logins.txt\"))";
-Debug.ShouldStop(16777216);
-_textreader1.Initialize((java.io.InputStream)(__c.File.OpenInput(__c.File.getDirRootExternal(),"Logins.txt").getObject()));
- BA.debugLineNum = 58;BA.debugLine="Dim line As String";
+ BA.debugLineNum = 58;BA.debugLine="Dim TextReader1 As TextReader";
 Debug.ShouldStop(33554432);
-_line = "";Debug.locals.put("line", _line);
- BA.debugLineNum = 59;BA.debugLine="Dim texto As List";
+_textreader1 = new anywheresoftware.b4a.objects.streams.File.TextReaderWrapper();Debug.locals.put("TextReader1", _textreader1);
+ BA.debugLineNum = 59;BA.debugLine="TextReader1.Initialize(File.OpenInput(File.DirRootExternal, \"Logins.txt\"))";
 Debug.ShouldStop(67108864);
-_texto = new anywheresoftware.b4a.objects.collections.List();Debug.locals.put("texto", _texto);
- BA.debugLineNum = 60;BA.debugLine="texto.Initialize";
+_textreader1.Initialize((java.io.InputStream)(__c.File.OpenInput(__c.File.getDirRootExternal(),"Logins.txt").getObject()));
+ BA.debugLineNum = 60;BA.debugLine="Dim line As String";
 Debug.ShouldStop(134217728);
-_texto.Initialize();
- BA.debugLineNum = 61;BA.debugLine="line = TextReader1.ReadLine";
+_line = "";Debug.locals.put("line", _line);
+ BA.debugLineNum = 61;BA.debugLine="Dim texto As List";
 Debug.ShouldStop(268435456);
-_line = _textreader1.ReadLine();Debug.locals.put("line", _line);
- BA.debugLineNum = 62;BA.debugLine="Do While line <> Null";
+_texto = new anywheresoftware.b4a.objects.collections.List();Debug.locals.put("texto", _texto);
+ BA.debugLineNum = 62;BA.debugLine="texto.Initialize";
 Debug.ShouldStop(536870912);
-while (_line!= null) {
- BA.debugLineNum = 63;BA.debugLine="If line = Username & Senha Then";
+_texto.Initialize();
+ BA.debugLineNum = 63;BA.debugLine="line = TextReader1.ReadLine";
 Debug.ShouldStop(1073741824);
-if ((_line).equals(_username+_senha)) { 
- BA.debugLineNum = 64;BA.debugLine="If File.Delete(File.DirRootExternal, \"Logins.txt\") Then";
+_line = _textreader1.ReadLine();Debug.locals.put("line", _line);
+ BA.debugLineNum = 64;BA.debugLine="Do While line <> Null";
 Debug.ShouldStop(-2147483648);
-if (__c.File.Delete(__c.File.getDirRootExternal(),"Logins.txt")) { 
- BA.debugLineNum = 65;BA.debugLine="Dim TextWriter1 As TextWriter";
+while (_line!= null) {
+ BA.debugLineNum = 65;BA.debugLine="If line = Username & Senha Then";
 Debug.ShouldStop(1);
-_textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();Debug.locals.put("TextWriter1", _textwriter1);
- BA.debugLineNum = 66;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, \"Logins.txt\", True))";
+if ((_line).equals(_username+_senha)) { 
+ BA.debugLineNum = 66;BA.debugLine="If File.Delete(File.DirRootExternal, \"Logins.txt\") Then";
 Debug.ShouldStop(2);
-_textwriter1.Initialize((java.io.OutputStream)(__c.File.OpenOutput(__c.File.getDirRootExternal(),"Logins.txt",__c.True).getObject()));
- BA.debugLineNum = 67;BA.debugLine="TextWriter1.WriteList(texto)";
+if (__c.File.Delete(__c.File.getDirRootExternal(),"Logins.txt")) { 
+ BA.debugLineNum = 67;BA.debugLine="Dim TextWriter1 As TextWriter";
 Debug.ShouldStop(4);
-_textwriter1.WriteList(_texto);
- BA.debugLineNum = 68;BA.debugLine="TextWriter1.Close";
+_textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();Debug.locals.put("TextWriter1", _textwriter1);
+ BA.debugLineNum = 68;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, \"Logins.txt\", True))";
 Debug.ShouldStop(8);
-_textwriter1.Close();
- BA.debugLineNum = 69;BA.debugLine="TextReader1.Close";
+_textwriter1.Initialize((java.io.OutputStream)(__c.File.OpenOutput(__c.File.getDirRootExternal(),"Logins.txt",__c.True).getObject()));
+ BA.debugLineNum = 69;BA.debugLine="TextWriter1.WriteList(texto)";
 Debug.ShouldStop(16);
-_textreader1.Close();
- BA.debugLineNum = 70;BA.debugLine="Return True";
+_textwriter1.WriteList(_texto);
+ BA.debugLineNum = 70;BA.debugLine="TextWriter1.Close";
 Debug.ShouldStop(32);
+_textwriter1.Close();
+ BA.debugLineNum = 71;BA.debugLine="TextReader1.Close";
+Debug.ShouldStop(64);
+_textreader1.Close();
+ BA.debugLineNum = 72;BA.debugLine="Return True";
+Debug.ShouldStop(128);
 if (true) return __c.True;
  };
  }else {
- BA.debugLineNum = 73;BA.debugLine="texto.Add(line)";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 75;BA.debugLine="texto.Add(line)";
+Debug.ShouldStop(1024);
 _texto.Add((Object)(_line));
- BA.debugLineNum = 74;BA.debugLine="line = TextReader1.ReadLine";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 76;BA.debugLine="line = TextReader1.ReadLine";
+Debug.ShouldStop(2048);
 _line = _textreader1.ReadLine();Debug.locals.put("line", _line);
  };
  }
 ;
  };
- BA.debugLineNum = 79;BA.debugLine="Return False";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 81;BA.debugLine="Return False";
+Debug.ShouldStop(65536);
 if (true) return __c.False;
- BA.debugLineNum = 80;BA.debugLine="End Sub";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 82;BA.debugLine="End Sub";
+Debug.ShouldStop(131072);
 return false;
 }
 catch (Exception e) {
@@ -194,65 +225,65 @@ anywheresoftware.b4a.objects.streams.File.TextReaderWrapper _textreader1 = null;
 String _line = "";
 Debug.locals.put("Username", _username);
 Debug.locals.put("Senha", _senha);
- BA.debugLineNum = 10;BA.debugLine="Public Sub Fazer_Login (Username As String, Senha As String) As Boolean";
-Debug.ShouldStop(512);
- BA.debugLineNum = 11;BA.debugLine="If Username = \"\" OR Senha = \"\" Then";
-Debug.ShouldStop(1024);
-if ((_username).equals("") || (_senha).equals("")) { 
- BA.debugLineNum = 12;BA.debugLine="Msgbox(\"Campos Obrigatorios não estão preenchidos\", \"Aviso!\" )";
+ BA.debugLineNum = 12;BA.debugLine="Public Sub Fazer_Login (Username As String, Senha As String) As Boolean";
 Debug.ShouldStop(2048);
+ BA.debugLineNum = 13;BA.debugLine="If Username = \"\" OR Senha = \"\" Then";
+Debug.ShouldStop(4096);
+if ((_username).equals("") || (_senha).equals("")) { 
+ BA.debugLineNum = 14;BA.debugLine="Msgbox(\"Campos Obrigatorios não estão preenchidos\", \"Aviso!\" )";
+Debug.ShouldStop(8192);
 __c.Msgbox("Campos Obrigatorios não estão preenchidos","Aviso!",getActivityBA());
  }else {
- BA.debugLineNum = 14;BA.debugLine="If Not(File.Exists(File.DirRootExternal, \"Logins.txt\")) Then";
-Debug.ShouldStop(8192);
-if (__c.Not(__c.File.Exists(__c.File.getDirRootExternal(),"Logins.txt"))) { 
- BA.debugLineNum = 15;BA.debugLine="Dim TextWriter1 As TextWriter";
-Debug.ShouldStop(16384);
-_textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();Debug.locals.put("TextWriter1", _textwriter1);
- BA.debugLineNum = 16;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, \"Logins.txt\", False))";
+ BA.debugLineNum = 16;BA.debugLine="If Not(File.Exists(File.DirRootExternal, \"Logins.txt\")) Then";
 Debug.ShouldStop(32768);
-_textwriter1.Initialize((java.io.OutputStream)(__c.File.OpenOutput(__c.File.getDirRootExternal(),"Logins.txt",__c.False).getObject()));
- BA.debugLineNum = 17;BA.debugLine="TextWriter1.Close";
+if (__c.Not(__c.File.Exists(__c.File.getDirRootExternal(),"Logins.txt"))) { 
+ BA.debugLineNum = 17;BA.debugLine="Dim TextWriter1 As TextWriter";
 Debug.ShouldStop(65536);
+_textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();Debug.locals.put("TextWriter1", _textwriter1);
+ BA.debugLineNum = 18;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, \"Logins.txt\", False))";
+Debug.ShouldStop(131072);
+_textwriter1.Initialize((java.io.OutputStream)(__c.File.OpenOutput(__c.File.getDirRootExternal(),"Logins.txt",__c.False).getObject()));
+ BA.debugLineNum = 19;BA.debugLine="TextWriter1.Close";
+Debug.ShouldStop(262144);
 _textwriter1.Close();
  }else {
- BA.debugLineNum = 19;BA.debugLine="Dim TextReader1 As TextReader";
-Debug.ShouldStop(262144);
-_textreader1 = new anywheresoftware.b4a.objects.streams.File.TextReaderWrapper();Debug.locals.put("TextReader1", _textreader1);
- BA.debugLineNum = 20;BA.debugLine="TextReader1.Initialize(File.OpenInput(File.DirRootExternal, \"Logins.txt\"))";
-Debug.ShouldStop(524288);
-_textreader1.Initialize((java.io.InputStream)(__c.File.OpenInput(__c.File.getDirRootExternal(),"Logins.txt").getObject()));
- BA.debugLineNum = 21;BA.debugLine="Dim line As String";
+ BA.debugLineNum = 21;BA.debugLine="Dim TextReader1 As TextReader";
 Debug.ShouldStop(1048576);
-_line = "";Debug.locals.put("line", _line);
- BA.debugLineNum = 22;BA.debugLine="line = TextReader1.ReadLine";
+_textreader1 = new anywheresoftware.b4a.objects.streams.File.TextReaderWrapper();Debug.locals.put("TextReader1", _textreader1);
+ BA.debugLineNum = 22;BA.debugLine="TextReader1.Initialize(File.OpenInput(File.DirRootExternal, \"Logins.txt\"))";
 Debug.ShouldStop(2097152);
-_line = _textreader1.ReadLine();Debug.locals.put("line", _line);
- BA.debugLineNum = 23;BA.debugLine="Do While line <> Null";
+_textreader1.Initialize((java.io.InputStream)(__c.File.OpenInput(__c.File.getDirRootExternal(),"Logins.txt").getObject()));
+ BA.debugLineNum = 23;BA.debugLine="Dim line As String";
 Debug.ShouldStop(4194304);
-while (_line!= null) {
- BA.debugLineNum = 24;BA.debugLine="If line = Username & Senha Then";
+_line = "";Debug.locals.put("line", _line);
+ BA.debugLineNum = 24;BA.debugLine="line = TextReader1.ReadLine";
 Debug.ShouldStop(8388608);
-if ((_line).equals(_username+_senha)) { 
- BA.debugLineNum = 25;BA.debugLine="Return True";
+_line = _textreader1.ReadLine();Debug.locals.put("line", _line);
+ BA.debugLineNum = 25;BA.debugLine="Do While line <> Null";
 Debug.ShouldStop(16777216);
+while (_line!= null) {
+ BA.debugLineNum = 26;BA.debugLine="If line = Username & Senha Then";
+Debug.ShouldStop(33554432);
+if ((_line).equals(_username+_senha)) { 
+ BA.debugLineNum = 27;BA.debugLine="Return True";
+Debug.ShouldStop(67108864);
 if (true) return __c.True;
  };
- BA.debugLineNum = 27;BA.debugLine="line = TextReader1.ReadLine";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 29;BA.debugLine="line = TextReader1.ReadLine";
+Debug.ShouldStop(268435456);
 _line = _textreader1.ReadLine();Debug.locals.put("line", _line);
  }
 ;
- BA.debugLineNum = 29;BA.debugLine="TextReader1.Close";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 31;BA.debugLine="TextReader1.Close";
+Debug.ShouldStop(1073741824);
 _textreader1.Close();
  };
  };
- BA.debugLineNum = 33;BA.debugLine="Return False";
-Debug.ShouldStop(1);
-if (true) return __c.False;
- BA.debugLineNum = 35;BA.debugLine="End Sub";
+ BA.debugLineNum = 35;BA.debugLine="Return False";
 Debug.ShouldStop(4);
+if (true) return __c.False;
+ BA.debugLineNum = 37;BA.debugLine="End Sub";
+Debug.ShouldStop(16);
 return false;
 }
 catch (Exception e) {
@@ -267,11 +298,103 @@ innerInitialize(_ba);
 		Debug.PushSubsStack("Initialize (persistencia) ","persistencia",3,ba,this);
 try {
 Debug.locals.put("ba", _ba);
- BA.debugLineNum = 6;BA.debugLine="Public Sub Initialize";
-Debug.ShouldStop(32);
- BA.debugLineNum = 8;BA.debugLine="End Sub";
+ BA.debugLineNum = 8;BA.debugLine="Public Sub Initialize";
 Debug.ShouldStop(128);
+ BA.debugLineNum = 10;BA.debugLine="End Sub";
+Debug.ShouldStop(512);
 return "";
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public String  _remover_categoria(int _pos) throws Exception{
+		Debug.PushSubsStack("Remover_Categoria (persistencia) ","persistencia",3,ba,this);
+try {
+Debug.locals.put("Pos", _pos);
+ BA.debugLineNum = 111;BA.debugLine="Public Sub Remover_Categoria(Pos As Int)";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 113;BA.debugLine="End Sub";
+Debug.ShouldStop(65536);
+return "";
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public String  _remover_transacao(int _pos) throws Exception{
+		Debug.PushSubsStack("Remover_Transacao (persistencia) ","persistencia",3,ba,this);
+try {
+String _linha = "";
+int _i = 0;
+float _valor = 0f;
+Debug.locals.put("Pos", _pos);
+ BA.debugLineNum = 101;BA.debugLine="Public Sub Remover_Transacao (Pos As Int)";
+Debug.ShouldStop(16);
+ BA.debugLineNum = 102;BA.debugLine="Dim Linha As String = Lista_Extrato.Get(Pos)";
+Debug.ShouldStop(32);
+_linha = BA.ObjectToString(_lista_extrato.Get(_pos));Debug.locals.put("Linha", _linha);Debug.locals.put("Linha", _linha);
+ BA.debugLineNum = 103;BA.debugLine="Dim i As Int = Linha.IndexOf(\"|\")";
+Debug.ShouldStop(64);
+_i = _linha.indexOf("|");Debug.locals.put("i", _i);Debug.locals.put("i", _i);
+ BA.debugLineNum = 104;BA.debugLine="Dim Valor As Float = Linha.SubString2(0,i)";
+Debug.ShouldStop(128);
+_valor = (float)(Double.parseDouble(_linha.substring((int) (0),_i)));Debug.locals.put("Valor", _valor);Debug.locals.put("Valor", _valor);
+ BA.debugLineNum = 106;BA.debugLine="Saldo = Saldo - Valor";
+Debug.ShouldStop(512);
+_saldo = (float) (_saldo-_valor);
+ BA.debugLineNum = 108;BA.debugLine="Lista_Extrato.RemoveAt(Pos)";
+Debug.ShouldStop(2048);
+_lista_extrato.RemoveAt(_pos);
+ BA.debugLineNum = 109;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
+return "";
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public boolean  _salvar_transacao(float _valor,String _data,String _categoria,String _tipo) throws Exception{
+		Debug.PushSubsStack("Salvar_Transacao (persistencia) ","persistencia",3,ba,this);
+try {
+Debug.locals.put("Valor", _valor);
+Debug.locals.put("Data", _data);
+Debug.locals.put("Categoria", _categoria);
+Debug.locals.put("Tipo", _tipo);
+ BA.debugLineNum = 88;BA.debugLine="Public Sub Salvar_Transacao (Valor As Float, Data As String, Categoria As String, Tipo As String) As Boolean";
+Debug.ShouldStop(8388608);
+ BA.debugLineNum = 90;BA.debugLine="If Tipo = \"Crédito\" Then";
+Debug.ShouldStop(33554432);
+if ((_tipo).equals("Crédito")) { 
+ BA.debugLineNum = 91;BA.debugLine="Atualizar_Saldo(Valor)";
+Debug.ShouldStop(67108864);
+_atualizar_saldo(_valor);
+ }else {
+ BA.debugLineNum = 93;BA.debugLine="Valor = Valor * (-1)";
+Debug.ShouldStop(268435456);
+_valor = (float) (_valor*(-1));Debug.locals.put("Valor", _valor);
+ BA.debugLineNum = 94;BA.debugLine="Atualizar_Saldo(Valor)";
+Debug.ShouldStop(536870912);
+_atualizar_saldo(_valor);
+ };
+ BA.debugLineNum = 96;BA.debugLine="Lista_Extrato.Add(NumberFormat(Valor,1,2) & \"|\" & Data & \"|\" & Categoria)";
+Debug.ShouldStop(-2147483648);
+_lista_extrato.Add((Object)(__c.NumberFormat(_valor,(int) (1),(int) (2))+"|"+_data+"|"+_categoria));
+ BA.debugLineNum = 98;BA.debugLine="Return True";
+Debug.ShouldStop(2);
+if (true) return __c.True;
+ BA.debugLineNum = 99;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
+return false;
 }
 catch (Exception e) {
 			Debug.ErrorCaught(e);

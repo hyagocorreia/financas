@@ -13,32 +13,19 @@ End Sub
 Sub Globals
 	Dim Button_Voltar As Button
 	Dim ListView_Extrato As ListView
-	Dim Label_SaldoAtual As Label
+	Private Label_Titulo As Label
+	Private Label_SaldoAtual As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
-	'Do not forget to load the layout file created with the visual designer. For example:
-	 
-	 'If FirstTime Then
-		
-		Activity.LoadLayout("Layout_Extrato")
+	Activity.LoadLayout("Layout_Extrato")
+	Label_SaldoAtual.Text = "Saldo Atual: " & NumberFormat(Main.Pers.Saldo,1,2)
+	Label_Titulo.Text = "Valor R$ | Data | Categ."
 	
-		'Label_SaldoAtual.Text = Financeiro.saldo
-	
-		ListView_Extrato.AddSingleLine("    (-)Debito" & "      " & "(+)Credito")
-		ListView_Extrato.AddSingleLine("| Data |  " & " | Valor |  " & " | Detalhe |")
-		
-		For i = 0 To Financeiro.list_Extrato.Size -1
-			
-			ListView_Extrato.AddSingleLine(Financeiro.list_Extrato.Get(i))
-			ListView_Extrato.FastScrollEnabled = True
-	
-		Next
-		
-	'End If
-	
-	
-   
+	For i = 0 To Main.Pers.Lista_Extrato.Size -1
+		ListView_Extrato.AddSingleLine(Main.Pers.Lista_Extrato.Get(i))
+		ListView_Extrato.FastScrollEnabled = True
+	Next
 End Sub
 
 Sub Activity_Resume
@@ -56,7 +43,8 @@ End Sub
 
 Sub ListView_Extrato_ItemLongClick (Position As Int, Value As Object)
 	If Msgbox2("Deseja excluir a transação?", "Excluir", "Sim", "", "Não", Null) = DialogResponse.POSITIVE Then
-		Financeiro.list_Extrato.RemoveAt(Position-2)
+		Main.Pers.Remover_Transacao(Position)
 		ListView_Extrato.RemoveAt(Position)
+		Label_SaldoAtual.Text = Main.Pers.Saldo
 	End If
 End Sub

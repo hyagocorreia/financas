@@ -17,7 +17,7 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout_Saldo")
-	Label_Total.Text = Label_Total.Text &" "& Financeiro.saldo
+	Label_Total.Text = Label_Total.Text &" "& NumberFormat(Main.Pers.Saldo,1,2)
 End Sub
 
 Sub Activity_Resume
