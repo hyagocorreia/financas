@@ -20,10 +20,21 @@ End Sub
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout_Extrato")
 	Label_SaldoAtual.Text = "Saldo Atual: " & NumberFormat(Main.Pers.Saldo,1,2)
-	Label_Titulo.Text = "Valor R$ | Data | Categ."
+	Label_Titulo.Text = "Transações"
 	
 	For i = 0 To Main.Pers.Lista_Extrato.Size -1
-		ListView_Extrato.AddSingleLine(Main.Pers.Lista_Extrato.Get(i))
+		Dim linha1,linha2,linha3,linha4 As String
+		linha1 = Main.Pers.Lista_Extrato.Get(i)
+		linha2 = linha1.SubString2(0,linha1.IndexOf("|"))
+		linha3 = linha1.SubString2(linha1.IndexOf("|")+1,linha1.LastIndexOf("|"))
+		linha4 = linha1.SubString(linha1.LastIndexOf("|")+1)
+		Dim valor As Double
+		valor = linha2
+		If valor < 0 Then
+			ListView_Extrato.AddTwoLinesAndBitmap("R$"&NumberFormat((valor*(-1)),1,2), linha3 & " - " & linha4,LoadBitmap(File.DirAssets,"debito.png"))
+		Else
+			ListView_Extrato.AddTwoLinesAndBitmap("R$"&NumberFormat(linha2,1,2), linha3 & " - " & linha4,LoadBitmap(File.DirAssets,"credito.png"))
+		End If
 		ListView_Extrato.FastScrollEnabled = True
 	Next
 End Sub

@@ -54,7 +54,7 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".debito"
+			android:name=".debitos"
 			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
@@ -68,7 +68,7 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".utilitários"
+			android:name=".utilitarios"
 			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>
@@ -104,13 +104,6 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".addcategoria"
-			android:label="Fine"
-			android:screenOrientation="unspecified">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".debitos"
 			android:label="Fine"
 			android:screenOrientation="unspecified">
 		</activity>

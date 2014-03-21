@@ -29,19 +29,18 @@ public Financas.Pessoais.main _main = null;
 public Financas.Pessoais.cadastro _cadastro = null;
 public Financas.Pessoais.financeiro _financeiro = null;
 public Financas.Pessoais.creditos _creditos = null;
-public Financas.Pessoais.debito _debito = null;
+public Financas.Pessoais.debitos _debitos = null;
 public Financas.Pessoais.total _total = null;
-public Financas.Pessoais.utilitários _utilitários = null;
+public Financas.Pessoais.utilitarios _utilitarios = null;
 public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
-public Financas.Pessoais.lista _lista = null;
-public Financas.Pessoais.debitos _debitos = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
+public Financas.Pessoais.lista _lista = null;
   public Object[] GetGlobals() {
-		return new Object[] {"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Lista_Extrato",_lista_extrato,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Saldo",_saldo,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
+		return new Object[] {"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Lista_Extrato",_lista_extrato,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Saldo",_saldo,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
 }
 public String  _atualizar_saldo(float _valor) throws Exception{
 		Debug.PushSubsStack("Atualizar_Saldo (persistencia) ","persistencia",3,ba,this);
@@ -363,28 +362,28 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
-public boolean  _salvar_transacao(float _valor,String _data,String _categoria,String _tipo) throws Exception{
+public boolean  _salvar_transacao(double _valor,String _data,String _categoria,String _tipo) throws Exception{
 		Debug.PushSubsStack("Salvar_Transacao (persistencia) ","persistencia",3,ba,this);
 try {
 Debug.locals.put("Valor", _valor);
 Debug.locals.put("Data", _data);
 Debug.locals.put("Categoria", _categoria);
 Debug.locals.put("Tipo", _tipo);
- BA.debugLineNum = 88;BA.debugLine="Public Sub Salvar_Transacao (Valor As Float, Data As String, Categoria As String, Tipo As String) As Boolean";
+ BA.debugLineNum = 88;BA.debugLine="Public Sub Salvar_Transacao (Valor As Double, Data As String, Categoria As String, Tipo As String) As Boolean";
 Debug.ShouldStop(8388608);
  BA.debugLineNum = 90;BA.debugLine="If Tipo = \"Crédito\" Then";
 Debug.ShouldStop(33554432);
 if ((_tipo).equals("Crédito")) { 
  BA.debugLineNum = 91;BA.debugLine="Atualizar_Saldo(Valor)";
 Debug.ShouldStop(67108864);
-_atualizar_saldo(_valor);
+_atualizar_saldo((float) (_valor));
  }else {
  BA.debugLineNum = 93;BA.debugLine="Valor = Valor * (-1)";
 Debug.ShouldStop(268435456);
-_valor = (float) (_valor*(-1));Debug.locals.put("Valor", _valor);
+_valor = _valor*(-1);Debug.locals.put("Valor", _valor);
  BA.debugLineNum = 94;BA.debugLine="Atualizar_Saldo(Valor)";
 Debug.ShouldStop(536870912);
-_atualizar_saldo(_valor);
+_atualizar_saldo((float) (_valor));
  };
  BA.debugLineNum = 96;BA.debugLine="Lista_Extrato.Add(NumberFormat(Valor,1,2) & \"|\" & Data & \"|\" & Categoria)";
 Debug.ShouldStop(-2147483648);

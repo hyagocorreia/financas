@@ -35,22 +35,21 @@ public Financas.Pessoais.main _main = null;
 public Financas.Pessoais.cadastro _cadastro = null;
 public Financas.Pessoais.financeiro _financeiro = null;
 public Financas.Pessoais.creditos _creditos = null;
-public Financas.Pessoais.debito _debito = null;
+public Financas.Pessoais.debitos _debitos = null;
 public Financas.Pessoais.total _total = null;
-public Financas.Pessoais.utilitários _utilitários = null;
+public Financas.Pessoais.utilitarios _utilitarios = null;
 public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
-public Financas.Pessoais.lista _lista = null;
-public Financas.Pessoais.debitos _debitos = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
+public Financas.Pessoais.lista _lista = null;
   public Object[] GetGlobals() {
-		return new Object[] {"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"et",_et,"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"lv",_lv,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"MAX_LIMIT",_max_limit,"mCallback",_mcallback,"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"mEventName",_meventname,"MIN_LIMIT",_min_limit,"prefixList",_prefixlist,"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"substringList",_substringlist,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
+		return new Object[] {"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"et",_et,"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"lv",_lv,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"MAX_LIMIT",_max_limit,"mCallback",_mcallback,"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"mEventName",_meventname,"MIN_LIMIT",_min_limit,"prefixList",_prefixlist,"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"substringList",_substringlist,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
 }
 public String  _additemstolist(anywheresoftware.b4a.objects.collections.List _li,String _full) throws Exception{
-		Debug.PushSubsStack("AddItemsToList (searchview) ","searchview",12,ba,this);
+		Debug.PushSubsStack("AddItemsToList (searchview) ","searchview",15,ba,this);
 try {
 int _i = 0;
 String _item = "";
@@ -100,7 +99,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public String  _addtoparent(anywheresoftware.b4a.objects.PanelWrapper _parent,int _left,int _top,int _width,int _height) throws Exception{
-		Debug.PushSubsStack("AddToParent (searchview) ","searchview",12,ba,this);
+		Debug.PushSubsStack("AddToParent (searchview) ","searchview",15,ba,this);
 try {
 Debug.locals.put("Parent", _parent);
 Debug.locals.put("Left", _left);
@@ -151,7 +150,7 @@ _meventname = "";
 return "";
 }
 public String  _et_textchanged(String _old,String _new) throws Exception{
-		Debug.PushSubsStack("et_TextChanged (searchview) ","searchview",12,ba,this);
+		Debug.PushSubsStack("et_TextChanged (searchview) ","searchview",15,ba,this);
 try {
 String _str1 = "";
 String _str2 = "";
@@ -207,7 +206,7 @@ finally {
 		}}
 public String  _initialize(anywheresoftware.b4a.BA _ba,Object _callback,String _eventname) throws Exception{
 innerInitialize(_ba);
-		Debug.PushSubsStack("Initialize (searchview) ","searchview",12,ba,this);
+		Debug.PushSubsStack("Initialize (searchview) ","searchview",15,ba,this);
 try {
 Debug.locals.put("ba", _ba);
 Debug.locals.put("Callback", _callback);
@@ -256,7 +255,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public String  _lv_itemclick(int _position,Object _value) throws Exception{
-		Debug.PushSubsStack("lv_ItemClick (searchview) ","searchview",12,ba,this);
+		Debug.PushSubsStack("lv_ItemClick (searchview) ","searchview",15,ba,this);
 try {
 anywheresoftware.b4a.objects.IME _ime = null;
 Debug.locals.put("Position", _position);
@@ -297,7 +296,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public String  _setindex(Object _index) throws Exception{
-		Debug.PushSubsStack("SetIndex (searchview) ","searchview",12,ba,this);
+		Debug.PushSubsStack("SetIndex (searchview) ","searchview",15,ba,this);
 try {
 Object[] _obj = null;
 Debug.locals.put("Index", _index);
@@ -334,7 +333,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public Object  _setitems(anywheresoftware.b4a.objects.collections.List _items) throws Exception{
-		Debug.PushSubsStack("SetItems (searchview) ","searchview",12,ba,this);
+		Debug.PushSubsStack("SetItems (searchview) ","searchview",15,ba,this);
 try {
 long _starttime = 0L;
 anywheresoftware.b4a.objects.collections.Map _noduplicates = null;

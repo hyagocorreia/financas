@@ -13,8 +13,8 @@ import anywheresoftware.b4a.B4AUncaughtException;
 import anywheresoftware.b4a.debug.*;
 import java.lang.ref.WeakReference;
 
-public class utilitários extends Activity implements B4AActivity{
-	public static utilitários mostCurrent;
+public class utilitarios extends Activity implements B4AActivity{
+	public static utilitarios mostCurrent;
 	static boolean afterFirstLayout;
 	static boolean isFirst = true;
     private static boolean processGlobalsRun = false;
@@ -31,7 +31,7 @@ public class utilitários extends Activity implements B4AActivity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		if (isFirst) {
-			processBA = new BA(this.getApplicationContext(), null, null, "Financas.Pessoais", "Financas.Pessoais.utilitários");
+			processBA = new BA(this.getApplicationContext(), null, null, "Financas.Pessoais", "Financas.Pessoais.utilitarios");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -40,7 +40,7 @@ public class utilitários extends Activity implements B4AActivity{
 		else if (previousOne != null) {
 			Activity p = previousOne.get();
 			if (p != null && p != this) {
-                BA.LogInfo("Killing previous instance (utilitários).");
+                BA.LogInfo("Killing previous instance (utilitarios).");
 				p.finish();
 			}
 		}
@@ -79,7 +79,7 @@ public class utilitários extends Activity implements B4AActivity{
 	private void afterFirstLayout() {
         if (this != mostCurrent)
 			return;
-		activityBA = new BA(this, layout, processBA, "Financas.Pessoais", "Financas.Pessoais.utilitários");
+		activityBA = new BA(this, layout, processBA, "Financas.Pessoais", "Financas.Pessoais.utilitarios");
         
         processBA.sharedProcessBA.activityBA = new java.lang.ref.WeakReference<BA>(activityBA);
         anywheresoftware.b4a.objects.ViewWrapper.lastId = 0;
@@ -88,19 +88,19 @@ public class utilitários extends Activity implements B4AActivity{
         if (BA.isShellModeRuntimeCheck(processBA)) {
 			if (isFirst)
 				processBA.raiseEvent2(null, true, "SHELL", false);
-			processBA.raiseEvent2(null, true, "CREATE", true, "Financas.Pessoais.utilitários", processBA, activityBA, _activity, anywheresoftware.b4a.keywords.Common.Density);
+			processBA.raiseEvent2(null, true, "CREATE", true, "Financas.Pessoais.utilitarios", processBA, activityBA, _activity, anywheresoftware.b4a.keywords.Common.Density);
 			_activity.reinitializeForShell(activityBA, "activity");
 		}
         initializeProcessGlobals();		
         initializeGlobals();
         
-        BA.LogInfo("** Activity (utilitários) Create, isFirst = " + isFirst + " **");
+        BA.LogInfo("** Activity (utilitarios) Create, isFirst = " + isFirst + " **");
         processBA.raiseEvent2(null, true, "activity_create", false, isFirst);
 		isFirst = false;
 		if (this != mostCurrent)
 			return;
         processBA.setActivityPaused(false);
-        BA.LogInfo("** Activity (utilitários) Resume **");
+        BA.LogInfo("** Activity (utilitarios) Resume **");
         processBA.raiseEvent(null, "activity_resume");
         if (android.os.Build.VERSION.SDK_INT >= 11) {
 			try {
@@ -154,7 +154,7 @@ public class utilitários extends Activity implements B4AActivity{
 		}
 	}
     public static Class<?> getObject() {
-		return utilitários.class;
+		return utilitarios.class;
 	}
     private Boolean onKeySubExist = null;
     private Boolean onKeyUpSubExist = null;
@@ -217,7 +217,7 @@ public class utilitários extends Activity implements B4AActivity{
         if (_activity == null) //workaround for emulator bug (Issue 2423)
             return;
 		anywheresoftware.b4a.Msgbox.dismiss(true);
-        BA.LogInfo("** Activity (utilitários) Pause, UserClosed = " + activityBA.activity.isFinishing() + " **");
+        BA.LogInfo("** Activity (utilitarios) Pause, UserClosed = " + activityBA.activity.isFinishing() + " **");
         processBA.raiseEvent2(_activity, true, "activity_pause", false, activityBA.activity.isFinishing());		
         processBA.setActivityPaused(true);
         mostCurrent = null;
@@ -250,7 +250,7 @@ public class utilitários extends Activity implements B4AActivity{
 			if (mostCurrent == null || mostCurrent != activity.get())
 				return;
 			processBA.setActivityPaused(false);
-            BA.LogInfo("** Activity (utilitários) Resume **");
+            BA.LogInfo("** Activity (utilitarios) Resume **");
 		    processBA.raiseEvent(mostCurrent._activity, "activity_resume", (Object[])null);
 		}
     }
@@ -272,18 +272,17 @@ public Financas.Pessoais.main _main = null;
 public Financas.Pessoais.cadastro _cadastro = null;
 public Financas.Pessoais.financeiro _financeiro = null;
 public Financas.Pessoais.creditos _creditos = null;
-public Financas.Pessoais.debito _debito = null;
+public Financas.Pessoais.debitos _debitos = null;
 public Financas.Pessoais.total _total = null;
 public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
-public Financas.Pessoais.lista _lista = null;
-public Financas.Pessoais.debitos _debitos = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
+public Financas.Pessoais.lista _lista = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Calculadora",mostCurrent._button_calculadora,"Button_Excluir",mostCurrent._button_excluir,"Button_Graficos",mostCurrent._button_graficos,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Calculadora",mostCurrent._button_calculadora,"Button_Excluir",mostCurrent._button_excluir,"Button_Graficos",mostCurrent._button_graficos,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -294,7 +293,7 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (utilitários) ","utilitários",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Create (utilitarios) ","utilitarios",7,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 17;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -314,7 +313,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (utilitários) ","utilitários",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Pause (utilitarios) ","utilitarios",7,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 25;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -331,7 +330,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (utilitários) ","utilitários",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Resume (utilitarios) ","utilitarios",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 21;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(1048576);
@@ -347,7 +346,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_calculadora_click() throws Exception{
-		Debug.PushSubsStack("Button_Calculadora_Click (utilitários) ","utilitários",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Calculadora_Click (utilitarios) ","utilitarios",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 29;BA.debugLine="Sub Button_Calculadora_Click";
 Debug.ShouldStop(268435456);
@@ -366,7 +365,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_excluir_click() throws Exception{
-		Debug.PushSubsStack("Button_Excluir_Click (utilitários) ","utilitários",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Excluir_Click (utilitarios) ","utilitarios",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 37;BA.debugLine="Sub Button_Excluir_Click";
 Debug.ShouldStop(16);
@@ -385,7 +384,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_graficos_click() throws Exception{
-		Debug.PushSubsStack("Button_Graficos_Click (utilitários) ","utilitários",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Graficos_Click (utilitarios) ","utilitarios",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 33;BA.debugLine="Sub Button_Graficos_Click";
 Debug.ShouldStop(1);
@@ -404,7 +403,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (utilitários) ","utilitários",7,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Voltar_Click (utilitarios) ","utilitarios",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 41;BA.debugLine="Sub Button_Voltar_Click";
 Debug.ShouldStop(256);

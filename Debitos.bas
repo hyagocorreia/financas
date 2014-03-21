@@ -7,26 +7,33 @@ Version=3.2
 #End Region
 
 Sub Process_Globals
-	'These global variables will be declared once when the application starts.
-	'These variables can be accessed from all modules.
-
+	
 End Sub
 
 Sub Globals
-	'These global variables will be redeclared each time the activity is created.
-	'These variables can only be accessed from this module.
-
-	Dim De As EditText
+	Private Categoria As Spinner
+	Dim result As Int
 	Dim Valor As EditText
-	Dim Observacao As EditText
 	Dim Button_Voltar As Button
-	Dim Button_Creditar As Button
+	Dim Button_Debitar As Button
+	Dim Data As EditText
+	Private Button_add As Button
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
-	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("Layout_Debitos")
-
+	DateTime.DateFormat = "dd/MM/yy"
+	Dim Data_hoje As String = DateTime.Date(DateTime.Now)
+	Data.Text = Data_hoje
+	'Lista.Lista_Categorias.Initialize
+	
+	Categoria.AddAll(Lista.Lista_Categorias)
+	
+'	If Lista.Lista_Categorias.Size > 1 Then
+'		
+'	End If
+	
 End Sub
 
 Sub Activity_Resume
@@ -37,12 +44,41 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
-
-
 Sub Button_Voltar_Click
-Activity.Finish
-	
+	Activity.Finish	
 End Sub
-Sub Button_Creditar_Click
+
+Sub Button_Debitar_Click
+	If Valor.Text = "" Then
+		Msgbox("Campos Obrigatórios não Preenchidos", "Atenção!")
+	Else
+		Dim Valor_final As Float
+		Valor_final = Valor.Text
+		
+		Msgbox("Valor: " & NumberFormat(Valor_final,1,2) & CRLF & "Categoria: " & Categoria.SelectedItem & CRLF & "Data: " &Data.Text,"Debitado com Sucesso!")
+		
+		Main.Pers.Salvar_Transacao(NumberFormat(Valor_final,1,2), Data.Text, Categoria.SelectedItem, "Débito")
 	
+		result = Msgbox2("Deseja fazer outra operação?","Aviso!","Sim","","Nao",Null)
+
+		If result = DialogResponse.POSITIVE Then
+			StartActivity("Debitos")
+		Else
+			StartActivity("Financeiro")
+			Activity.Finish
+		End If
+	End If
+End Sub
+
+'Sub limita_campo(texto As String, qte_caracteres As Int) As String
+'	If texto.Length > qte_caracteres Then
+'		texto = texto.SubString2(1,qte_caracteres)	
+'	End If	
+'	Return texto
+'End Sub
+
+Sub Button_add_Click
+	Activity.Finish
+	AddCategoria.nome_classe = "débito"
+	StartActivity("AddCategoria")
 End Sub

@@ -15,6 +15,7 @@ Sub Globals
 	Dim Button_sair As Button
 	Dim Button_Utilitarios As Button
 	Private Button_ExcluirConta As Button
+	Private Button_Logout As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -51,9 +52,15 @@ Sub Button_sair_Click
 End Sub
 
 Sub Button_Utilitarios_Click
-	StartActivity("Utilitários")
+	StartActivity("Utilitarios")
 End Sub
 
 Sub Button_ExcluirConta_Click
 	StartActivity("Excluir")
+End Sub
+
+Sub Button_Logout_Click
+	Main.Fazer_logout = True
+	StartActivity("Main")
+	Activity.Finish
 End Sub

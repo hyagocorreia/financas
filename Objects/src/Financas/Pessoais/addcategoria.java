@@ -272,18 +272,17 @@ public Financas.Pessoais.main _main = null;
 public Financas.Pessoais.cadastro _cadastro = null;
 public Financas.Pessoais.financeiro _financeiro = null;
 public Financas.Pessoais.creditos _creditos = null;
-public Financas.Pessoais.debito _debito = null;
+public Financas.Pessoais.debitos _debitos = null;
 public Financas.Pessoais.total _total = null;
-public Financas.Pessoais.utilitários _utilitários = null;
+public Financas.Pessoais.utilitarios _utilitarios = null;
 public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
-public Financas.Pessoais.lista _lista = null;
-public Financas.Pessoais.debitos _debitos = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
+public Financas.Pessoais.lista _lista = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"Button_Adicionar",mostCurrent._button_adicionar,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Categoria_Text",mostCurrent._categoria_text,"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"nome_classe",_nome_classe,"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"Button_Adicionar",mostCurrent._button_adicionar,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Categoria_Text",mostCurrent._categoria_text,"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"nome_classe",_nome_classe,"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -294,7 +293,7 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (addcategoria) ","addcategoria",13,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Create (addcategoria) ","addcategoria",12,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 21;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -314,7 +313,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (addcategoria) ","addcategoria",13,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Pause (addcategoria) ","addcategoria",12,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 31;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -331,7 +330,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (addcategoria) ","addcategoria",13,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Resume (addcategoria) ","addcategoria",12,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 27;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(67108864);
@@ -347,7 +346,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_adicionar_click() throws Exception{
-		Debug.PushSubsStack("Button_Adicionar_Click (addcategoria) ","addcategoria",13,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Adicionar_Click (addcategoria) ","addcategoria",12,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 35;BA.debugLine="Sub Button_Adicionar_Click";
 Debug.ShouldStop(4);
@@ -360,9 +359,9 @@ mostCurrent._activity.Finish();
  BA.debugLineNum = 39;BA.debugLine="If nome_classe = \"débito\" Then";
 Debug.ShouldStop(64);
 if ((_nome_classe).equals("débito")) { 
- BA.debugLineNum = 40;BA.debugLine="StartActivity(\"Debito\")";
+ BA.debugLineNum = 40;BA.debugLine="StartActivity(\"Debitos\")";
 Debug.ShouldStop(128);
-anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Debito"));
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Debitos"));
  }else 
 { BA.debugLineNum = 41;BA.debugLine="Else If nome_classe = \"crédito\" Then";
 Debug.ShouldStop(256);
@@ -387,7 +386,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (addcategoria) ","addcategoria",13,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Voltar_Click (addcategoria) ","addcategoria",12,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 48;BA.debugLine="Sub Button_Voltar_Click";
 Debug.ShouldStop(32768);

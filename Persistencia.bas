@@ -88,7 +88,7 @@ Private Sub Atualizar_Saldo(Valor As Float)
 	Saldo = Saldo + Valor
 End Sub
 
-Public Sub Salvar_Transacao (Valor As Float, Data As String, Categoria As String, Tipo As String) As Boolean
+Public Sub Salvar_Transacao (Valor As Double, Data As String, Categoria As String, Tipo As String) As Boolean
 	
 	If Tipo = "Crédito" Then
 		Atualizar_Saldo(Valor)

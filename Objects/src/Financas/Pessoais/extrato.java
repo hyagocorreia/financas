@@ -272,18 +272,17 @@ public Financas.Pessoais.main _main = null;
 public Financas.Pessoais.cadastro _cadastro = null;
 public Financas.Pessoais.financeiro _financeiro = null;
 public Financas.Pessoais.creditos _creditos = null;
-public Financas.Pessoais.debito _debito = null;
+public Financas.Pessoais.debitos _debitos = null;
 public Financas.Pessoais.total _total = null;
-public Financas.Pessoais.utilitários _utilitários = null;
+public Financas.Pessoais.utilitarios _utilitarios = null;
 public Financas.Pessoais.menu _menu = null;
 public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
-public Financas.Pessoais.lista _lista = null;
-public Financas.Pessoais.debitos _debitos = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
+public Financas.Pessoais.lista _lista = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debito",Debug.moduleToString(Financas.Pessoais.debito.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Label_SaldoAtual",mostCurrent._label_saldoatual,"Label_Titulo",mostCurrent._label_titulo,"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"ListView_Extrato",mostCurrent._listview_extrato,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitários",Debug.moduleToString(Financas.Pessoais.utilitários.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Label_SaldoAtual",mostCurrent._label_saldoatual,"Label_Titulo",mostCurrent._label_titulo,"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"ListView_Extrato",mostCurrent._listview_extrato,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -297,6 +296,11 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 		Debug.PushSubsStack("Activity_Create (extrato) ","extrato",10,mostCurrent.activityBA,mostCurrent);
 try {
 int _i = 0;
+String _linha1 = "";
+String _linha2 = "";
+String _linha3 = "";
+String _linha4 = "";
+double _valor = 0;
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 17;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
 Debug.ShouldStop(65536);
@@ -306,9 +310,9 @@ mostCurrent._activity.LoadLayout("Layout_Extrato",mostCurrent.activityBA);
  BA.debugLineNum = 19;BA.debugLine="Label_SaldoAtual.Text = \"Saldo Atual: \" & NumberFormat(Main.Pers.Saldo,1,2)";
 Debug.ShouldStop(262144);
 mostCurrent._label_saldoatual.setText((Object)("Saldo Atual: "+anywheresoftware.b4a.keywords.Common.NumberFormat(mostCurrent._main._pers._saldo,(int) (1),(int) (2))));
- BA.debugLineNum = 20;BA.debugLine="Label_Titulo.Text = \"Valor R$ | Data | Categ.\"";
+ BA.debugLineNum = 20;BA.debugLine="Label_Titulo.Text = \"Transações\"";
 Debug.ShouldStop(524288);
-mostCurrent._label_titulo.setText((Object)("Valor R$ | Data | Categ."));
+mostCurrent._label_titulo.setText((Object)("Transações"));
  BA.debugLineNum = 22;BA.debugLine="For i = 0 To Main.Pers.Lista_Extrato.Size -1";
 Debug.ShouldStop(2097152);
 {
@@ -316,17 +320,49 @@ final int step12 = 1;
 final int limit12 = (int) (mostCurrent._main._pers._lista_extrato.getSize()-1);
 for (_i = (int) (0); (step12 > 0 && _i <= limit12) || (step12 < 0 && _i >= limit12); _i = ((int)(0 + _i + step12))) {
 Debug.locals.put("i", _i);
- BA.debugLineNum = 23;BA.debugLine="ListView_Extrato.AddSingleLine(Main.Pers.Lista_Extrato.Get(i))";
+ BA.debugLineNum = 23;BA.debugLine="Dim linha1,linha2,linha3,linha4 As String";
 Debug.ShouldStop(4194304);
-mostCurrent._listview_extrato.AddSingleLine(BA.ObjectToString(mostCurrent._main._pers._lista_extrato.Get(_i)));
- BA.debugLineNum = 24;BA.debugLine="ListView_Extrato.FastScrollEnabled = True";
+_linha1 = "";Debug.locals.put("linha1", _linha1);
+_linha2 = "";Debug.locals.put("linha2", _linha2);
+_linha3 = "";Debug.locals.put("linha3", _linha3);
+_linha4 = "";Debug.locals.put("linha4", _linha4);
+ BA.debugLineNum = 24;BA.debugLine="linha1 = Main.Pers.Lista_Extrato.Get(i)";
 Debug.ShouldStop(8388608);
+_linha1 = BA.ObjectToString(mostCurrent._main._pers._lista_extrato.Get(_i));Debug.locals.put("linha1", _linha1);
+ BA.debugLineNum = 25;BA.debugLine="linha2 = linha1.SubString2(0,linha1.IndexOf(\"|\"))";
+Debug.ShouldStop(16777216);
+_linha2 = _linha1.substring((int) (0),_linha1.indexOf("|"));Debug.locals.put("linha2", _linha2);
+ BA.debugLineNum = 26;BA.debugLine="linha3 = linha1.SubString2(linha1.IndexOf(\"|\")+1,linha1.LastIndexOf(\"|\"))";
+Debug.ShouldStop(33554432);
+_linha3 = _linha1.substring((int) (_linha1.indexOf("|")+1),_linha1.lastIndexOf("|"));Debug.locals.put("linha3", _linha3);
+ BA.debugLineNum = 27;BA.debugLine="linha4 = linha1.SubString(linha1.LastIndexOf(\"|\")+1)";
+Debug.ShouldStop(67108864);
+_linha4 = _linha1.substring((int) (_linha1.lastIndexOf("|")+1));Debug.locals.put("linha4", _linha4);
+ BA.debugLineNum = 28;BA.debugLine="Dim valor As Double";
+Debug.ShouldStop(134217728);
+_valor = 0;Debug.locals.put("valor", _valor);
+ BA.debugLineNum = 29;BA.debugLine="valor = linha2";
+Debug.ShouldStop(268435456);
+_valor = (double)(Double.parseDouble(_linha2));Debug.locals.put("valor", _valor);
+ BA.debugLineNum = 30;BA.debugLine="If valor < 0 Then";
+Debug.ShouldStop(536870912);
+if (_valor<0) { 
+ BA.debugLineNum = 31;BA.debugLine="ListView_Extrato.AddTwoLinesAndBitmap(\"R$\"&NumberFormat((valor*(-1)),1,2), linha3 & \" - \" & linha4,LoadBitmap(File.DirAssets,\"debito.png\"))";
+Debug.ShouldStop(1073741824);
+mostCurrent._listview_extrato.AddTwoLinesAndBitmap("R$"+anywheresoftware.b4a.keywords.Common.NumberFormat((_valor*(-1)),(int) (1),(int) (2)),_linha3+" - "+_linha4,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"debito.png").getObject()));
+ }else {
+ BA.debugLineNum = 33;BA.debugLine="ListView_Extrato.AddTwoLinesAndBitmap(\"R$\"&NumberFormat(linha2,1,2), linha3 & \" - \" & linha4,LoadBitmap(File.DirAssets,\"credito.png\"))";
+Debug.ShouldStop(1);
+mostCurrent._listview_extrato.AddTwoLinesAndBitmap("R$"+anywheresoftware.b4a.keywords.Common.NumberFormat((double)(Double.parseDouble(_linha2)),(int) (1),(int) (2)),_linha3+" - "+_linha4,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"credito.png").getObject()));
+ };
+ BA.debugLineNum = 35;BA.debugLine="ListView_Extrato.FastScrollEnabled = True";
+Debug.ShouldStop(4);
 mostCurrent._listview_extrato.setFastScrollEnabled(anywheresoftware.b4a.keywords.Common.True);
  }
 }Debug.locals.put("i", _i);
 ;
- BA.debugLineNum = 26;BA.debugLine="End Sub";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 37;BA.debugLine="End Sub";
+Debug.ShouldStop(16);
 return "";
 }
 catch (Exception e) {
@@ -340,10 +376,10 @@ public static String  _activity_pause(boolean _userclosed) throws Exception{
 		Debug.PushSubsStack("Activity_Pause (extrato) ","extrato",10,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 32;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(-2147483648);
- BA.debugLineNum = 34;BA.debugLine="End Sub";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 43;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(1024);
+ BA.debugLineNum = 45;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return "";
 }
 catch (Exception e) {
@@ -356,10 +392,10 @@ finally {
 public static String  _activity_resume() throws Exception{
 		Debug.PushSubsStack("Activity_Resume (extrato) ","extrato",10,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 28;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(134217728);
- BA.debugLineNum = 30;BA.debugLine="End Sub";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 39;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(64);
+ BA.debugLineNum = 41;BA.debugLine="End Sub";
+Debug.ShouldStop(256);
 return "";
 }
 catch (Exception e) {
@@ -372,13 +408,13 @@ finally {
 public static String  _button_voltar_click() throws Exception{
 		Debug.PushSubsStack("Button_Voltar_Click (extrato) ","extrato",10,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 37;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(16);
- BA.debugLineNum = 38;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 48;BA.debugLine="Sub Button_Voltar_Click";
+Debug.ShouldStop(32768);
+ BA.debugLineNum = 49;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(65536);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 39;BA.debugLine="End Sub";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 50;BA.debugLine="End Sub";
+Debug.ShouldStop(131072);
 return "";
 }
 catch (Exception e) {
@@ -406,23 +442,23 @@ public static String  _listview_extrato_itemlongclick(int _position,Object _valu
 try {
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
- BA.debugLineNum = 41;BA.debugLine="Sub ListView_Extrato_ItemLongClick (Position As Int, Value As Object)";
-Debug.ShouldStop(256);
- BA.debugLineNum = 42;BA.debugLine="If Msgbox2(\"Deseja excluir a transação?\", \"Excluir\", \"Sim\", \"\", \"Não\", Null) = DialogResponse.POSITIVE Then";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 52;BA.debugLine="Sub ListView_Extrato_ItemLongClick (Position As Int, Value As Object)";
+Debug.ShouldStop(524288);
+ BA.debugLineNum = 53;BA.debugLine="If Msgbox2(\"Deseja excluir a transação?\", \"Excluir\", \"Sim\", \"\", \"Não\", Null) = DialogResponse.POSITIVE Then";
+Debug.ShouldStop(1048576);
 if (anywheresoftware.b4a.keywords.Common.Msgbox2("Deseja excluir a transação?","Excluir","Sim","","Não",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null),mostCurrent.activityBA)==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
- BA.debugLineNum = 43;BA.debugLine="Main.Pers.Remover_Transacao(Position)";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 54;BA.debugLine="Main.Pers.Remover_Transacao(Position)";
+Debug.ShouldStop(2097152);
 mostCurrent._main._pers._remover_transacao(_position);
- BA.debugLineNum = 44;BA.debugLine="ListView_Extrato.RemoveAt(Position)";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 55;BA.debugLine="ListView_Extrato.RemoveAt(Position)";
+Debug.ShouldStop(4194304);
 mostCurrent._listview_extrato.RemoveAt(_position);
- BA.debugLineNum = 45;BA.debugLine="Label_SaldoAtual.Text = Main.Pers.Saldo";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 56;BA.debugLine="Label_SaldoAtual.Text = Main.Pers.Saldo";
+Debug.ShouldStop(8388608);
 mostCurrent._label_saldoatual.setText((Object)(mostCurrent._main._pers._saldo));
  };
- BA.debugLineNum = 47;BA.debugLine="End Sub";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 58;BA.debugLine="End Sub";
+Debug.ShouldStop(33554432);
 return "";
 }
 catch (Exception e) {

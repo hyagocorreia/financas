@@ -40,7 +40,7 @@ Sub Button_Adicionar_Click
 	Lista.Lista_Categorias.Add(Categoria_Text.Text)
 	Activity.Finish
 	If nome_classe = "débito" Then
-		StartActivity("Debito")
+		StartActivity("Debitos")
 	Else If nome_classe = "crédito" Then
 		StartActivity("Creditos")
 	Else

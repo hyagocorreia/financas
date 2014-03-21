@@ -40,7 +40,7 @@ Sub Button_Creditos_Click
 End Sub
 
 Sub Button_Debitos_Click
-	StartActivity("Debito")
+	StartActivity("Debitos")
 End Sub
 
 Sub Button_Voltar_Click

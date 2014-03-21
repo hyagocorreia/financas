@@ -1,6 +1,6 @@
 ﻿Version=3.2
 IconFile=
-NumberOfModules=16
+NumberOfModules=15
 Module1=Cadastro
 ModuleVisible1=1
 Module2=Financeiro
@@ -9,11 +9,11 @@ Module3=Persistencia
 ModuleVisible3=1
 Module4=Creditos
 ModuleVisible4=1
-Module5=Debito
+Module5=Debitos
 ModuleVisible5=1
 Module6=Total
 ModuleVisible6=1
-Module7=Utilitários
+Module7=Utilitarios
 ModuleVisible7=1
 Module8=Menu
 ModuleVisible8=1
@@ -23,16 +23,14 @@ Module10=Extrato
 ModuleVisible10=1
 Module11=Excluir
 ModuleVisible11=1
-Module15=SearchView
-ModuleVisible15=1
 Module12=AddCategoria
 ModuleVisible12=1
-Module14=Lista
-ModuleVisible14=1
-Module16=Debitos
-ModuleVisible16=0
 Module13=Remover_Categoria
 ModuleVisible13=1
+Module14=Lista
+ModuleVisible14=1
+Module15=SearchView
+ModuleVisible15=1
 Package=Financas.Pessoais
 DoNotOverwriteManifest=False
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
@@ -70,8 +68,8 @@ Library3=sql
 #End Region
 
 Sub Process_Globals
-	Dim Pers As Persistencia	
-	
+	Dim Pers As Persistencia
+	Dim Fazer_logout As Boolean
 End Sub
 
 Sub Globals
@@ -83,9 +81,17 @@ Sub Globals
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
-	
-	Activity.LoadLayout("Layout_Login")
-
+	If FirstTime Then
+		FirstTime = False
+		Activity.LoadLayout("Layout_Login")
+	Else
+		If Fazer_logout Then
+			Activity.LoadLayout("Layout_Login")
+		Else
+			StartActivity("Menu")
+			Activity.Finish
+		End If
+	End If
 End Sub
 
 Sub Activity_Resume
@@ -108,6 +114,7 @@ Sub Button_entrar_Click
 	Pers.Initialize
 	If Pers.Fazer_Login(Username.Text, Senha.Text) Then
 		StartActivity("Menu")
+		Activity.Finish
 	Else
 		Msgbox("Usuario ou senha invalida!", "Aviso!")
 	End If

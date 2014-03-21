@@ -47,12 +47,12 @@ Sub Button_Creditar_Click
 	If Valor.Text = "" Then 
 		Msgbox("Campos Obrigatorios não estão preenchidos", "Aviso!" )
 	Else
-		Dim Valor_final As Float
+		Dim Valor_final As Double
 		Valor_final = Valor.Text
 		
-		Msgbox("Valor: " & NumberFormat(Valor_final,1,2) & CRLF& "Categoria: "& CRLF & Categoria.SelectedItem & CRLF & "Data: " & Data.Text,"Creditado com Sucesso!")
+		Msgbox("Valor: " & NumberFormat(Valor_final,1,2) & CRLF & "Categoria: " & Categoria.SelectedItem & CRLF & "Data: " & Data.Text,"Creditado com Sucesso!")
 		
-		Main.Pers.Salvar_Transacao(NumberFormat(Valor_final,1,2), Data.Text, Categoria.SelectedItem, "Crédito")
+		Main.Pers.Salvar_Transacao(NumberFormat(Valor_final,0,2), Data.Text, Categoria.SelectedItem, "Crédito")
 		
 		result = Msgbox2("Deseja fazer outra operação?","Aviso!","Sim","","Nao",Null)
 			
@@ -75,7 +75,6 @@ End Sub
 '	End If
 '	Return texto
 'End Sub
-
 
 Sub Button_add_Click
 	Activity.Finish
