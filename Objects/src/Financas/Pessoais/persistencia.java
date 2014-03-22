@@ -314,10 +314,10 @@ public String  _remover_categoria(int _pos) throws Exception{
 		Debug.PushSubsStack("Remover_Categoria (persistencia) ","persistencia",3,ba,this);
 try {
 Debug.locals.put("Pos", _pos);
- BA.debugLineNum = 111;BA.debugLine="Public Sub Remover_Categoria(Pos As Int)";
-Debug.ShouldStop(16384);
- BA.debugLineNum = 113;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 122;BA.debugLine="Public Sub Remover_Categoria(Pos As Int)";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 124;BA.debugLine="End Sub";
+Debug.ShouldStop(134217728);
 return "";
 }
 catch (Exception e) {
@@ -353,6 +353,45 @@ Debug.ShouldStop(2048);
 _lista_extrato.RemoveAt(_pos);
  BA.debugLineNum = 109;BA.debugLine="End Sub";
 Debug.ShouldStop(4096);
+return "";
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public String  _remover_transacao2(String _obj) throws Exception{
+		Debug.PushSubsStack("Remover_Transacao2 (persistencia) ","persistencia",3,ba,this);
+try {
+int _pos = 0;
+String _linha = "";
+int _i = 0;
+float _valor = 0f;
+Debug.locals.put("Obj", _obj);
+ BA.debugLineNum = 111;BA.debugLine="Public Sub Remover_Transacao2 (Obj As String)";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 112;BA.debugLine="Dim Pos As Int = Lista_Extrato.IndexOf(Obj)";
+Debug.ShouldStop(32768);
+_pos = _lista_extrato.IndexOf((Object)(_obj));Debug.locals.put("Pos", _pos);Debug.locals.put("Pos", _pos);
+ BA.debugLineNum = 113;BA.debugLine="Dim Linha As String = Lista_Extrato.Get(Pos)";
+Debug.ShouldStop(65536);
+_linha = BA.ObjectToString(_lista_extrato.Get(_pos));Debug.locals.put("Linha", _linha);Debug.locals.put("Linha", _linha);
+ BA.debugLineNum = 114;BA.debugLine="Dim i As Int = Linha.IndexOf(\"|\")";
+Debug.ShouldStop(131072);
+_i = _linha.indexOf("|");Debug.locals.put("i", _i);Debug.locals.put("i", _i);
+ BA.debugLineNum = 115;BA.debugLine="Dim Valor As Float = Linha.SubString2(0,i)";
+Debug.ShouldStop(262144);
+_valor = (float)(Double.parseDouble(_linha.substring((int) (0),_i)));Debug.locals.put("Valor", _valor);Debug.locals.put("Valor", _valor);
+ BA.debugLineNum = 117;BA.debugLine="Saldo = Saldo - Valor";
+Debug.ShouldStop(1048576);
+_saldo = (float) (_saldo-_valor);
+ BA.debugLineNum = 119;BA.debugLine="Lista_Extrato.RemoveAt(Pos)";
+Debug.ShouldStop(4194304);
+_lista_extrato.RemoveAt(_pos);
+ BA.debugLineNum = 120;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return "";
 }
 catch (Exception e) {

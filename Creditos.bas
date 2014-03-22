@@ -23,8 +23,7 @@ End Sub
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout_Creditos")
 	DateTime.DateFormat = "dd/MM/yy"
-	Dim Data_hoje As  String = DateTime.Date(DateTime.Now)
-	Data.Text = Data_hoje
+	Data.Text = DateTime.Date(DateTime.Now)
 	'Lista.Lista_Categorias.Initialize
 
 	Categoria.AddAll(Lista.Lista_Categorias)

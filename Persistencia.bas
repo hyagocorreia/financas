@@ -111,6 +111,17 @@ Public Sub Remover_Transacao (Pos As Int)
 	Lista_Extrato.RemoveAt(Pos)
 End Sub
 
+Public Sub Remover_Transacao2 (Obj As String)
+	Dim Pos As Int = Lista_Extrato.IndexOf(Obj)
+	Dim Linha As String = Lista_Extrato.Get(Pos)
+	Dim i As Int = Linha.IndexOf("|")
+	Dim Valor As Float = Linha.SubString2(0,i)
+	
+	Saldo = Saldo - Valor
+
+	Lista_Extrato.RemoveAt(Pos)
+End Sub
+
 Public Sub Remover_Categoria(Pos As Int)
 	
 End Sub
