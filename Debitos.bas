@@ -55,9 +55,9 @@ Sub Button_Debitar_Click
 		Dim Valor_final As Float
 		Valor_final = Valor.Text
 		
-		Msgbox("Valor: " & NumberFormat(Valor_final,1,2) & CRLF & "Categoria: " & Categoria.SelectedItem & CRLF & "Data: " &Data.Text,"Debitado com Sucesso!")
+		Msgbox("Valor: " & NumberFormat2(Valor_final,1,2,2,True) & CRLF & "Categoria: " & Categoria.SelectedItem & CRLF & "Data: " &Data.Text,"Debitado com Sucesso!")
 		
-		Main.Pers.Salvar_Transacao(NumberFormat(Valor_final,1,2), Data.Text, Categoria.SelectedItem, "Débito")
+		Main.Pers.Salvar_Transacao(Valor_final, Data.Text, Categoria.SelectedItem, "Débito")
 	
 		result = Msgbox2("Deseja fazer outra operação?","Aviso!","Sim","","Nao",Null)
 

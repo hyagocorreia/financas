@@ -23,13 +23,20 @@ Public Sub Fazer_Login (Username As String, Senha As String) As Boolean
 		Else
 			Dim TextReader1 As TextReader
 	    	TextReader1.Initialize(File.OpenInput(File.DirRootExternal, "Logins.txt"))
-	    	Dim line As String
-	    	line = TextReader1.ReadLine    
-	    	Do While line <> Null
-	        	If line = Username & Senha Then
+	    	Dim linha1,linha2,linha3,linha4 As String
+			linha1 = TextReader1.ReadLine
+			If linha1 = Null Then
+				Return False
+			End If
+			linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
+			linha3 = linha1.SubString2(linha1.IndexOf(";")+1,linha1.LastIndexOf(";"))
+			linha4 = linha1.SubString(linha1.LastIndexOf(";")+1)
+			
+			Do While linha1 <> Null
+	        	If linha2 & linha3 = Username & Senha Then
 					Return True
 				End If
-	        	line = TextReader1.ReadLine
+	        	linha1 = TextReader1.ReadLine
 	    	Loop
 	    	TextReader1.Close
 		End If
@@ -45,11 +52,44 @@ Public Sub Criar_Login(Nome As String, Username As String, Senha As String, Senh
 	Else If Not(Senha = Senha_Repetida) Then
 		Msgbox("Senhas não conferem!", "Atenção!")
 	Else
-		Dim TextWriter1 As TextWriter
-   		TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, "Logins.txt", True))
-		TextWriter1.WriteLine(Username & Senha)
-    	TextWriter1.Close
-		Return True
+		If Not(File.Exists(File.DirRootExternal, "Logins.txt")) Then
+			Dim TextWriter1 As TextWriter
+			TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, "Logins.txt", True))
+			TextWriter1.WriteLine(Username &";"& Senha &";"& Nome)
+			TextWriter1.Close
+			Return True
+		Else
+			Dim TextReader1 As TextReader
+	    	TextReader1.Initialize(File.OpenInput(File.DirRootExternal, "Logins.txt"))
+	    	Dim linha1,linha2,linha3,linha4 As String
+			linha1 = TextReader1.ReadLine
+			
+			If linha1 = Null Then
+				Dim TextWriter1 As TextWriter
+				TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, "Logins.txt", True))
+				TextWriter1.WriteLine(Username &";"& Senha &";"& Nome)
+				TextWriter1.Close
+				Return True
+			End If
+			
+			linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
+			linha3 = linha1.SubString2(linha1.IndexOf(";")+1,linha1.LastIndexOf(";"))
+			linha4 = linha1.SubString(linha1.LastIndexOf(";")+1)
+			
+			Do While linha1 <> Null
+	        	If linha2 = Username Then
+					Msgbox("Username já existe!","Atenção!")
+					linha1 = TextReader1.ReadLine
+				Else
+					Dim TextWriter2 As TextWriter
+					TextWriter2.Initialize(File.OpenOutput(File.DirRootExternal, "Logins.txt", True))
+					TextWriter2.WriteLine(Username &";"& Senha &";"& Nome)
+					TextWriter2.Close
+					Return True
+				End If
+	    	Loop
+	    	TextReader1.Close
+		End If
 	End If
 	Return False
 End Sub
@@ -60,23 +100,31 @@ Public Sub Excluir_Login(Username As String, Senha As String) As Boolean
 	Else
 		Dim TextReader1 As TextReader
     	TextReader1.Initialize(File.OpenInput(File.DirRootExternal, "Logins.txt"))
-    	Dim line As String
+		
 		Dim texto As List
 		texto.Initialize
-    	line = TextReader1.ReadLine    
-    	Do While line <> Null
-			If line = Username & Senha Then
+		
+	    Dim linha1,linha2,linha3,linha4 As String
+		linha1 = TextReader1.ReadLine
+		linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
+		linha3 = linha1.SubString2(linha1.IndexOf(";")+1,linha1.LastIndexOf(";"))
+		linha4 = linha1.SubString(linha1.LastIndexOf(";")+1)
+
+		Do While linha1 <> Null
+			If linha2 & linha3 = Username & Senha Then
 				If File.Delete(File.DirRootExternal, "Logins.txt") Then
 					Dim TextWriter1 As TextWriter
    					TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, "Logins.txt", True))
-					TextWriter1.WriteList(texto)
-    				TextWriter1.Close
+					If texto <> Null Then
+						TextWriter1.WriteList(texto)
+    				End If
+					TextWriter1.Close
 					TextReader1.Close
 					Return True
 				End If
 			Else
-				texto.Add(line)
-        		line = TextReader1.ReadLine
+				texto.Add(linha1)
+        		linha1 = TextReader1.ReadLine
 			End If
     	Loop
 	End If
@@ -88,15 +136,16 @@ Private Sub Atualizar_Saldo(Valor As Float)
 	Saldo = Saldo + Valor
 End Sub
 
-Public Sub Salvar_Transacao (Valor As Double, Data As String, Categoria As String, Tipo As String) As Boolean
-	
+Public Sub Salvar_Transacao (valor As Object, Data As String, Categoria As String, Tipo As String) As Boolean
+	Dim valor1 As Float
+	valor1 = valor
 	If Tipo = "Crédito" Then
-		Atualizar_Saldo(Valor)
+		Atualizar_Saldo(valor1)
 	Else
-		Valor = Valor * (-1)
-		Atualizar_Saldo(Valor)
+		valor1 = valor1 * (-1)
+		Atualizar_Saldo(valor1)
 	End If
-	Lista_Extrato.Add(NumberFormat(Valor,1,2) & "|" & Data & "|" & Categoria)
+	Lista_Extrato.Add(valor1 & "|" & Data & "|" & Categoria)
 
 	Return True
 End Sub
@@ -122,6 +171,24 @@ Public Sub Remover_Transacao2 (Obj As String)
 	Lista_Extrato.RemoveAt(Pos)
 End Sub
 
-Public Sub Remover_Categoria(Pos As Int)
+Public Sub GetUsuario(Username As String) As Object
+	Dim TextReader1 As TextReader
+	TextReader1.Initialize(File.OpenInput(File.DirRootExternal, "Logins.txt"))
+	Dim linha1,linha2,linha3,linha4 As String
+	linha1 = TextReader1.ReadLine
+	If linha1 = Null Then
+		Return False
+	End If
+	linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
+	linha3 = linha1.SubString2(linha1.IndexOf(";")+1,linha1.LastIndexOf(";"))
+	linha4 = linha1.SubString(linha1.LastIndexOf(";")+1)
 	
+	Do While linha1 <> Null
+    	If linha2 = Username Then
+			Return linha1
+		End If
+    	linha1 = TextReader1.ReadLine
+	Loop
+	TextReader1.Close
+	Return Null
 End Sub

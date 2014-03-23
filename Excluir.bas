@@ -33,6 +33,8 @@ Sub Button_Excluir_Click
 	If Main.Pers.Excluir_Login(Username.Text, Senha.Text) Then
 		Msgbox("Excluido com sucesso","Atenção")
 		StartActivity("Main")
+		Main.Fazer_logout = True
+		Activity.Finish
 	End If
 End Sub
 

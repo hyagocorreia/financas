@@ -286,8 +286,9 @@ public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
 public Financas.Pessoais.lista _lista = null;
+public Financas.Pessoais.editar _editar = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Label_Saldo_Mes",mostCurrent._label_saldo_mes,"Label_SaldoAtual",mostCurrent._label_saldoatual,"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"ListView_Extrato1",mostCurrent._listview_extrato1,"ListView_Extrato2",mostCurrent._listview_extrato2,"ListView_Extrato3",mostCurrent._listview_extrato3,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Spinner_Categorias",mostCurrent._spinner_categorias,"Spinner_Meses",mostCurrent._spinner_meses,"TabHost_Transacoes",mostCurrent._tabhost_transacoes,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Label_Saldo_Mes",mostCurrent._label_saldo_mes,"Label_SaldoAtual",mostCurrent._label_saldoatual,"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"ListView_Extrato1",mostCurrent._listview_extrato1,"ListView_Extrato2",mostCurrent._listview_extrato2,"ListView_Extrato3",mostCurrent._listview_extrato3,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Spinner_Categorias",mostCurrent._spinner_categorias,"Spinner_Meses",mostCurrent._spinner_meses,"TabHost_Transacoes",mostCurrent._tabhost_transacoes,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -353,13 +354,13 @@ _valor = (double)(Double.parseDouble(_linha2));Debug.locals.put("valor", _valor)
  BA.debugLineNum = 36;BA.debugLine="If valor < 0 Then";
 Debug.ShouldStop(8);
 if (_valor<0) { 
- BA.debugLineNum = 37;BA.debugLine="ListView_Extrato1.AddTwoLinesAndBitmap(\"R$\"&NumberFormat((valor*(-1)),1,2), linha3 & \" - \" & linha4,LoadBitmap(File.DirAssets,\"debito.png\"))";
+ BA.debugLineNum = 37;BA.debugLine="ListView_Extrato1.AddTwoLinesAndBitmap(\"R$\"&NumberFormat2((valor*(-1)),1,2,2,True), linha3 & \" - \" & linha4,LoadBitmap(File.DirAssets,\"debito.png\"))";
 Debug.ShouldStop(16);
-mostCurrent._listview_extrato1.AddTwoLinesAndBitmap("R$"+anywheresoftware.b4a.keywords.Common.NumberFormat((_valor*(-1)),(int) (1),(int) (2)),_linha3+" - "+_linha4,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"debito.png").getObject()));
+mostCurrent._listview_extrato1.AddTwoLinesAndBitmap("R$"+anywheresoftware.b4a.keywords.Common.NumberFormat2((_valor*(-1)),(int) (1),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.True),_linha3+" - "+_linha4,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"debito.png").getObject()));
  }else {
- BA.debugLineNum = 39;BA.debugLine="ListView_Extrato1.AddTwoLinesAndBitmap(\"R$\"&NumberFormat(linha2,1,2), linha3 & \" - \" & linha4,LoadBitmap(File.DirAssets,\"credito.png\"))";
+ BA.debugLineNum = 39;BA.debugLine="ListView_Extrato1.AddTwoLinesAndBitmap(\"R$\"&NumberFormat2(linha2,1,2,2,True), linha3 & \" - \" & linha4,LoadBitmap(File.DirAssets,\"credito.png\"))";
 Debug.ShouldStop(64);
-mostCurrent._listview_extrato1.AddTwoLinesAndBitmap("R$"+anywheresoftware.b4a.keywords.Common.NumberFormat((double)(Double.parseDouble(_linha2)),(int) (1),(int) (2)),_linha3+" - "+_linha4,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"credito.png").getObject()));
+mostCurrent._listview_extrato1.AddTwoLinesAndBitmap("R$"+anywheresoftware.b4a.keywords.Common.NumberFormat2((double)(Double.parseDouble(_linha2)),(int) (1),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.True),_linha3+" - "+_linha4,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"credito.png").getObject()));
  };
  BA.debugLineNum = 41;BA.debugLine="ListView_Extrato1.FastScrollEnabled = True";
 Debug.ShouldStop(256);
@@ -668,13 +669,13 @@ _valor = (double)(Double.parseDouble(_linha2));Debug.locals.put("valor", _valor)
  BA.debugLineNum = 91;BA.debugLine="If valor < 0 Then";
 Debug.ShouldStop(67108864);
 if (_valor<0) { 
- BA.debugLineNum = 92;BA.debugLine="ListView_Extrato2.AddTwoLinesAndBitmap(\"R$\"&NumberFormat((valor*(-1)),1,2), linha3 & \" - \" & linha4,LoadBitmap(File.DirAssets,\"debito.png\"))";
+ BA.debugLineNum = 92;BA.debugLine="ListView_Extrato2.AddTwoLinesAndBitmap(\"R$\"&NumberFormat2((valor*(-1)),1,2,2,True), linha3 & \" - \" & linha4,LoadBitmap(File.DirAssets,\"debito.png\"))";
 Debug.ShouldStop(134217728);
-mostCurrent._listview_extrato2.AddTwoLinesAndBitmap("R$"+anywheresoftware.b4a.keywords.Common.NumberFormat((_valor*(-1)),(int) (1),(int) (2)),_linha3+" - "+_linha4,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"debito.png").getObject()));
+mostCurrent._listview_extrato2.AddTwoLinesAndBitmap("R$"+anywheresoftware.b4a.keywords.Common.NumberFormat2((_valor*(-1)),(int) (1),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.True),_linha3+" - "+_linha4,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"debito.png").getObject()));
  }else {
- BA.debugLineNum = 94;BA.debugLine="ListView_Extrato2.AddTwoLinesAndBitmap(\"R$\"&NumberFormat(linha2,1,2), linha3 & \" - \" & linha4,LoadBitmap(File.DirAssets,\"credito.png\"))";
+ BA.debugLineNum = 94;BA.debugLine="ListView_Extrato2.AddTwoLinesAndBitmap(\"R$\"&NumberFormat2(linha2,1,2,2,True), linha3 & \" - \" & linha4,LoadBitmap(File.DirAssets,\"credito.png\"))";
 Debug.ShouldStop(536870912);
-mostCurrent._listview_extrato2.AddTwoLinesAndBitmap("R$"+anywheresoftware.b4a.keywords.Common.NumberFormat((double)(Double.parseDouble(_linha2)),(int) (1),(int) (2)),_linha3+" - "+_linha4,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"credito.png").getObject()));
+mostCurrent._listview_extrato2.AddTwoLinesAndBitmap("R$"+anywheresoftware.b4a.keywords.Common.NumberFormat2((double)(Double.parseDouble(_linha2)),(int) (1),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.True),_linha3+" - "+_linha4,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"credito.png").getObject()));
  };
  BA.debugLineNum = 97;BA.debugLine="Label_Saldo_Mes.Text = \"Saldo do Mês (R$): \"& NumberFormat(valor,1,2)";
 Debug.ShouldStop(1);
