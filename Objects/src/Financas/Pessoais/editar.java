@@ -375,16 +375,16 @@ finally {
 public static String  _button_cancelar_click() throws Exception{
 		Debug.PushSubsStack("Button_Cancelar_Click (editar) ","editar",16,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 71;BA.debugLine="Sub Button_Cancelar_Click";
-Debug.ShouldStop(64);
- BA.debugLineNum = 72;BA.debugLine="StartActivity(\"Menu\")";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 77;BA.debugLine="Sub Button_Cancelar_Click";
+Debug.ShouldStop(4096);
+ BA.debugLineNum = 78;BA.debugLine="StartActivity(\"Menu\")";
+Debug.ShouldStop(8192);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
- BA.debugLineNum = 73;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 79;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(16384);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 74;BA.debugLine="End Sub";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 80;BA.debugLine="End Sub";
+Debug.ShouldStop(32768);
 return "";
 }
 catch (Exception e) {
@@ -411,29 +411,43 @@ if (mostCurrent._main._pers._excluir_login(mostCurrent._linha2,mostCurrent._linh
  BA.debugLineNum = 57;BA.debugLine="Msgbox(\"Nome: \"&EditText_Nome.Text & CRLF & \"Username: \"&EditText_UserName.Text, \"Alterado com sucesso!\")";
 Debug.ShouldStop(16777216);
 anywheresoftware.b4a.keywords.Common.Msgbox("Nome: "+mostCurrent._edittext_nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Username: "+mostCurrent._edittext_username.getText(),"Alterado com sucesso!",mostCurrent.activityBA);
- };
+ BA.debugLineNum = 58;BA.debugLine="StartActivity(\"Menu\")";
+Debug.ShouldStop(33554432);
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
+ BA.debugLineNum = 59;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(67108864);
+mostCurrent._activity.Finish();
  };
  }else {
- BA.debugLineNum = 61;BA.debugLine="If EditText_SenhaAntiga.Text = linha3 Then";
-Debug.ShouldStop(268435456);
-if ((mostCurrent._edittext_senhaantiga.getText()).equals(mostCurrent._linha3)) { 
- BA.debugLineNum = 62;BA.debugLine="If Main.Pers.Excluir_Login(linha2,linha3) AND	Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_SenhaAntiga.Text,EditText_SenhaAntiga.Text) Then";
+ BA.debugLineNum = 62;BA.debugLine="Msgbox(\"Senha incorreta!\", \"Atenção!\")";
 Debug.ShouldStop(536870912);
+anywheresoftware.b4a.keywords.Common.Msgbox("Senha incorreta!","Atenção!",mostCurrent.activityBA);
+ };
+ }else {
+ BA.debugLineNum = 65;BA.debugLine="If EditText_SenhaAntiga.Text = linha3 Then";
+Debug.ShouldStop(1);
+if ((mostCurrent._edittext_senhaantiga.getText()).equals(mostCurrent._linha3)) { 
+ BA.debugLineNum = 66;BA.debugLine="If Main.Pers.Excluir_Login(linha2,linha3) AND	Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_SenhaAntiga.Text,EditText_SenhaAntiga.Text) Then";
+Debug.ShouldStop(2);
 if (mostCurrent._main._pers._excluir_login(mostCurrent._linha2,mostCurrent._linha3) && mostCurrent._main._pers._criar_login(mostCurrent._edittext_nome.getText(),mostCurrent._edittext_username.getText(),mostCurrent._edittext_senhaantiga.getText(),mostCurrent._edittext_senhaantiga.getText())) { 
- BA.debugLineNum = 63;BA.debugLine="Msgbox(\"Nome: \"&EditText_Nome.Text & CRLF & \"Username: \"&EditText_UserName.Text, \"Alterado com sucesso!\")";
-Debug.ShouldStop(1073741824);
-anywheresoftware.b4a.keywords.Common.Msgbox("Nome: "+mostCurrent._edittext_nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Username: "+mostCurrent._edittext_username.getText(),"Alterado com sucesso!",mostCurrent.activityBA);
- };
- };
- };
- BA.debugLineNum = 67;BA.debugLine="StartActivity(\"Menu\")";
+ BA.debugLineNum = 67;BA.debugLine="Msgbox(\"Nome: \"&EditText_Nome.Text & CRLF & \"Username: \"&EditText_UserName.Text, \"Alterado com sucesso!\")";
 Debug.ShouldStop(4);
-anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
- BA.debugLineNum = 68;BA.debugLine="Activity.Finish";
+anywheresoftware.b4a.keywords.Common.Msgbox("Nome: "+mostCurrent._edittext_nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Username: "+mostCurrent._edittext_username.getText(),"Alterado com sucesso!",mostCurrent.activityBA);
+ BA.debugLineNum = 68;BA.debugLine="StartActivity(\"Menu\")";
 Debug.ShouldStop(8);
-mostCurrent._activity.Finish();
- BA.debugLineNum = 69;BA.debugLine="End Sub";
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
+ BA.debugLineNum = 69;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(16);
+mostCurrent._activity.Finish();
+ };
+ }else {
+ BA.debugLineNum = 72;BA.debugLine="Msgbox(\"Senha incorreta!\", \"Atenção!\")";
+Debug.ShouldStop(128);
+anywheresoftware.b4a.keywords.Common.Msgbox("Senha incorreta!","Atenção!",mostCurrent.activityBA);
+ };
+ };
+ BA.debugLineNum = 75;BA.debugLine="End Sub";
+Debug.ShouldStop(1024);
 return "";
 }
 catch (Exception e) {

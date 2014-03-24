@@ -58,17 +58,23 @@ Sub Button_Salvar_Click
 		If EditText_SenhaAntiga.Text = linha3 Then
 			If Main.Pers.Excluir_Login(linha2,linha3) AND	Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_NovaSenha1.Text,EditText_NovaSenha2.Text) Then
 				Msgbox("Nome: "&EditText_Nome.Text & CRLF & "Username: "&EditText_UserName.Text, "Alterado com sucesso!")
+				StartActivity("Menu")
+				Activity.Finish
 			End If
+		Else
+			Msgbox("Senha incorreta!", "Atenção!")
 		End If
 	Else
 		If EditText_SenhaAntiga.Text = linha3 Then
 			If Main.Pers.Excluir_Login(linha2,linha3) AND	Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_SenhaAntiga.Text,EditText_SenhaAntiga.Text) Then
 				Msgbox("Nome: "&EditText_Nome.Text & CRLF & "Username: "&EditText_UserName.Text, "Alterado com sucesso!")
+				StartActivity("Menu")
+				Activity.Finish		
 			End If
+		Else
+			Msgbox("Senha incorreta!", "Atenção!")
 		End If
 	End If
-	StartActivity("Menu")
-	Activity.Finish
 End Sub
 
 Sub Button_Cancelar_Click
