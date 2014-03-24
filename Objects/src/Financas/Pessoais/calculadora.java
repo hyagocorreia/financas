@@ -302,7 +302,7 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Create (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 25;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -322,7 +322,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Pause (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 33;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -339,7 +339,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Resume (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 29;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(268435456);
@@ -355,7 +355,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_divisao_click() throws Exception{
-		Debug.PushSubsStack("Button_Divisao_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Divisao_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 58;BA.debugLine="Sub Button_Divisao_Click";
 Debug.ShouldStop(33554432);
@@ -377,7 +377,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_igual_click() throws Exception{
-		Debug.PushSubsStack("Button_igual_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_igual_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 66;BA.debugLine="Sub Button_igual_Click";
 Debug.ShouldStop(2);
@@ -468,7 +468,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_multiplicacao_click() throws Exception{
-		Debug.PushSubsStack("Button_Multiplicacao_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Multiplicacao_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 44;BA.debugLine="Sub Button_Multiplicacao_Click";
 Debug.ShouldStop(2048);
@@ -490,7 +490,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_soma_click() throws Exception{
-		Debug.PushSubsStack("Button_soma_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_soma_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 37;BA.debugLine="Sub Button_soma_Click";
 Debug.ShouldStop(16);
@@ -512,7 +512,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_subtracao_click() throws Exception{
-		Debug.PushSubsStack("Button_subtracao_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_subtracao_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 51;BA.debugLine="Sub Button_subtracao_Click";
 Debug.ShouldStop(262144);
@@ -534,7 +534,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (calculadora) ","calculadora",9,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Voltar_Click (calculadora) ","calculadora",8,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 112;BA.debugLine="Sub Button_Voltar_Click";
 Debug.ShouldStop(32768);

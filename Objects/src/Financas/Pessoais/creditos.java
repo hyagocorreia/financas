@@ -297,7 +297,7 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (creditos) ","creditos",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Create (creditos) ","creditos",3,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 20;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -326,7 +326,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (creditos) ","creditos",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Pause (creditos) ","creditos",3,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 38;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -343,7 +343,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (creditos) ","creditos",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Resume (creditos) ","creditos",3,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 34;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(2);
@@ -359,7 +359,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_add_click() throws Exception{
-		Debug.PushSubsStack("Button_add_Click (creditos) ","creditos",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_add_Click (creditos) ","creditos",3,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 75;BA.debugLine="Sub Button_add_Click";
 Debug.ShouldStop(1024);
@@ -384,7 +384,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_creditar_click() throws Exception{
-		Debug.PushSubsStack("Button_Creditar_Click (creditos) ","creditos",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Creditar_Click (creditos) ","creditos",3,mostCurrent.activityBA,mostCurrent);
 try {
 double _valor_final = 0;
  BA.debugLineNum = 42;BA.debugLine="Sub Button_Creditar_Click";
@@ -438,7 +438,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (creditos) ","creditos",4,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Voltar_Click (creditos) ","creditos",3,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 64;BA.debugLine="Sub Button_Voltar_Click";
 Debug.ShouldStop(-2147483648);

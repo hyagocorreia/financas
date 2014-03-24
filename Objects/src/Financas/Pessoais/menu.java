@@ -296,7 +296,7 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (menu) ","menu",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Create (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 19;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -347,7 +347,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (menu) ","menu",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Pause (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 40;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -364,7 +364,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (menu) ","menu",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Resume (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 36;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(8);
@@ -380,7 +380,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_editarconta_click() throws Exception{
-		Debug.PushSubsStack("Button_EditarConta_Click (menu) ","menu",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_EditarConta_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 66;BA.debugLine="Sub Button_EditarConta_Click";
 Debug.ShouldStop(2);
@@ -402,7 +402,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_excluirconta_click() throws Exception{
-		Debug.PushSubsStack("Button_ExcluirConta_Click (menu) ","menu",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_ExcluirConta_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 56;BA.debugLine="Sub Button_ExcluirConta_Click";
 Debug.ShouldStop(8388608);
@@ -421,7 +421,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_financeiro_click() throws Exception{
-		Debug.PushSubsStack("Button_Financeiro_Click (menu) ","menu",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Financeiro_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 44;BA.debugLine="Sub Button_Financeiro_Click";
 Debug.ShouldStop(2048);
@@ -440,7 +440,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_logout_click() throws Exception{
-		Debug.PushSubsStack("Button_Logout_Click (menu) ","menu",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Logout_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 60;BA.debugLine="Sub Button_Logout_Click";
 Debug.ShouldStop(134217728);
@@ -465,7 +465,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_sair_click() throws Exception{
-		Debug.PushSubsStack("Button_sair_Click (menu) ","menu",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_sair_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 48;BA.debugLine="Sub Button_sair_Click";
 Debug.ShouldStop(32768);
@@ -484,7 +484,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_utilitarios_click() throws Exception{
-		Debug.PushSubsStack("Button_Utilitarios_Click (menu) ","menu",8,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Utilitarios_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 52;BA.debugLine="Sub Button_Utilitarios_Click";
 Debug.ShouldStop(524288);

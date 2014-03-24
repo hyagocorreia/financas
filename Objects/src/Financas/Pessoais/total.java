@@ -292,7 +292,7 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (total) ","total",6,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Create (total) ","total",5,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 15;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -315,7 +315,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (total) ","total",6,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Pause (total) ","total",5,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 24;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -332,7 +332,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (total) ","total",6,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Resume (total) ","total",5,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 20;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(524288);
@@ -348,7 +348,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (total) ","total",6,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Voltar_Click (total) ","total",5,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 28;BA.debugLine="Sub Button_Voltar_Click";
 Debug.ShouldStop(134217728);

@@ -37,6 +37,9 @@ Public Sub Fazer_Login (Username As String, Senha As String) As Boolean
 					Return True
 				End If
 	        	linha1 = TextReader1.ReadLine
+				linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
+				linha3 = linha1.SubString2(linha1.IndexOf(";")+1,linha1.LastIndexOf(";"))
+				linha4 = linha1.SubString(linha1.LastIndexOf(";")+1)
 	    	Loop
 	    	TextReader1.Close
 		End If
