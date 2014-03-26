@@ -26,7 +26,7 @@ End Sub
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout_Editar")
 	
-	linha1 = Main.Pers.GetUsuario(Main.UN)
+	linha1 = Main.Pers.GetUsuario(Main.Pers.Logado)
 	linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
 	linha3 = linha1.SubString2(linha1.IndexOf(";")+1,linha1.LastIndexOf(";"))
 	linha4 = linha1.SubString(linha1.LastIndexOf(";")+1)

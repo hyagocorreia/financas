@@ -36,8 +36,9 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Sub Button_Adicionar_Click
-	
-	Lista.Lista_Categorias.Add(Categoria_Text.Text)
+	If Main.Pers.Salvar_Categoria(Categoria_Text.Text) Then
+		Msgbox("Categoria adicionada com sucesso!","Fine")
+	End If
 	Activity.Finish
 	If nome_classe = "débito" Then
 		StartActivity("Debitos")
@@ -49,6 +50,5 @@ Sub Button_Adicionar_Click
 	
 End Sub
 Sub Button_Voltar_Click
-
 	Activity.Finish
 End Sub

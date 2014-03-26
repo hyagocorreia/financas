@@ -3,9 +3,7 @@ Version=3.2
 @EndOfDesignText@
 
 Sub Class_Globals
-	Dim Lista_Extrato As List
-	Lista_Extrato.Initialize
-	Dim Saldo As Float
+
 End Sub
 
 Public Sub Initialize
@@ -135,11 +133,75 @@ Public Sub Excluir_Login(Username As String, Senha As String) As Boolean
 	Return False
 End Sub
 
-Private Sub Atualizar_Saldo(Valor As Float)
-	Saldo = Saldo + Valor
+Private Sub Atualizar_Saldo(valor As Float)
+	Dim tr As TextReader
+	Dim tw As TextWriter
+	If Not(File.Exists(File.DirRootExternal,Logado&"saldo.txt")) Then
+		tw.Initialize(File.OpenOutput(File.DirRootExternal,Logado&"saldo.txt",True))
+		tw.WriteLine("0")
+		tw.Close
+	End If
+	tr.Initialize(File.OpenInput(File.DirRootExternal,Logado&"saldo.txt"))
+	Dim saldoTemp As Double
+	Dim abc As String = tr.ReadLine
+	tr.Close
+	saldoTemp = abc
+	File.Delete(File.DirRootExternal,Logado&"saldo.txt")
+	tw.Initialize(File.OpenOutput(File.DirRootExternal,Logado&"saldo.txt",True))
+	Dim Saldo As Double
+
+	Saldo = saldoTemp + valor
+	
+	tw.WriteLine(Saldo)
+	tw.Close
 End Sub
 
-Public Sub Salvar_Transacao (valor As Object, Data As String, Categoria As String, Tipo As String) As Boolean
+Public Sub GetSaldo As String
+	Dim tr As TextReader
+	Dim tw As TextWriter
+	If Not(File.Exists(File.DirRootExternal,Logado&"saldo.txt")) Then
+		tw.Initialize(File.OpenOutput(File.DirRootExternal,Logado&"saldo.txt",True))
+		tw.Close
+		Return 0
+	End If
+	tr.Initialize(File.OpenInput(File.DirRootExternal,Logado&"saldo.txt"))	
+	Dim saldo As String
+	saldo = tr.ReadLine
+	Return saldo
+End Sub
+
+Public Sub Logado As String
+	Dim TextReader1 As TextReader
+	TextReader1.Initialize(File.OpenInput(File.DirRootExternal,"logado.txt"))
+	Dim usuario As String
+	usuario = TextReader1.ReadLine
+	Return usuario
+End Sub
+
+Public Sub GetTransacoes(Usuario As String) As List
+	Dim TextReader1 As TextReader
+	If Not(File.Exists(File.DirRootExternal,Logado&"transacoes.txt")) Then
+		Dim tw As TextWriter
+		tw.Initialize(File.OpenOutput(File.DirRootExternal,Logado&"transacoes.txt",True))
+		tw.Close
+	End If
+	TextReader1.Initialize(File.OpenInput(File.DirRootExternal,Logado&"transacoes.txt"))
+	Dim transacao,linha1,linha2 As String
+	Dim transacoes As List
+	transacoes.Initialize
+	linha1 = TextReader1.ReadLine
+	Do While linha1 <> Null
+		linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
+		If linha2 = Usuario Then
+			transacao = linha1.SubString(linha1.IndexOf(";")+1)
+		End If
+		linha1 = TextReader1.ReadLine
+		transacoes.Add(transacao)
+	Loop
+	Return transacoes
+End Sub
+
+Public Sub Salvar_Transacao(usuario As String, valor As Object, Data As String, Categoria As String, Tipo As String) As Boolean
 	Dim valor1 As Float
 	valor1 = valor
 	If Tipo = "Crédito" Then
@@ -148,30 +210,36 @@ Public Sub Salvar_Transacao (valor As Object, Data As String, Categoria As Strin
 		valor1 = valor1 * (-1)
 		Atualizar_Saldo(valor1)
 	End If
-	Lista_Extrato.Add(valor1 & "|" & Data & "|" & Categoria)
-
+	Dim TextWriter1 As TextWriter
+	TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal,Logado&"transacoes.txt",True))
+	TextWriter1.WriteLine(usuario &";"& valor1 &";"& Data &";"& Categoria)
+	TextWriter1.Close
 	Return True
 End Sub
 
 Public Sub Remover_Transacao (Pos As Int)
-	Dim Linha As String = Lista_Extrato.Get(Pos)
-	Dim i As Int = Linha.IndexOf("|")
-	Dim Valor As Float = Linha.SubString2(0,i)
+	Dim linha1,linha2 As String
+	Dim lista As List
+	Dim TextReader1 As TextReader
+	Dim TextWriter1 As TextWriter
 	
-	Saldo = Saldo - Valor
-
-	Lista_Extrato.RemoveAt(Pos)
-End Sub
-
-Public Sub Remover_Transacao2 (Obj As String)
-	Dim Pos As Int = Lista_Extrato.IndexOf(Obj)
-	Dim Linha As String = Lista_Extrato.Get(Pos)
-	Dim i As Int = Linha.IndexOf("|")
-	Dim Valor As Float = Linha.SubString2(0,i)
+	linha1 = GetTransacoes(Logado).Get(Pos)
+	linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
 	
-	Saldo = Saldo - Valor
-
-	Lista_Extrato.RemoveAt(Pos)
+	TextReader1.Initialize(File.OpenInput(File.DirRootExternal,Logado&"transacoes.txt"))
+	lista = TextReader1.ReadList
+	TextReader1.Close
+	
+	File.Delete(File.DirRootExternal,Logado&"transacoes.txt")
+	
+	lista.RemoveAt(Pos)
+	
+	TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal,Logado&"transacoes.txt",True))
+	TextWriter1.WriteList(lista)
+	Dim Valor As Float = linha2
+	TextWriter1.Close
+	Atualizar_Saldo(-Valor)
+	
 End Sub
 
 Public Sub GetUsuario(Username As String) As Object
@@ -194,4 +262,54 @@ Public Sub GetUsuario(Username As String) As Object
 	Loop
 	TextReader1.Close
 	Return Null
+End Sub
+
+Public Sub Salvar_Categoria(Categoria As String) As Boolean
+	If Categoria = "" Then
+		Msgbox("Categoria está em branco!", "Atenção!")
+	Else
+		Dim TextWriter1 As TextWriter
+		TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal, "categ.txt", True))
+		TextWriter1.WriteLine(Categoria)
+		TextWriter1.Close
+		Return True
+	End If
+	Return False
+End Sub
+
+Public Sub Deletar_Categoria(Categoria As String) As Boolean
+	Dim TextReader1 As TextReader
+	Dim TextWriter1 As TextWriter
+	If Categoria = "Agua" OR Categoria = "Luz" OR Categoria = "Telefone" OR Categoria = "Interet" OR Categoria = "TV" OR Categoria = "Salario" OR Categoria = "Alimentacao" OR Categoria = "Combustivel" OR Categoria = "Construcao" Then
+		Return False
+	Else
+		TextReader1.Initialize(File.OpenInput(File.DirRootExternal,"categ.txt"))
+		Dim Lista As List
+		Lista.Initialize
+		Lista.AddAll(TextReader1.ReadList)
+		File.Delete(File.DirRootExternal,"categ.txt")
+		TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal,"categ.txt",True))
+		TextWriter1.WriteList(Lista)
+		TextReader1.Close
+		TextWriter1.Close
+		Return True
+	End If
+End Sub
+
+Public Sub GetCategorias As List
+	Dim TextReader1,TextReader2 As TextReader
+	TextReader1.Initialize(File.OpenInput(File.DirAssets,"categ.txt"))
+	If Not(File.Exists(File.DirRootExternal,"categ.txt")) Then
+		Dim TextWriter1 As TextWriter
+		TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal,"categ.txt",True))
+		TextWriter1.Close
+	End If
+	TextReader2.Initialize(File.OpenInput(File.DirRootExternal,"categ.txt"))
+	Dim Lista As List
+	Lista.Initialize
+	Lista.AddAll(TextReader1.ReadList)
+	Lista.AddAll(TextReader2.ReadList)
+	TextReader1.Close
+	TextReader2.Close
+	Return Lista
 End Sub

@@ -1,0 +1,10 @@
+Selecione a categoria
+Agua
+Luz
+Telefone
+Internet
+TV
+Salario
+Alimentacao
+Combustivel
+Construcao

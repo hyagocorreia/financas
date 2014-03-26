@@ -289,9 +289,8 @@ public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
-public Financas.Pessoais.lista _lista = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Cancelar",mostCurrent._button_cancelar,"Button_Salvar",mostCurrent._button_salvar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"CheckBox_AlterarSenha",mostCurrent._checkbox_alterarsenha,"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"EditText_Nome",mostCurrent._edittext_nome,"EditText_NovaSenha1",mostCurrent._edittext_novasenha1,"EditText_NovaSenha2",mostCurrent._edittext_novasenha2,"EditText_SenhaAntiga",mostCurrent._edittext_senhaantiga,"EditText_UserName",mostCurrent._edittext_username,"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"linha1",mostCurrent._linha1,"linha2",mostCurrent._linha2,"linha3",mostCurrent._linha3,"linha4",mostCurrent._linha4,"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Cancelar",mostCurrent._button_cancelar,"Button_Salvar",mostCurrent._button_salvar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"CheckBox_AlterarSenha",mostCurrent._checkbox_alterarsenha,"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"EditText_Nome",mostCurrent._edittext_nome,"EditText_NovaSenha1",mostCurrent._edittext_novasenha1,"EditText_NovaSenha2",mostCurrent._edittext_novasenha2,"EditText_SenhaAntiga",mostCurrent._edittext_senhaantiga,"EditText_UserName",mostCurrent._edittext_username,"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"linha1",mostCurrent._linha1,"linha2",mostCurrent._linha2,"linha3",mostCurrent._linha3,"linha4",mostCurrent._linha4,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -302,7 +301,7 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (editar) ","editar",16,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Create (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 23;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -310,9 +309,9 @@ Debug.ShouldStop(4194304);
  BA.debugLineNum = 24;BA.debugLine="Activity.LoadLayout(\"Layout_Editar\")";
 Debug.ShouldStop(8388608);
 mostCurrent._activity.LoadLayout("Layout_Editar",mostCurrent.activityBA);
- BA.debugLineNum = 26;BA.debugLine="linha1 = Main.Pers.GetUsuario(Main.UN)";
+ BA.debugLineNum = 26;BA.debugLine="linha1 = Main.Pers.GetUsuario(Main.Pers.Logado)";
 Debug.ShouldStop(33554432);
-mostCurrent._linha1 = BA.ObjectToString(mostCurrent._main._pers._getusuario(mostCurrent._main._un));
+mostCurrent._linha1 = BA.ObjectToString(mostCurrent._main._pers._getusuario(mostCurrent._main._pers._logado()));
  BA.debugLineNum = 27;BA.debugLine="linha2 = linha1.SubString2(0,linha1.IndexOf(\";\"))";
 Debug.ShouldStop(67108864);
 mostCurrent._linha2 = mostCurrent._linha1.substring((int) (0),mostCurrent._linha1.indexOf(";"));
@@ -340,7 +339,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (editar) ","editar",16,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Pause (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 39;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -357,7 +356,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (editar) ","editar",16,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Activity_Resume (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 35;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(4);
@@ -373,7 +372,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_cancelar_click() throws Exception{
-		Debug.PushSubsStack("Button_Cancelar_Click (editar) ","editar",16,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Cancelar_Click (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 77;BA.debugLine="Sub Button_Cancelar_Click";
 Debug.ShouldStop(4096);
@@ -395,7 +394,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _button_salvar_click() throws Exception{
-		Debug.PushSubsStack("Button_Salvar_Click (editar) ","editar",16,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("Button_Salvar_Click (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
 try {
  BA.debugLineNum = 53;BA.debugLine="Sub Button_Salvar_Click";
 Debug.ShouldStop(1048576);
@@ -458,7 +457,7 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _checkbox_alterarsenha_checkedchange(boolean _checked) throws Exception{
-		Debug.PushSubsStack("CheckBox_AlterarSenha_CheckedChange (editar) ","editar",16,mostCurrent.activityBA,mostCurrent);
+		Debug.PushSubsStack("CheckBox_AlterarSenha_CheckedChange (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("Checked", _checked);
  BA.debugLineNum = 43;BA.debugLine="Sub CheckBox_AlterarSenha_CheckedChange(Checked As Boolean)";

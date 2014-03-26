@@ -282,10 +282,9 @@ public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
-public Financas.Pessoais.lista _lista = null;
 public Financas.Pessoais.editar _editar = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_EditarConta",mostCurrent._button_editarconta,"Button_ExcluirConta",mostCurrent._button_excluirconta,"Button_Financeiro",mostCurrent._button_financeiro,"Button_Logout",mostCurrent._button_logout,"Button_sair",mostCurrent._button_sair,"Button_Utilitarios",mostCurrent._button_utilitarios,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_EditarConta",mostCurrent._button_editarconta,"Button_ExcluirConta",mostCurrent._button_excluirconta,"Button_Financeiro",mostCurrent._button_financeiro,"Button_Logout",mostCurrent._button_logout,"Button_sair",mostCurrent._button_sair,"Button_Utilitarios",mostCurrent._button_utilitarios,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -304,39 +303,8 @@ Debug.ShouldStop(262144);
  BA.debugLineNum = 20;BA.debugLine="Activity.LoadLayout(\"Layout_Menu\")";
 Debug.ShouldStop(524288);
 mostCurrent._activity.LoadLayout("Layout_Menu",mostCurrent.activityBA);
- BA.debugLineNum = 22;BA.debugLine="If Lista.Lista_Categorias.Size = 0 Then";
-Debug.ShouldStop(2097152);
-if (mostCurrent._lista._lista_categorias.getSize()==0) { 
- BA.debugLineNum = 23;BA.debugLine="Lista.Lista_Categorias.Add(\"Selecione Categoria\")";
-Debug.ShouldStop(4194304);
-mostCurrent._lista._lista_categorias.Add((Object)("Selecione Categoria"));
- BA.debugLineNum = 24;BA.debugLine="Lista.Lista_Categorias.Add(\"Água\")";
-Debug.ShouldStop(8388608);
-mostCurrent._lista._lista_categorias.Add((Object)("Água"));
- BA.debugLineNum = 25;BA.debugLine="Lista.Lista_Categorias.Add(\"Gás\")";
-Debug.ShouldStop(16777216);
-mostCurrent._lista._lista_categorias.Add((Object)("Gás"));
- BA.debugLineNum = 26;BA.debugLine="Lista.Lista_Categorias.Add(\"Luz\")";
-Debug.ShouldStop(33554432);
-mostCurrent._lista._lista_categorias.Add((Object)("Luz"));
- BA.debugLineNum = 27;BA.debugLine="Lista.Lista_Categorias.Add(\"Combustível\")";
-Debug.ShouldStop(67108864);
-mostCurrent._lista._lista_categorias.Add((Object)("Combustível"));
- BA.debugLineNum = 28;BA.debugLine="Lista.Lista_Categorias.Add(\"Vestuário\")";
-Debug.ShouldStop(134217728);
-mostCurrent._lista._lista_categorias.Add((Object)("Vestuário"));
- BA.debugLineNum = 29;BA.debugLine="Lista.Lista_Categorias.Add(\"Alimentação\")";
-Debug.ShouldStop(268435456);
-mostCurrent._lista._lista_categorias.Add((Object)("Alimentação"));
- BA.debugLineNum = 30;BA.debugLine="Lista.Lista_Categorias.Add(\"Móveis\")";
-Debug.ShouldStop(536870912);
-mostCurrent._lista._lista_categorias.Add((Object)("Móveis"));
- BA.debugLineNum = 31;BA.debugLine="Lista.Lista_Categorias.Add(\"Construção\")";
-Debug.ShouldStop(1073741824);
-mostCurrent._lista._lista_categorias.Add((Object)("Construção"));
- };
- BA.debugLineNum = 34;BA.debugLine="End Sub";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 21;BA.debugLine="End Sub";
+Debug.ShouldStop(1048576);
 return "";
 }
 catch (Exception e) {
@@ -350,10 +318,10 @@ public static String  _activity_pause(boolean _userclosed) throws Exception{
 		Debug.PushSubsStack("Activity_Pause (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 40;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(128);
- BA.debugLineNum = 42;BA.debugLine="End Sub";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 27;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(67108864);
+ BA.debugLineNum = 29;BA.debugLine="End Sub";
+Debug.ShouldStop(268435456);
 return "";
 }
 catch (Exception e) {
@@ -366,10 +334,10 @@ finally {
 public static String  _activity_resume() throws Exception{
 		Debug.PushSubsStack("Activity_Resume (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 36;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(8);
- BA.debugLineNum = 38;BA.debugLine="End Sub";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 23;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(4194304);
+ BA.debugLineNum = 25;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 return "";
 }
 catch (Exception e) {
@@ -382,16 +350,16 @@ finally {
 public static String  _button_editarconta_click() throws Exception{
 		Debug.PushSubsStack("Button_EditarConta_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 66;BA.debugLine="Sub Button_EditarConta_Click";
-Debug.ShouldStop(2);
- BA.debugLineNum = 67;BA.debugLine="StartActivity(\"Editar\")";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 53;BA.debugLine="Sub Button_EditarConta_Click";
+Debug.ShouldStop(1048576);
+ BA.debugLineNum = 54;BA.debugLine="StartActivity(\"Editar\")";
+Debug.ShouldStop(2097152);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Editar"));
- BA.debugLineNum = 68;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 55;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(4194304);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 69;BA.debugLine="End Sub";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 56;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return "";
 }
 catch (Exception e) {
@@ -404,13 +372,13 @@ finally {
 public static String  _button_excluirconta_click() throws Exception{
 		Debug.PushSubsStack("Button_ExcluirConta_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 56;BA.debugLine="Sub Button_ExcluirConta_Click";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 57;BA.debugLine="StartActivity(\"Excluir\")";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 43;BA.debugLine="Sub Button_ExcluirConta_Click";
+Debug.ShouldStop(1024);
+ BA.debugLineNum = 44;BA.debugLine="StartActivity(\"Excluir\")";
+Debug.ShouldStop(2048);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Excluir"));
- BA.debugLineNum = 58;BA.debugLine="End Sub";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 45;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return "";
 }
 catch (Exception e) {
@@ -423,13 +391,13 @@ finally {
 public static String  _button_financeiro_click() throws Exception{
 		Debug.PushSubsStack("Button_Financeiro_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 44;BA.debugLine="Sub Button_Financeiro_Click";
-Debug.ShouldStop(2048);
- BA.debugLineNum = 45;BA.debugLine="StartActivity(\"Financeiro\")";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 31;BA.debugLine="Sub Button_Financeiro_Click";
+Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 32;BA.debugLine="StartActivity(\"Financeiro\")";
+Debug.ShouldStop(-2147483648);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Financeiro"));
- BA.debugLineNum = 46;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 33;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return "";
 }
 catch (Exception e) {
@@ -442,19 +410,19 @@ finally {
 public static String  _button_logout_click() throws Exception{
 		Debug.PushSubsStack("Button_Logout_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 60;BA.debugLine="Sub Button_Logout_Click";
-Debug.ShouldStop(134217728);
- BA.debugLineNum = 61;BA.debugLine="Main.Fazer_logout = True";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 47;BA.debugLine="Sub Button_Logout_Click";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 48;BA.debugLine="Main.Fazer_logout = True";
+Debug.ShouldStop(32768);
 mostCurrent._main._fazer_logout = anywheresoftware.b4a.keywords.Common.True;
- BA.debugLineNum = 62;BA.debugLine="StartActivity(\"Main\")";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 49;BA.debugLine="StartActivity(\"Main\")";
+Debug.ShouldStop(65536);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Main"));
- BA.debugLineNum = 63;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 50;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(131072);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 64;BA.debugLine="End Sub";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 51;BA.debugLine="End Sub";
+Debug.ShouldStop(262144);
 return "";
 }
 catch (Exception e) {
@@ -467,13 +435,13 @@ finally {
 public static String  _button_sair_click() throws Exception{
 		Debug.PushSubsStack("Button_sair_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 48;BA.debugLine="Sub Button_sair_Click";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 49;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 35;BA.debugLine="Sub Button_sair_Click";
+Debug.ShouldStop(4);
+ BA.debugLineNum = 36;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(8);
 mostCurrent._activity.Finish();
- BA.debugLineNum = 50;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 37;BA.debugLine="End Sub";
+Debug.ShouldStop(16);
 return "";
 }
 catch (Exception e) {
@@ -486,13 +454,13 @@ finally {
 public static String  _button_utilitarios_click() throws Exception{
 		Debug.PushSubsStack("Button_Utilitarios_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 52;BA.debugLine="Sub Button_Utilitarios_Click";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 53;BA.debugLine="StartActivity(\"Utilitarios\")";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 39;BA.debugLine="Sub Button_Utilitarios_Click";
+Debug.ShouldStop(64);
+ BA.debugLineNum = 40;BA.debugLine="StartActivity(\"Utilitarios\")";
+Debug.ShouldStop(128);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Utilitarios"));
- BA.debugLineNum = 54;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 41;BA.debugLine="End Sub";
+Debug.ShouldStop(256);
 return "";
 }
 catch (Exception e) {

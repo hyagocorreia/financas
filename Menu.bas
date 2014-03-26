@@ -21,19 +21,6 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout_Menu")
-	
-	If Lista.Lista_Categorias.Size = 0 Then
-		Lista.Lista_Categorias.Add("Selecione Categoria")
-		Lista.Lista_Categorias.Add("Água")
-		Lista.Lista_Categorias.Add("Gás")
-		Lista.Lista_Categorias.Add("Luz")
-		Lista.Lista_Categorias.Add("Combustível")
-		Lista.Lista_Categorias.Add("Vestuário")
-		Lista.Lista_Categorias.Add("Alimentação")
-		Lista.Lista_Categorias.Add("Móveis")
-		Lista.Lista_Categorias.Add("Construção")
-	End If
-	
 End Sub
 
 Sub Activity_Resume

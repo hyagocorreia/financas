@@ -278,10 +278,9 @@ public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
-public Financas.Pessoais.lista _lista = null;
 public Financas.Pessoais.editar _editar = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"ListView_Categorias",mostCurrent._listview_categorias,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"ListView_Categorias",mostCurrent._listview_categorias,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -301,16 +300,16 @@ Debug.ShouldStop(65536);
  BA.debugLineNum = 18;BA.debugLine="Activity.LoadLayout(\"Layout_Remover_Categoria\")";
 Debug.ShouldStop(131072);
 mostCurrent._activity.LoadLayout("Layout_Remover_Categoria",mostCurrent.activityBA);
- BA.debugLineNum = 20;BA.debugLine="For i = 0 To Lista.Lista_Categorias.Size -1";
+ BA.debugLineNum = 20;BA.debugLine="For i = 0 To Main.Pers.GetCategorias.Size -1";
 Debug.ShouldStop(524288);
 {
 final int step8 = 1;
-final int limit8 = (int) (mostCurrent._lista._lista_categorias.getSize()-1);
+final int limit8 = (int) (mostCurrent._main._pers._getcategorias().getSize()-1);
 for (_i = (int) (0); (step8 > 0 && _i <= limit8) || (step8 < 0 && _i >= limit8); _i = ((int)(0 + _i + step8))) {
 Debug.locals.put("i", _i);
- BA.debugLineNum = 21;BA.debugLine="ListView_Categorias.AddSingleLine(Lista.Lista_Categorias.Get(i))";
+ BA.debugLineNum = 21;BA.debugLine="ListView_Categorias.AddSingleLine(Main.Pers.GetCategorias.Get(i))";
 Debug.ShouldStop(1048576);
-mostCurrent._listview_categorias.AddSingleLine(BA.ObjectToString(mostCurrent._lista._lista_categorias.Get(_i)));
+mostCurrent._listview_categorias.AddSingleLine(BA.ObjectToString(mostCurrent._main._pers._getcategorias().Get(_i)));
  BA.debugLineNum = 22;BA.debugLine="ListView_Categorias.FastScrollEnabled = True";
 Debug.ShouldStop(2097152);
 mostCurrent._listview_categorias.setFastScrollEnabled(anywheresoftware.b4a.keywords.Common.True);
@@ -399,15 +398,23 @@ Debug.ShouldStop(32);
  BA.debugLineNum = 39;BA.debugLine="If Msgbox2(\"Deseja excluir a categoria?\", \"Excluir\", \"Sim\", \"\", \"Não\", Null) = DialogResponse.POSITIVE Then";
 Debug.ShouldStop(64);
 if (anywheresoftware.b4a.keywords.Common.Msgbox2("Deseja excluir a categoria?","Excluir","Sim","","Não",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null),mostCurrent.activityBA)==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
- BA.debugLineNum = 40;BA.debugLine="Lista.Lista_Categorias.RemoveAt(Position)";
+ BA.debugLineNum = 40;BA.debugLine="If Main.Pers.Deletar_Categoria(Value) Then";
 Debug.ShouldStop(128);
-mostCurrent._lista._lista_categorias.RemoveAt(_position);
- BA.debugLineNum = 41;BA.debugLine="ListView_Categorias.RemoveAt(Position)";
+if (mostCurrent._main._pers._deletar_categoria(BA.ObjectToString(_value))) { 
+ BA.debugLineNum = 41;BA.debugLine="Msgbox(\"Categoria: \" & Value & \"foi removida com sucesso!\", \"Fine\")";
 Debug.ShouldStop(256);
+anywheresoftware.b4a.keywords.Common.Msgbox("Categoria: "+BA.ObjectToString(_value)+"foi removida com sucesso!","Fine",mostCurrent.activityBA);
+ BA.debugLineNum = 42;BA.debugLine="ListView_Categorias.RemoveAt(Position)";
+Debug.ShouldStop(512);
 mostCurrent._listview_categorias.RemoveAt(_position);
+ }else {
+ BA.debugLineNum = 44;BA.debugLine="Msgbox(\"Categorias predefinidas não podem ser deletadas!\", \"ATENÇÃO!\")";
+Debug.ShouldStop(2048);
+anywheresoftware.b4a.keywords.Common.Msgbox("Categorias predefinidas não podem ser deletadas!","ATENÇÃO!",mostCurrent.activityBA);
  };
- BA.debugLineNum = 43;BA.debugLine="End Sub";
-Debug.ShouldStop(1024);
+ };
+ BA.debugLineNum = 47;BA.debugLine="End Sub";
+Debug.ShouldStop(16384);
 return "";
 }
 catch (Exception e) {

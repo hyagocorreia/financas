@@ -26,7 +26,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	Data.Text = DateTime.Date(DateTime.Now)
 	'Lista.Lista_Categorias.Initialize
 
-	Categoria.AddAll(Lista.Lista_Categorias)
+	Categoria.AddAll(Main.Pers.GetCategorias)
 
 '	If Lista.Lista_Categorias.Size > 1 Then
 '		
@@ -51,7 +51,7 @@ Sub Button_Creditar_Click
 		
 		Msgbox("Valor: " & NumberFormat2(Valor_final,1,2,2,True) & CRLF & "Categoria: " & Categoria.SelectedItem & CRLF & "Data: " & Data.Text,"Creditado com Sucesso!")
 		
-		Main.Pers.Salvar_Transacao(Valor_final, Data.Text, Categoria.SelectedItem, "Crédito")
+		Main.Pers.Salvar_Transacao(Main.Pers.Logado,Valor_final, Data.Text, Categoria.SelectedItem, "Crédito")
 		
 		result = Msgbox2("Deseja fazer outra operação?","Aviso!","Sim","","Nao",Null)
 			

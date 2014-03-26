@@ -280,10 +280,9 @@ public Financas.Pessoais.calculadora _calculadora = null;
 public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
-public Financas.Pessoais.lista _lista = null;
 public Financas.Pessoais.editar _editar = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"Button_Adicionar",mostCurrent._button_adicionar,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Categoria_Text",mostCurrent._categoria_text,"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Lista",Debug.moduleToString(Financas.Pessoais.lista.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"nome_classe",_nome_classe,"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"Button_Adicionar",mostCurrent._button_adicionar,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Categoria_Text",mostCurrent._categoria_text,"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"nome_classe",_nome_classe,"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -351,32 +350,36 @@ public static String  _button_adicionar_click() throws Exception{
 try {
  BA.debugLineNum = 35;BA.debugLine="Sub Button_Adicionar_Click";
 Debug.ShouldStop(4);
- BA.debugLineNum = 37;BA.debugLine="Lista.Lista_Categorias.Add(Categoria_Text.Text)";
+ BA.debugLineNum = 36;BA.debugLine="If Main.Pers.Salvar_Categoria(Categoria_Text.Text) Then";
+Debug.ShouldStop(8);
+if (mostCurrent._main._pers._salvar_categoria(mostCurrent._categoria_text.getText())) { 
+ BA.debugLineNum = 37;BA.debugLine="Msgbox(\"Categoria adicionada com sucesso!\",\"Fine\")";
 Debug.ShouldStop(16);
-mostCurrent._lista._lista_categorias.Add((Object)(mostCurrent._categoria_text.getText()));
- BA.debugLineNum = 38;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(32);
-mostCurrent._activity.Finish();
- BA.debugLineNum = 39;BA.debugLine="If nome_classe = \"débito\" Then";
+anywheresoftware.b4a.keywords.Common.Msgbox("Categoria adicionada com sucesso!","Fine",mostCurrent.activityBA);
+ };
+ BA.debugLineNum = 39;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(64);
-if ((_nome_classe).equals("débito")) { 
- BA.debugLineNum = 40;BA.debugLine="StartActivity(\"Debitos\")";
+mostCurrent._activity.Finish();
+ BA.debugLineNum = 40;BA.debugLine="If nome_classe = \"débito\" Then";
 Debug.ShouldStop(128);
+if ((_nome_classe).equals("débito")) { 
+ BA.debugLineNum = 41;BA.debugLine="StartActivity(\"Debitos\")";
+Debug.ShouldStop(256);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Debitos"));
  }else 
-{ BA.debugLineNum = 41;BA.debugLine="Else If nome_classe = \"crédito\" Then";
-Debug.ShouldStop(256);
-if ((_nome_classe).equals("crédito")) { 
- BA.debugLineNum = 42;BA.debugLine="StartActivity(\"Creditos\")";
+{ BA.debugLineNum = 42;BA.debugLine="Else If nome_classe = \"crédito\" Then";
 Debug.ShouldStop(512);
+if ((_nome_classe).equals("crédito")) { 
+ BA.debugLineNum = 43;BA.debugLine="StartActivity(\"Creditos\")";
+Debug.ShouldStop(1024);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Creditos"));
  }else {
- BA.debugLineNum = 44;BA.debugLine="StartActivity(\"Financeiro\")";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 45;BA.debugLine="StartActivity(\"Financeiro\")";
+Debug.ShouldStop(4096);
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Financeiro"));
  }};
- BA.debugLineNum = 47;BA.debugLine="End Sub";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 48;BA.debugLine="End Sub";
+Debug.ShouldStop(32768);
 return "";
 }
 catch (Exception e) {
@@ -389,8 +392,8 @@ finally {
 public static String  _button_voltar_click() throws Exception{
 		Debug.PushSubsStack("Button_Voltar_Click (addcategoria) ","addcategoria",12,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 48;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 49;BA.debugLine="Sub Button_Voltar_Click";
+Debug.ShouldStop(65536);
  BA.debugLineNum = 50;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(131072);
 mostCurrent._activity.Finish();

@@ -1,6 +1,6 @@
 ﻿Version=3.2
 IconFile=
-NumberOfModules=16
+NumberOfModules=15
 Module1=Cadastro
 ModuleVisible1=1
 Module2=Financeiro
@@ -27,12 +27,10 @@ Module12=AddCategoria
 ModuleVisible12=1
 Module13=Remover_Categoria
 ModuleVisible13=1
-Module14=Lista
+Module14=Editar
 ModuleVisible14=1
 Module15=SearchView
 ModuleVisible15=1
-Module16=Editar
-ModuleVisible16=1
 Package=Financas.Pessoais
 DoNotOverwriteManifest=False
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
@@ -74,7 +72,6 @@ Library4=stringutils
 Sub Process_Globals
 	Dim Pers As Persistencia
 	Dim Fazer_logout As Boolean
-	Dim UN,S As String
 End Sub
 
 Sub Globals
@@ -86,6 +83,9 @@ Sub Globals
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
+	If File.Exists(File.DirRootExternal,"logado.txt") Then
+		File.Delete(File.DirRootExternal,"logado.txt")
+	End If
 	If FirstTime Then
 		FirstTime = False
 		Activity.LoadLayout("Layout_Login")
@@ -117,9 +117,11 @@ End Sub
 
 Sub Button_entrar_Click
 	Pers.Initialize
-	UN = Username.Text
-	S = Senha.Text
 	If Pers.Fazer_Login(Username.Text, Senha.Text) Then
+		Dim TextWriter1 As TextWriter
+		TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal,"logado.txt",True))
+		TextWriter1.Write(Username.Text)
+		TextWriter1.Close
 		StartActivity("Menu")
 		Activity.Finish
 	Else

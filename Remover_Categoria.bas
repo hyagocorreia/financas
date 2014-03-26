@@ -20,8 +20,8 @@ End Sub
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout_Remover_Categoria")
 
-	For i = 0 To Lista.Lista_Categorias.Size -1
-		ListView_Categorias.AddSingleLine(Lista.Lista_Categorias.Get(i))
+	For i = 0 To Main.Pers.GetCategorias.Size -1
+		ListView_Categorias.AddSingleLine(Main.Pers.GetCategorias.Get(i))
 		ListView_Categorias.FastScrollEnabled = True
 	Next
 End Sub
@@ -40,7 +40,11 @@ End Sub
 
 Sub ListView_Categorias_ItemClick (Position As Int, Value As Object)
 	If Msgbox2("Deseja excluir a categoria?", "Excluir", "Sim", "", "Não", Null) = DialogResponse.POSITIVE Then
-		Lista.Lista_Categorias.RemoveAt(Position)
-		ListView_Categorias.RemoveAt(Position)
+		If Main.Pers.Deletar_Categoria(Value) Then
+			Msgbox("Categoria: " & Value & "foi removida com sucesso!", "Fine")
+			ListView_Categorias.RemoveAt(Position)
+		Else
+			Msgbox("Categorias predefinidas não podem ser deletadas!", "ATENÇÃO!")
+		End If
 	End If	
 End Sub

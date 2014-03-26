@@ -25,15 +25,17 @@ End Sub
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout_Extrato")
 
-	Spinner_Categorias.AddAll(Lista.Lista_Categorias)
-	Label_SaldoAtual.Text = "Saldo Atual (R$): " & NumberFormat(Main.Pers.Saldo,1,2)
-	
-	For i = 0 To Main.Pers.Lista_Extrato.Size -1
+	Spinner_Categorias.AddAll(Main.Pers.GetCategorias)
+	Label_SaldoAtual.Text = "Saldo Atual (R$): " & NumberFormat(Main.Pers.GetSaldo,1,2)
+	Dim transacoes As List
+	transacoes.Initialize
+	transacoes = Main.Pers.GetTransacoes(Main.Pers.Logado)
+	For i = 0 To transacoes.Size -1
 		Dim linha1,linha2,linha3,linha4 As String
-		linha1 = Main.Pers.Lista_Extrato.Get(i)
-		linha2 = linha1.SubString2(0,linha1.IndexOf("|"))
-		linha3 = linha1.SubString2(linha1.IndexOf("|")+1,linha1.LastIndexOf("|"))
-		linha4 = linha1.SubString(linha1.LastIndexOf("|")+1)
+		linha1 = transacoes.Get(i)
+		linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
+		linha3 = linha1.SubString2(linha1.IndexOf(";")+1,linha1.LastIndexOf(";"))
+		linha4 = linha1.SubString(linha1.LastIndexOf(";")+1)
 		Dim valor As Double
 		valor = linha2
 		If valor < 0 Then
@@ -71,52 +73,53 @@ Sub ListView_Extrato1_ItemLongClick (Position As Int, Value As Object)
 	If Msgbox2("Deseja excluir a transação?", "Excluir", "Sim", "", "Não", Null) = DialogResponse.POSITIVE Then
 		Main.Pers.Remover_Transacao(Position)
 		ListView_Extrato1.RemoveAt(Position)
-		Label_SaldoAtual.Text = Main.Pers.Saldo
+		Label_SaldoAtual.Text = "Saldo Atual (R$): " & NumberFormat(Main.Pers.GetSaldo,1,2)
 	End If
 End Sub
 
 Sub Spinner_Meses_ItemClick (Position As Int, Value As Object)
 	Dim linha1,linha2,linha3,linha4 As String
 	Dim mes_linha As String
-	
+	Dim valor,valor1 As Double
+	valor = 0.0
 	ListView_Extrato2.Clear
-	
-	For i = 0 To Main.Pers.Lista_Extrato.Size -1
-		linha1 = Main.Pers.Lista_Extrato.Get(i)
-		linha2 = linha1.SubString2(0,linha1.IndexOf("|"))
-		linha3 = linha1.SubString2(linha1.IndexOf("|")+1,linha1.LastIndexOf("|"))
-		linha4 = linha1.SubString(linha1.LastIndexOf("|")+1)
+	Dim transacoes As List = Main.Pers.GetTransacoes(Main.Pers.Logado)
+	For i = 0 To transacoes.Size -1
+		linha1 = transacoes.Get(i)
+		linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
+		linha3 = linha1.SubString2(linha1.IndexOf(";")+1,linha1.LastIndexOf(";"))
+		linha4 = linha1.SubString(linha1.LastIndexOf(";")+1)
 		mes_linha = linha1.SubString2(linha1.IndexOf("/")+1,linha1.LastIndexOf("/"))
 		Dim mes_ As Int = mes_linha
 		If mes_ = Position Then
-			Dim valor As Double
-			valor = linha2
-			If valor < 0 Then
+			valor = valor + linha2
+			valor1 = linha2
+			If valor1 < 0 Then
 				ListView_Extrato2.AddTwoLinesAndBitmap("R$"&NumberFormat2((valor*(-1)),1,2,2,True), linha3 & " - " & linha4,LoadBitmap(File.DirAssets,"debito.png"))
 			Else
 				ListView_Extrato2.AddTwoLinesAndBitmap("R$"&NumberFormat2(linha2,1,2,2,True), linha3 & " - " & linha4,LoadBitmap(File.DirAssets,"credito.png"))
 			End If
-			
-			Label_Saldo_Mes.Text = "Saldo do Mês (R$): "& NumberFormat(valor,1,2)
-			Label_Saldo_Mes.Visible = True
-			ListView_Extrato2.FastScrollEnabled = True
-			ListView_Extrato2.Visible = True
 		End If
 	Next
+	Label_Saldo_Mes.Text = "Saldo do Mês (R$): "& NumberFormat(valor,1,2)
+	Label_Saldo_Mes.Visible = True
+	ListView_Extrato2.FastScrollEnabled = True
+	ListView_Extrato2.Visible = True
+	
 End Sub
 
 Sub Spinner_Categorias_ItemClick (Position As Int, Value As Object)
 	Dim linha1,linha2,linha3,linha4,l4 As String
 	Dim Str As String = Spinner_Categorias.GetItem(Position)
-	l4 = Str.SubString(Str.LastIndexOf("|")+1)
+	l4 = Str.SubString(Str.LastIndexOf(";")+1)
 
 	ListView_Extrato3.Clear
-	
-	For i = 0 To Main.Pers.Lista_Extrato.Size -1
-		linha1 = Main.Pers.Lista_Extrato.Get(i)
-		linha2 = linha1.SubString2(0,linha1.IndexOf("|"))
-		linha3 = linha1.SubString2(linha1.IndexOf("|")+1,linha1.LastIndexOf("|"))
-		linha4 = linha1.SubString(linha1.LastIndexOf("|")+1)
+	Dim transacoes As List = Main.Pers.GetTransacoes(Main.Pers.Logado)
+	For i = 0 To transacoes.Size -1
+		linha1 = transacoes.Get(i)
+		linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
+		linha3 = linha1.SubString2(linha1.IndexOf(";")+1,linha1.LastIndexOf(";"))
+		linha4 = linha1.SubString(linha1.LastIndexOf(";")+1)
 		If linha4 = l4 Then
 			Dim valor As Double
 			valor = linha2

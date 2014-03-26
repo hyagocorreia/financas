@@ -9,7 +9,3 @@ Sub Process_Globals
 	Dim Lista_Categorias As List
 	Lista_Categorias.Initialize
 End Sub
-
-Sub Adicionar_Na_Lista
-	
-End Sub
