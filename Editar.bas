@@ -11,7 +11,6 @@ Sub Process_Globals
 End Sub
 
 Sub Globals
-	
 	Private EditText_Nome As EditText
 	Private CheckBox_AlterarSenha As CheckBox
 	Private EditText_SenhaAntiga As EditText
@@ -56,8 +55,9 @@ End Sub
 Sub Button_Salvar_Click
 	If CheckBox_AlterarSenha.Checked = True Then
 		If EditText_SenhaAntiga.Text = linha3 Then
-			If Main.Pers.Excluir_Login(linha2,linha3) AND	Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_NovaSenha1.Text,EditText_NovaSenha2.Text) Then
+			If Main.Pers.Excluir_Login(linha2,linha3) AND Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_NovaSenha1.Text,EditText_NovaSenha2.Text) Then
 				Msgbox("Nome: "&EditText_Nome.Text & CRLF & "Username: "&EditText_UserName.Text, "Alterado com sucesso!")
+				Main.Pers.Atualizar_Username(EditText_UserName.Text)
 				StartActivity("Menu")
 				Activity.Finish
 			End If
@@ -66,8 +66,9 @@ Sub Button_Salvar_Click
 		End If
 	Else
 		If EditText_SenhaAntiga.Text = linha3 Then
-			If Main.Pers.Excluir_Login(linha2,linha3) AND	Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_SenhaAntiga.Text,EditText_SenhaAntiga.Text) Then
+			If Main.Pers.Excluir_Login(linha2,linha3) AND Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_SenhaAntiga.Text,EditText_SenhaAntiga.Text) Then
 				Msgbox("Nome: "&EditText_Nome.Text & CRLF & "Username: "&EditText_UserName.Text, "Alterado com sucesso!")
+				Main.Pers.Atualizar_Username(EditText_UserName.Text)
 				StartActivity("Menu")
 				Activity.Finish		
 			End If

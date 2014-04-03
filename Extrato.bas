@@ -95,7 +95,7 @@ Sub Spinner_Meses_ItemClick (Position As Int, Value As Object)
 			valor = valor + linha2
 			valor1 = linha2
 			If valor1 < 0 Then
-				ListView_Extrato2.AddTwoLinesAndBitmap("R$"&NumberFormat2((valor*(-1)),1,2,2,True), linha3 & " - " & linha4,LoadBitmap(File.DirAssets,"debito.png"))
+				ListView_Extrato2.AddTwoLinesAndBitmap("R$"&NumberFormat2((valor1*(-1)),1,2,2,True), linha3 & " - " & linha4,LoadBitmap(File.DirAssets,"debito.png"))
 			Else
 				ListView_Extrato2.AddTwoLinesAndBitmap("R$"&NumberFormat2(linha2,1,2,2,True), linha3 & " - " & linha4,LoadBitmap(File.DirAssets,"credito.png"))
 			End If
@@ -124,9 +124,9 @@ Sub Spinner_Categorias_ItemClick (Position As Int, Value As Object)
 			Dim valor As Double
 			valor = linha2
 			If valor < 0 Then
-				ListView_Extrato3.AddTwoLinesAndBitmap("R$"&NumberFormat((valor*(-1)),1,2), linha3 & " - " & linha4,LoadBitmap(File.DirAssets,"debito.png"))
+				ListView_Extrato3.AddTwoLinesAndBitmap("R$"&NumberFormat2((valor*(-1)),1,2,2,True), linha3 & " - " & linha4,LoadBitmap(File.DirAssets,"debito.png"))
 			Else
-				ListView_Extrato3.AddTwoLinesAndBitmap("R$"&NumberFormat(linha2,1,2), linha3 & " - " & linha4,LoadBitmap(File.DirAssets,"credito.png"))
+				ListView_Extrato3.AddTwoLinesAndBitmap("R$"&NumberFormat2(linha2,1,2,2,True), linha3 & " - " & linha4,LoadBitmap(File.DirAssets,"credito.png"))
 			End If
 			
 			ListView_Extrato3.FastScrollEnabled = True
@@ -150,6 +150,7 @@ Sub TabHost_Transacoes_TabChanged
 		ListView_Extrato2.Visible = False
 		ListView_Extrato1.Visible = False
 		Label_Saldo_Mes.Visible = False
+		Label_SaldoAtual.Visible = False
 	End If
 End Sub
 

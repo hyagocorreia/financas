@@ -18,22 +18,14 @@ Sub Globals
 	Dim Button_Debitar As Button
 	Dim Data As EditText
 	Private Button_add As Button
-	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout_Debitos")
-	DateTime.DateFormat = "dd/MM/yy"
+	DateTime.DateFormat = "dd/MM/yyyy"
 	Dim Data_hoje As String = DateTime.Date(DateTime.Now)
 	Data.Text = Data_hoje
-	'Lista.Lista_Categorias.Initialize
-	
 	Categoria.AddAll(Main.Pers.GetCategorias)
-	
-'	If Lista.Lista_Categorias.Size > 1 Then
-'		
-'	End If
-	
 End Sub
 
 Sub Activity_Resume
@@ -55,7 +47,7 @@ Sub Button_Debitar_Click
 		Dim Valor_final As Float
 		Valor_final = Valor.Text
 		
-		Msgbox("Valor: " & NumberFormat2(Valor_final,1,2,2,True) & CRLF & "Categoria: " & Categoria.SelectedItem & CRLF & "Data: " &Data.Text,"Debitado com Sucesso!")
+		Msgbox2("Valor: " & NumberFormat2(Valor_final,1,2,2,True) & CRLF & "Categoria: " & Categoria.SelectedItem & CRLF & "Data: " & Data.Text,"Debitado com Sucesso!","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
 		
 		Main.Pers.Salvar_Transacao(Main.Pers.Logado,Valor_final, Data.Text, Categoria.SelectedItem, "Débito")
 	
@@ -70,15 +62,6 @@ Sub Button_Debitar_Click
 	End If
 End Sub
 
-'Sub limita_campo(texto As String, qte_caracteres As Int) As String
-'	If texto.Length > qte_caracteres Then
-'		texto = texto.SubString2(1,qte_caracteres)	
-'	End If	
-'	Return texto
-'End Sub
-
 Sub Button_add_Click
-	Activity.Finish
-	AddCategoria.nome_classe = "débito"
 	StartActivity("AddCategoria")
 End Sub

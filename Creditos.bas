@@ -22,16 +22,9 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout_Creditos")
-	DateTime.DateFormat = "dd/MM/yy"
+	DateTime.DateFormat = "dd/MM/yyyy"
 	Data.Text = DateTime.Date(DateTime.Now)
-	'Lista.Lista_Categorias.Initialize
-
 	Categoria.AddAll(Main.Pers.GetCategorias)
-
-'	If Lista.Lista_Categorias.Size > 1 Then
-'		
-'	End If
-	
 End Sub
 
 Sub Activity_Resume
@@ -49,7 +42,7 @@ Sub Button_Creditar_Click
 		Dim Valor_final As Double
 		Valor_final = Valor.Text
 		
-		Msgbox("Valor: " & NumberFormat2(Valor_final,1,2,2,True) & CRLF & "Categoria: " & Categoria.SelectedItem & CRLF & "Data: " & Data.Text,"Creditado com Sucesso!")
+		Msgbox2("Valor: " & NumberFormat2(Valor_final,1,2,2,True) & CRLF & "Categoria: " & Categoria.SelectedItem & CRLF & "Data: " & Data.Text,"Creditado com Sucesso!","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
 		
 		Main.Pers.Salvar_Transacao(Main.Pers.Logado,Valor_final, Data.Text, Categoria.SelectedItem, "Crédito")
 		
@@ -68,16 +61,6 @@ Sub Button_Voltar_Click
 	Activity.Finish	
 End Sub
 
-'Sub Limita_Campo(texto As String, qte_caracteres As Int) As String
-'	If texto.Length > qte_caracteres Then
-'		texto = texto.SubString2(1,qte_caracteres)	
-'	End If
-'	Return texto
-'End Sub
-
 Sub Button_add_Click
-	Activity.Finish
-	AddCategoria.nome_classe = "crédito"
 	StartActivity("AddCategoria")
-	
 End Sub
