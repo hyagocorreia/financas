@@ -1,6 +1,6 @@
 ﻿Version=3.2
 IconFile=
-NumberOfModules=15
+NumberOfModules=17
 Module1=Cadastro
 ModuleVisible1=1
 Module2=Financeiro
@@ -31,10 +31,14 @@ Module14=Editar
 ModuleVisible14=1
 Module15=SearchView
 ModuleVisible15=1
+Module16=Charts
+ModuleVisible16=1
+Module17=Graficos
+ModuleVisible17=1
 Package=Financas.Pessoais
 DoNotOverwriteManifest=False
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
-UserTypesHint=SearchView,Persistencia
+UserTypesHint=BarData,LineData,LinePoint,Graph,GraphInternal,PieData,PieItem,SearchView,Persistencia
 NumberOfFiles=14
 File1=Layout_AddCategoria.bal
 File2=Layout_Cadastro.bal
@@ -50,11 +54,12 @@ File11=Layout_Menu.bal
 File12=Layout_Remover_Categoria.bal
 File13=Layout_Saldo.bal
 File14=Layout_Utilitarios.bal
-NumberOfLibraries=4
+NumberOfLibraries=5
 Library1=core
 Library2=ime
-Library3=sql
-Library4=stringutils
+Library3=phone
+Library4=sql
+Library5=stringutils
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: Fine
@@ -65,13 +70,14 @@ Library4=stringutils
 	#CanInstallToExternalStorage: False
 #End Region
 #Region  Activity Attributes 
-	#FullScreen: False
-	#IncludeTitle: True
+	#FullScreen: True
+	#IncludeTitle: False
 #End Region
 
 Sub Process_Globals
 	Dim Pers As Persistencia
 	Dim Fazer_logout As Boolean
+	Fazer_logout = False
 End Sub
 
 Sub Globals
@@ -83,19 +89,14 @@ Sub Globals
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
-	If File.Exists(File.DirRootExternal,"logado.txt") Then
-		File.Delete(File.DirRootExternal,"logado.txt")
-	End If
-	If FirstTime Then
+	If File.Exists(File.DirInternal,"logado.txt") Then
+		StartActivity("Menu")
+		Activity.Finish
+	Else If FirstTime Then
 		FirstTime = False
 		Activity.LoadLayout("Layout_Login")
-	Else
-		If Fazer_logout Then
-			Activity.LoadLayout("Layout_Login")
-		Else
-			StartActivity("Menu")
-			Activity.Finish
-		End If
+	Else If Fazer_logout Then
+		Activity.LoadLayout("Layout_Login")
 	End If
 End Sub
 
@@ -119,7 +120,7 @@ Sub Button_entrar_Click
 	Pers.Initialize
 	If Pers.Fazer_Login(Username.Text, Senha.Text) Then
 		Dim TextWriter1 As TextWriter
-		TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal,"logado.txt",True))
+		TextWriter1.Initialize(File.OpenOutput(File.DirInternal,"logado.txt",True))
 		TextWriter1.Write(Username.Text)
 		TextWriter1.Close
 		StartActivity("Menu")
