@@ -24,7 +24,7 @@ public class menu extends Activity implements B4AActivity{
     ActivityWrapper _activity;
     java.util.ArrayList<B4AMenuItem> menuItems;
 	public static final boolean fullScreen = false;
-	public static final boolean includeTitle = true;
+	public static final boolean includeTitle = false;
     public static WeakReference<Activity> previousOne;
 
 	@Override
@@ -283,8 +283,10 @@ public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
 public Financas.Pessoais.editar _editar = null;
+public Financas.Pessoais.charts _charts = null;
+public Financas.Pessoais.graficos _graficos = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_EditarConta",mostCurrent._button_editarconta,"Button_ExcluirConta",mostCurrent._button_excluirconta,"Button_Financeiro",mostCurrent._button_financeiro,"Button_Logout",mostCurrent._button_logout,"Button_sair",mostCurrent._button_sair,"Button_Utilitarios",mostCurrent._button_utilitarios,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_EditarConta",mostCurrent._button_editarconta,"Button_ExcluirConta",mostCurrent._button_excluirconta,"Button_Financeiro",mostCurrent._button_financeiro,"Button_Logout",mostCurrent._button_logout,"Button_sair",mostCurrent._button_sair,"Button_Utilitarios",mostCurrent._button_utilitarios,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Charts",Debug.moduleToString(Financas.Pessoais.charts.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Graficos",Debug.moduleToString(Financas.Pessoais.graficos.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -350,16 +352,16 @@ finally {
 public static String  _button_editarconta_click() throws Exception{
 		Debug.PushSubsStack("Button_EditarConta_Click (menu) ","menu",7,mostCurrent.activityBA,mostCurrent);
 try {
- BA.debugLineNum = 53;BA.debugLine="Sub Button_EditarConta_Click";
-Debug.ShouldStop(1048576);
- BA.debugLineNum = 54;BA.debugLine="StartActivity(\"Editar\")";
+ BA.debugLineNum = 54;BA.debugLine="Sub Button_EditarConta_Click";
 Debug.ShouldStop(2097152);
-anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Editar"));
- BA.debugLineNum = 55;BA.debugLine="Activity.Finish";
+ BA.debugLineNum = 55;BA.debugLine="StartActivity(\"Editar\")";
 Debug.ShouldStop(4194304);
-mostCurrent._activity.Finish();
- BA.debugLineNum = 56;BA.debugLine="End Sub";
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Editar"));
+ BA.debugLineNum = 56;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(8388608);
+mostCurrent._activity.Finish();
+ BA.debugLineNum = 57;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 return "";
 }
 catch (Exception e) {
@@ -415,14 +417,17 @@ Debug.ShouldStop(16384);
  BA.debugLineNum = 48;BA.debugLine="Main.Fazer_logout = True";
 Debug.ShouldStop(32768);
 mostCurrent._main._fazer_logout = anywheresoftware.b4a.keywords.Common.True;
- BA.debugLineNum = 49;BA.debugLine="StartActivity(\"Main\")";
+ BA.debugLineNum = 49;BA.debugLine="File.Delete(File.DirInternal,\"logado.txt\")";
 Debug.ShouldStop(65536);
-anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Main"));
- BA.debugLineNum = 50;BA.debugLine="Activity.Finish";
+anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"logado.txt");
+ BA.debugLineNum = 50;BA.debugLine="StartActivity(\"Main\")";
 Debug.ShouldStop(131072);
-mostCurrent._activity.Finish();
- BA.debugLineNum = 51;BA.debugLine="End Sub";
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Main"));
+ BA.debugLineNum = 51;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(262144);
+mostCurrent._activity.Finish();
+ BA.debugLineNum = 52;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return "";
 }
 catch (Exception e) {
