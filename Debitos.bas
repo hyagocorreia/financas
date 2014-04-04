@@ -51,7 +51,7 @@ Sub Button_Debitar_Click
 		
 		Main.Pers.Salvar_Transacao(Main.Pers.Logado,Valor_final, Data.Text, Categoria.SelectedItem, "Débito")
 	
-		result = Msgbox2("Deseja fazer outra operação?","Aviso!","Sim","","Nao",Null)
+		result = Msgbox2("Deseja fazer outra operação?","Fine","Sim","","Nao",LoadBitmap(File.DirAssets,"fineico.png"))
 
 		If result = DialogResponse.POSITIVE Then
 			StartActivity("Debitos")
@@ -64,4 +64,6 @@ End Sub
 
 Sub Button_add_Click
 	StartActivity("AddCategoria")
+	AddCategoria.tipo ="debitos"
+	Activity.Finish
 End Sub

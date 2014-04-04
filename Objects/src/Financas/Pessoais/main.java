@@ -286,9 +286,6 @@ public Financas.Pessoais.remover_categoria _remover_categoria = null;
 public Financas.Pessoais.editar _editar = null;
 public Financas.Pessoais.charts _charts = null;
 public Financas.Pessoais.graficos _graficos = null;
-  public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Cadastro",mostCurrent._button_cadastro,"Button_entrar",mostCurrent._button_entrar,"Button_Sair",mostCurrent._button_sair,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Charts",Debug.moduleToString(Financas.Pessoais.charts.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Fazer_logout",_fazer_logout,"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Graficos",Debug.moduleToString(Financas.Pessoais.graficos.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Pers",_pers,"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Senha",mostCurrent._senha,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Username",mostCurrent._username,"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
-}
 
 public static boolean isAnyActivityVisible() {
     boolean vis = false;
@@ -308,355 +305,81 @@ vis = vis | (remover_categoria.mostCurrent != null);
 vis = vis | (editar.mostCurrent != null);
 vis = vis | (graficos.mostCurrent != null);
 return vis;}
-
-public static void killProgram() {
-     {
-            Activity __a = null;
-            if (main.previousOne != null) {
-				__a = main.previousOne.get();
-			}
-            else {
-                BA ba = main.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (cadastro.previousOne != null) {
-				__a = cadastro.previousOne.get();
-			}
-            else {
-                BA ba = cadastro.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (financeiro.previousOne != null) {
-				__a = financeiro.previousOne.get();
-			}
-            else {
-                BA ba = financeiro.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (creditos.previousOne != null) {
-				__a = creditos.previousOne.get();
-			}
-            else {
-                BA ba = creditos.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (debitos.previousOne != null) {
-				__a = debitos.previousOne.get();
-			}
-            else {
-                BA ba = debitos.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (total.previousOne != null) {
-				__a = total.previousOne.get();
-			}
-            else {
-                BA ba = total.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (utilitarios.previousOne != null) {
-				__a = utilitarios.previousOne.get();
-			}
-            else {
-                BA ba = utilitarios.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (menu.previousOne != null) {
-				__a = menu.previousOne.get();
-			}
-            else {
-                BA ba = menu.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (calculadora.previousOne != null) {
-				__a = calculadora.previousOne.get();
-			}
-            else {
-                BA ba = calculadora.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (extrato.previousOne != null) {
-				__a = extrato.previousOne.get();
-			}
-            else {
-                BA ba = extrato.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (excluir.previousOne != null) {
-				__a = excluir.previousOne.get();
-			}
-            else {
-                BA ba = excluir.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (addcategoria.previousOne != null) {
-				__a = addcategoria.previousOne.get();
-			}
-            else {
-                BA ba = addcategoria.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (remover_categoria.previousOne != null) {
-				__a = remover_categoria.previousOne.get();
-			}
-            else {
-                BA ba = remover_categoria.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (editar.previousOne != null) {
-				__a = editar.previousOne.get();
-			}
-            else {
-                BA ba = editar.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (graficos.previousOne != null) {
-				__a = graficos.previousOne.get();
-			}
-            else {
-                BA ba = graficos.mostCurrent.processBA.sharedProcessBA.activityBA.get();
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
-}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (main) ","main",0,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 28;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(134217728);
- BA.debugLineNum = 29;BA.debugLine="If File.Exists(File.DirInternal,\"logado.txt\") Then";
-Debug.ShouldStop(268435456);
-if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"logado.txt")) { 
- BA.debugLineNum = 30;BA.debugLine="StartActivity(\"Menu\")";
-Debug.ShouldStop(536870912);
-anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
- BA.debugLineNum = 31;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(1073741824);
-mostCurrent._activity.Finish();
- }else 
-{ BA.debugLineNum = 32;BA.debugLine="Else If FirstTime Then";
-Debug.ShouldStop(-2147483648);
-if (_firsttime) { 
- BA.debugLineNum = 33;BA.debugLine="FirstTime = False";
-Debug.ShouldStop(1);
-_firsttime = anywheresoftware.b4a.keywords.Common.False;Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 34;BA.debugLine="Activity.LoadLayout(\"Layout_Login\")";
-Debug.ShouldStop(2);
-mostCurrent._activity.LoadLayout("Layout_Login",mostCurrent.activityBA);
- }else 
-{ BA.debugLineNum = 35;BA.debugLine="Else If Fazer_logout Then";
-Debug.ShouldStop(4);
-if (_fazer_logout) { 
- BA.debugLineNum = 36;BA.debugLine="Activity.LoadLayout(\"Layout_Login\")";
-Debug.ShouldStop(8);
-mostCurrent._activity.LoadLayout("Layout_Login",mostCurrent.activityBA);
- }}};
- BA.debugLineNum = 38;BA.debugLine="End Sub";
-Debug.ShouldStop(32);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (main) ","main",0,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 44;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(2048);
- BA.debugLineNum = 46;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (main) ","main",0,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 40;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(128);
- BA.debugLineNum = 42;BA.debugLine="End Sub";
-Debug.ShouldStop(512);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _button_cadastro_click() throws Exception{
-		Debug.PushSubsStack("Button_Cadastro_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 48;BA.debugLine="Sub Button_Cadastro_Click";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 49;BA.debugLine="StartActivity(\"Cadastro\")";
-Debug.ShouldStop(65536);
-anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Cadastro"));
- BA.debugLineNum = 50;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _button_entrar_click() throws Exception{
-		Debug.PushSubsStack("Button_entrar_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent);
-try {
-anywheresoftware.b4a.objects.streams.File.TextWriterWrapper _textwriter1 = null;
- BA.debugLineNum = 56;BA.debugLine="Sub Button_entrar_Click";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 57;BA.debugLine="Pers.Initialize";
-Debug.ShouldStop(16777216);
+ //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 29;BA.debugLine="Pers.Initialize";
 _pers._initialize(processBA);
- BA.debugLineNum = 58;BA.debugLine="If Pers.Fazer_Login(Username.Text, Senha.Text) Then";
-Debug.ShouldStop(33554432);
-if (_pers._fazer_login(mostCurrent._username.getText(),mostCurrent._senha.getText())) { 
- BA.debugLineNum = 59;BA.debugLine="Dim TextWriter1 As TextWriter";
-Debug.ShouldStop(67108864);
-_textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();Debug.locals.put("TextWriter1", _textwriter1);
- BA.debugLineNum = 60;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirInternal,\"logado.txt\",True))";
-Debug.ShouldStop(134217728);
-_textwriter1.Initialize((java.io.OutputStream)(anywheresoftware.b4a.keywords.Common.File.OpenOutput(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"logado.txt",anywheresoftware.b4a.keywords.Common.True).getObject()));
- BA.debugLineNum = 61;BA.debugLine="TextWriter1.Write(Username.Text)";
-Debug.ShouldStop(268435456);
-_textwriter1.Write(mostCurrent._username.getText());
- BA.debugLineNum = 62;BA.debugLine="TextWriter1.Close";
-Debug.ShouldStop(536870912);
-_textwriter1.Close();
- BA.debugLineNum = 63;BA.debugLine="StartActivity(\"Menu\")";
-Debug.ShouldStop(1073741824);
+ //BA.debugLineNum = 30;BA.debugLine="If File.Exists(File.DirInternal,\"logado.txt\") Then";
+if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"logado.txt")) { 
+ //BA.debugLineNum = 31;BA.debugLine="StartActivity(\"Menu\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
- BA.debugLineNum = 64;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(-2147483648);
+ //BA.debugLineNum = 32;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+ }else if(_firsttime) { 
+ //BA.debugLineNum = 34;BA.debugLine="FirstTime = False";
+_firsttime = anywheresoftware.b4a.keywords.Common.False;
+ //BA.debugLineNum = 35;BA.debugLine="Activity.LoadLayout(\"Layout_Login\")";
+mostCurrent._activity.LoadLayout("Layout_Login",mostCurrent.activityBA);
+ }else if(_fazer_logout) { 
+ //BA.debugLineNum = 37;BA.debugLine="Activity.LoadLayout(\"Layout_Login\")";
+mostCurrent._activity.LoadLayout("Layout_Login",mostCurrent.activityBA);
+ };
+ //BA.debugLineNum = 39;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_pause(boolean _userclosed) throws Exception{
+ //BA.debugLineNum = 45;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 47;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_resume() throws Exception{
+ //BA.debugLineNum = 41;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 43;BA.debugLine="End Sub";
+return "";
+}
+public static String  _button_cadastro_click() throws Exception{
+ //BA.debugLineNum = 49;BA.debugLine="Sub Button_Cadastro_Click";
+ //BA.debugLineNum = 50;BA.debugLine="StartActivity(\"Cadastro\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Cadastro"));
+ //BA.debugLineNum = 51;BA.debugLine="End Sub";
+return "";
+}
+public static String  _button_entrar_click() throws Exception{
+anywheresoftware.b4a.objects.streams.File.TextWriterWrapper _textwriter1 = null;
+ //BA.debugLineNum = 57;BA.debugLine="Sub Button_entrar_Click";
+ //BA.debugLineNum = 58;BA.debugLine="Pers.Initialize";
+_pers._initialize(processBA);
+ //BA.debugLineNum = 59;BA.debugLine="If Pers.Fazer_Login(Username.Text, Senha.Text) Then";
+if (_pers._fazer_login(mostCurrent._username.getText(),mostCurrent._senha.getText())) { 
+ //BA.debugLineNum = 60;BA.debugLine="Dim TextWriter1 As TextWriter";
+_textwriter1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();
+ //BA.debugLineNum = 61;BA.debugLine="TextWriter1.Initialize(File.OpenOutput(File.DirInternal,\"logado.txt\",True))";
+_textwriter1.Initialize((java.io.OutputStream)(anywheresoftware.b4a.keywords.Common.File.OpenOutput(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"logado.txt",anywheresoftware.b4a.keywords.Common.True).getObject()));
+ //BA.debugLineNum = 62;BA.debugLine="TextWriter1.Write(Username.Text)";
+_textwriter1.Write(mostCurrent._username.getText());
+ //BA.debugLineNum = 63;BA.debugLine="TextWriter1.Close";
+_textwriter1.Close();
+ //BA.debugLineNum = 64;BA.debugLine="StartActivity(\"Menu\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
+ //BA.debugLineNum = 65;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  }else {
- BA.debugLineNum = 66;BA.debugLine="Msgbox(\"Usuario ou senha invalida!\", \"Aviso!\")";
-Debug.ShouldStop(2);
+ //BA.debugLineNum = 67;BA.debugLine="Msgbox(\"Usuario ou senha invalida!\", \"Aviso!\")";
 anywheresoftware.b4a.keywords.Common.Msgbox("Usuario ou senha invalida!","Aviso!",mostCurrent.activityBA);
  };
- BA.debugLineNum = 68;BA.debugLine="End Sub";
-Debug.ShouldStop(8);
+ //BA.debugLineNum = 69;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _button_sair_click() throws Exception{
-		Debug.PushSubsStack("Button_Sair_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 52;BA.debugLine="Sub Button_Sair_Click";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 53;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(1048576);
+ //BA.debugLineNum = 53;BA.debugLine="Sub Button_Sair_Click";
+ //BA.debugLineNum = 54;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- BA.debugLineNum = 54;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ //BA.debugLineNum = 55;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 
 public static void initializeProcessGlobals() {
-    if (mostCurrent != null && mostCurrent.activityBA != null) {
-Debug.StartDebugging(mostCurrent.activityBA, 42231, new int[] {3, 2, 2, 2, 3, 1, 3, 2, 4, 12, 5, 2, 2, 2, 3, 4, 11, 6}, "65741c4e-a691-41bb-95ef-79a5867e6b68");}
-
+    
     if (main.processGlobalsRun == false) {
 	    main.processGlobalsRun = true;
 		try {

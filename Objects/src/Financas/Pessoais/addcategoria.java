@@ -264,7 +264,7 @@ public class addcategoria extends Activity implements B4AActivity{
 	}
 
 public anywheresoftware.b4a.keywords.Common __c = null;
-public static String _nome_classe = "";
+public static String _tipo = "";
 public anywheresoftware.b4a.objects.ButtonWrapper _button_adicionar = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _button_voltar = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _categoria_text = null;
@@ -283,9 +283,6 @@ public Financas.Pessoais.remover_categoria _remover_categoria = null;
 public Financas.Pessoais.editar _editar = null;
 public Financas.Pessoais.charts _charts = null;
 public Financas.Pessoais.graficos _graficos = null;
-  public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"Button_Adicionar",mostCurrent._button_adicionar,"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Categoria_Text",mostCurrent._categoria_text,"Charts",Debug.moduleToString(Financas.Pessoais.charts.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Graficos",Debug.moduleToString(Financas.Pessoais.graficos.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"nome_classe",_nome_classe,"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
-}
 
 public static void initializeProcessGlobals() {
              try {
@@ -295,107 +292,52 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (addcategoria) ","addcategoria",12,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 16;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 17;BA.debugLine="Activity.LoadLayout(\"Layout_AddCategoria\")";
-Debug.ShouldStop(65536);
+ //BA.debugLineNum = 16;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 17;BA.debugLine="Activity.LoadLayout(\"Layout_AddCategoria\")";
 mostCurrent._activity.LoadLayout("Layout_AddCategoria",mostCurrent.activityBA);
- BA.debugLineNum = 18;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
+ //BA.debugLineNum = 18;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (addcategoria) ","addcategoria",12,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 24;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 26;BA.debugLine="End Sub";
-Debug.ShouldStop(33554432);
+ //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 26;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (addcategoria) ","addcategoria",12,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 20;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 22;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ //BA.debugLineNum = 20;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 22;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _button_adicionar_click() throws Exception{
-		Debug.PushSubsStack("Button_Adicionar_Click (addcategoria) ","addcategoria",12,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 28;BA.debugLine="Sub Button_Adicionar_Click";
-Debug.ShouldStop(134217728);
- BA.debugLineNum = 29;BA.debugLine="If Main.Pers.Salvar_Categoria(Categoria_Text.Text) Then";
-Debug.ShouldStop(268435456);
+ //BA.debugLineNum = 28;BA.debugLine="Sub Button_Adicionar_Click";
+ //BA.debugLineNum = 29;BA.debugLine="If Main.Pers.Salvar_Categoria(Categoria_Text.Text) Then";
 if (mostCurrent._main._pers._salvar_categoria(mostCurrent._categoria_text.getText())) { 
- BA.debugLineNum = 30;BA.debugLine="Msgbox2(\"Categoria adicionada com sucesso!\",\"Fine\",\"Ok\",\"\",\"\",LoadBitmap(File.DirAssets,\"fineico.png\"))";
-Debug.ShouldStop(536870912);
+ //BA.debugLineNum = 30;BA.debugLine="Msgbox2(\"Categoria adicionada com sucesso!\",\"Fine\",\"Ok\",\"\",\"\",LoadBitmap(File.DirAssets,\"fineico.png\"))";
 anywheresoftware.b4a.keywords.Common.Msgbox2("Categoria adicionada com sucesso!","Fine","Ok","","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"fineico.png").getObject()),mostCurrent.activityBA);
  }else {
- BA.debugLineNum = 32;BA.debugLine="Msgbox2(\"Erro ao adicionar categoria!\",\"Fine\",\"Ok\",\"\",\"\",LoadBitmap(File.DirAssets,\"fineico.png\"))";
-Debug.ShouldStop(-2147483648);
+ //BA.debugLineNum = 32;BA.debugLine="Msgbox2(\"Erro ao adicionar categoria!\",\"Fine\",\"Ok\",\"\",\"\",LoadBitmap(File.DirAssets,\"fineico.png\"))";
 anywheresoftware.b4a.keywords.Common.Msgbox2("Erro ao adicionar categoria!","Fine","Ok","","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"fineico.png").getObject()),mostCurrent.activityBA);
  };
- BA.debugLineNum = 34;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(2);
+ //BA.debugLineNum = 34;BA.debugLine="If tipo = \"debitos\" Then";
+if ((_tipo).equals("debitos")) { 
+ //BA.debugLineNum = 35;BA.debugLine="StartActivity(\"Debitos\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Debitos"));
+ }else if((_tipo).equals("ceditos")) { 
+ //BA.debugLineNum = 37;BA.debugLine="StartActivity(\"Creditos\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Creditos"));
+ };
+ //BA.debugLineNum = 39;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- BA.debugLineNum = 35;BA.debugLine="End Sub";
-Debug.ShouldStop(4);
+ //BA.debugLineNum = 40;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (addcategoria) ","addcategoria",12,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 36;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(8);
- BA.debugLineNum = 37;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(16);
+ //BA.debugLineNum = 42;BA.debugLine="Sub Button_Voltar_Click";
+ //BA.debugLineNum = 43;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- BA.debugLineNum = 38;BA.debugLine="End Sub";
-Debug.ShouldStop(32);
+ //BA.debugLineNum = 44;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 10;BA.debugLine="Sub Globals";
  //BA.debugLineNum = 11;BA.debugLine="Private Button_Adicionar As Button";
@@ -409,8 +351,8 @@ return "";
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 7;BA.debugLine="Dim nome_classe As String = \"\"";
-_nome_classe = "";
+ //BA.debugLineNum = 7;BA.debugLine="Dim tipo As String = \"\"";
+_tipo = "";
  //BA.debugLineNum = 8;BA.debugLine="End Sub";
 return "";
 }

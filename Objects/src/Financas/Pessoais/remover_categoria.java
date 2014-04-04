@@ -279,9 +279,8 @@ public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
 public Financas.Pessoais.editar _editar = null;
-  public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"ListView_Categorias",mostCurrent._listview_categorias,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
-}
+public Financas.Pessoais.charts _charts = null;
+public Financas.Pessoais.graficos _graficos = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -291,142 +290,74 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (remover_categoria) ","remover_categoria",13,mostCurrent.activityBA,mostCurrent);
-try {
 int _i = 0;
-Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 17;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(65536);
- BA.debugLineNum = 18;BA.debugLine="Activity.LoadLayout(\"Layout_Remover_Categoria\")";
-Debug.ShouldStop(131072);
+ //BA.debugLineNum = 15;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 16;BA.debugLine="Activity.LoadLayout(\"Layout_Remover_Categoria\")";
 mostCurrent._activity.LoadLayout("Layout_Remover_Categoria",mostCurrent.activityBA);
- BA.debugLineNum = 20;BA.debugLine="For i = 0 To Main.Pers.GetCategorias.Size -1";
-Debug.ShouldStop(524288);
+ //BA.debugLineNum = 18;BA.debugLine="For i = 0 To Main.Pers.GetCategorias.Size -1";
 {
 final int step8 = 1;
 final int limit8 = (int) (mostCurrent._main._pers._getcategorias().getSize()-1);
 for (_i = (int) (0); (step8 > 0 && _i <= limit8) || (step8 < 0 && _i >= limit8); _i = ((int)(0 + _i + step8))) {
-Debug.locals.put("i", _i);
- BA.debugLineNum = 21;BA.debugLine="ListView_Categorias.AddSingleLine(Main.Pers.GetCategorias.Get(i))";
-Debug.ShouldStop(1048576);
+ //BA.debugLineNum = 19;BA.debugLine="ListView_Categorias.AddSingleLine(Main.Pers.GetCategorias.Get(i))";
 mostCurrent._listview_categorias.AddSingleLine(BA.ObjectToString(mostCurrent._main._pers._getcategorias().Get(_i)));
- BA.debugLineNum = 22;BA.debugLine="ListView_Categorias.FastScrollEnabled = True";
-Debug.ShouldStop(2097152);
+ //BA.debugLineNum = 20;BA.debugLine="ListView_Categorias.FastScrollEnabled = True";
 mostCurrent._listview_categorias.setFastScrollEnabled(anywheresoftware.b4a.keywords.Common.True);
  }
-}Debug.locals.put("i", _i);
-;
- BA.debugLineNum = 24;BA.debugLine="End Sub";
-Debug.ShouldStop(8388608);
+};
+ //BA.debugLineNum = 22;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (remover_categoria) ","remover_categoria",13,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 30;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(536870912);
- BA.debugLineNum = 32;BA.debugLine="End Sub";
-Debug.ShouldStop(-2147483648);
+ //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 30;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (remover_categoria) ","remover_categoria",13,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 26;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(33554432);
- BA.debugLineNum = 28;BA.debugLine="End Sub";
-Debug.ShouldStop(134217728);
+ //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 26;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (remover_categoria) ","remover_categoria",13,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 34;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(2);
- BA.debugLineNum = 35;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(4);
+ //BA.debugLineNum = 32;BA.debugLine="Sub Button_Voltar_Click";
+ //BA.debugLineNum = 33;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- BA.debugLineNum = 36;BA.debugLine="End Sub";
-Debug.ShouldStop(8);
+ //BA.debugLineNum = 34;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 13;BA.debugLine="Private ListView_Categorias As ListView";
+ //BA.debugLineNum = 10;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 11;BA.debugLine="Private ListView_Categorias As ListView";
 mostCurrent._listview_categorias = new anywheresoftware.b4a.objects.ListViewWrapper();
- //BA.debugLineNum = 14;BA.debugLine="Private Button_Voltar As Button";
+ //BA.debugLineNum = 12;BA.debugLine="Private Button_Voltar As Button";
 mostCurrent._button_voltar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 15;BA.debugLine="End Sub";
+ //BA.debugLineNum = 13;BA.debugLine="End Sub";
 return "";
 }
 public static String  _listview_categorias_itemclick(int _position,Object _value) throws Exception{
-		Debug.PushSubsStack("ListView_Categorias_ItemClick (remover_categoria) ","remover_categoria",13,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("Position", _position);
-Debug.locals.put("Value", _value);
- BA.debugLineNum = 38;BA.debugLine="Sub ListView_Categorias_ItemClick (Position As Int, Value As Object)";
-Debug.ShouldStop(32);
- BA.debugLineNum = 39;BA.debugLine="If Msgbox2(\"Deseja excluir a categoria?\", \"Excluir\", \"Sim\", \"\", \"Não\", Null) = DialogResponse.POSITIVE Then";
-Debug.ShouldStop(64);
+ //BA.debugLineNum = 36;BA.debugLine="Sub ListView_Categorias_ItemClick (Position As Int, Value As Object)";
+ //BA.debugLineNum = 37;BA.debugLine="If Msgbox2(\"Deseja excluir a categoria?\", \"Excluir\", \"Sim\", \"\", \"Não\", Null) = DialogResponse.POSITIVE Then";
 if (anywheresoftware.b4a.keywords.Common.Msgbox2("Deseja excluir a categoria?","Excluir","Sim","","Não",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null),mostCurrent.activityBA)==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
- BA.debugLineNum = 40;BA.debugLine="If Main.Pers.Deletar_Categoria(Value) Then";
-Debug.ShouldStop(128);
-if (mostCurrent._main._pers._deletar_categoria(BA.ObjectToString(_value))) { 
- BA.debugLineNum = 41;BA.debugLine="Msgbox(\"Categoria: \" & Value & \"foi removida com sucesso!\", \"Fine\")";
-Debug.ShouldStop(256);
-anywheresoftware.b4a.keywords.Common.Msgbox("Categoria: "+BA.ObjectToString(_value)+"foi removida com sucesso!","Fine",mostCurrent.activityBA);
- BA.debugLineNum = 42;BA.debugLine="ListView_Categorias.RemoveAt(Position)";
-Debug.ShouldStop(512);
+ //BA.debugLineNum = 38;BA.debugLine="If Main.Pers.Deletar_Categoria(Value) = \"True\" Then";
+if ((mostCurrent._main._pers._deletar_categoria(BA.ObjectToString(_value))).equals("True")) { 
+ //BA.debugLineNum = 39;BA.debugLine="Msgbox(\"Categoria: \" & Value & \" foi removida com sucesso!\", \"Fine\")";
+anywheresoftware.b4a.keywords.Common.Msgbox("Categoria: "+BA.ObjectToString(_value)+" foi removida com sucesso!","Fine",mostCurrent.activityBA);
+ //BA.debugLineNum = 40;BA.debugLine="ListView_Categorias.RemoveAt(Position)";
 mostCurrent._listview_categorias.RemoveAt(_position);
+ }else if((mostCurrent._main._pers._deletar_categoria(BA.ObjectToString(_value))).equals("False")) { 
+ //BA.debugLineNum = 42;BA.debugLine="Msgbox(\"Categorias predefinidas não podem ser deletadas: \" & Value, \"ATENÇÃO!\")";
+anywheresoftware.b4a.keywords.Common.Msgbox("Categorias predefinidas não podem ser deletadas: "+BA.ObjectToString(_value),"ATENÇÃO!",mostCurrent.activityBA);
  }else {
- BA.debugLineNum = 44;BA.debugLine="Msgbox(\"Categorias predefinidas não podem ser deletadas!\", \"ATENÇÃO!\")";
-Debug.ShouldStop(2048);
-anywheresoftware.b4a.keywords.Common.Msgbox("Categorias predefinidas não podem ser deletadas!","ATENÇÃO!",mostCurrent.activityBA);
+ //BA.debugLineNum = 44;BA.debugLine="Msgbox(\"Existe uma Transação associada a categoria:\" & Value, \"ATENÇÃO!\")";
+anywheresoftware.b4a.keywords.Common.Msgbox("Existe uma Transação associada a categoria:"+BA.ObjectToString(_value),"ATENÇÃO!",mostCurrent.activityBA);
  };
  };
- BA.debugLineNum = 47;BA.debugLine="End Sub";
-Debug.ShouldStop(16384);
+ //BA.debugLineNum = 47;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8;BA.debugLine="End Sub";
 return "";
 }
 }

@@ -7,7 +7,7 @@ Version=3.2
 #End Region
 
 Sub Process_Globals
-	Dim nome_classe As String = ""
+	Dim tipo As String = ""
 End Sub
 
 Sub Globals
@@ -34,8 +34,14 @@ Sub Button_Adicionar_Click
 	Else
 		Msgbox2("Erro ao adicionar categoria!","Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
 	End If
+	If tipo = "debitos" Then
+		StartActivity("Debitos")
+	Else If tipo = "ceditos" Then
+		StartActivity("Creditos")
+	End If
 	Activity.Finish
 End Sub
+
 Sub Button_Voltar_Click
 	Activity.Finish
 End Sub

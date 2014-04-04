@@ -36,9 +36,14 @@ Sub Button_Voltar_Click
 End Sub
 
 Sub Button_Salvar_Click
-	Main.Pers.Initialize
-	If Main.Pers.Criar_Login(Nome.Text, Username.Text, Senha.Text, Senha_Repetida.Text) Then
-		Msgbox("Nome: " & Nome.Text & CRLF & "Username: " & Username.Text,"Cadastrado com Sucesso!")
-		Activity.Finish
+	If Nome.Text = "" OR Username.Text = "" OR Senha.Text = "" OR Senha_Repetida.Text = "" Then
+		Msgbox2("Dados preenchidos incorretamente!","Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
+	Else If Senha.Text <> Senha_Repetida.Text Then
+		Msgbox2("Senhas não conferem!","Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
+	Else
+		If Main.Pers.Criar_Login(Nome.Text, Username.Text, Senha.Text, Senha_Repetida.Text) Then
+			Msgbox2("Nome: " & Nome.Text & CRLF & "Username: " & Username.Text&CRLF&"Cadastrado com Sucesso!","Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
+			Activity.Finish
+		End If
 	End If
 End Sub

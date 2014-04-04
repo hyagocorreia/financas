@@ -50,11 +50,12 @@ Sub Activity_Create(FirstTime As Boolean)
 	listinha.Initialize
 	listinha.AddAll(Array As String("Selecione o mês","Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"))
 	Spinner_Meses.AddAll(listinha)
-	TabHost_Transacoes.SetBackgroundImage(LoadBitmap(File.DirAssets,"iconest.png"))
-	TabHost_Transacoes.AddTab2("",ListView_Extrato1)
-	TabHost_Transacoes.AddTab2("",Spinner_Meses)
-	TabHost_Transacoes.AddTab2("",Spinner_Categorias)
-
+	Dim cor As ColorDrawable
+	cor.Initialize(Colors.RGB(139,0,0),0)
+	TabHost_Transacoes.Background = cor
+	TabHost_Transacoes.AddTabWithIcon2("",LoadBitmap(File.DirAssets,"transico.png"),LoadBitmap(File.DirAssets,"transico.png"),ListView_Extrato1)
+	TabHost_Transacoes.AddTabWithIcon2("",LoadBitmap(File.DirAssets,"mesico.png"),LoadBitmap(File.DirAssets,"mesico.png"),Spinner_Meses)
+	TabHost_Transacoes.AddTabWithIcon2("",LoadBitmap(File.DirAssets,"categico.png"),LoadBitmap(File.DirAssets,"categico.png"),Spinner_Categorias)
 End Sub
 
 Sub Activity_Resume

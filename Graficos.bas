@@ -17,6 +17,9 @@ Sub Globals
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
+	Activity.Title = "Gráficos"
+	Activity.TitleColor = Colors.RGB(139,0,0)
+	Activity.Color = Colors.Black
 	TabHost_Grafico.Initialize("TabHost_Grafico")
 	Button_Voltar.Initialize("Button_Voltar")
 	pnlLine1.Initialize("pnlLine1")
@@ -25,7 +28,6 @@ Sub Activity_Create(FirstTime As Boolean)
 	CriarGraficoTrans_por_Mes
 	CriarGraficoTrans_por_Categ
 	CriarBotaoVoltar
-	Activity.Title = "Gráficos"
 End Sub
 
 Sub CriarBotaoVoltar

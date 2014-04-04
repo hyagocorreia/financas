@@ -285,9 +285,6 @@ public Financas.Pessoais.remover_categoria _remover_categoria = null;
 public Financas.Pessoais.editar _editar = null;
 public Financas.Pessoais.charts _charts = null;
 public Financas.Pessoais.graficos _graficos = null;
-  public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Salvar",mostCurrent._button_salvar,"Button_Voltar",mostCurrent._button_voltar,"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Charts",Debug.moduleToString(Financas.Pessoais.charts.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Graficos",Debug.moduleToString(Financas.Pessoais.graficos.class),"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Nome",mostCurrent._nome,"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Senha",mostCurrent._senha,"Senha_Repetida",mostCurrent._senha_repetida,"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Username",mostCurrent._username,"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
-}
 
 public static void initializeProcessGlobals() {
              try {
@@ -297,106 +294,50 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (cadastro) ","cadastro",1,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 19;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(262144);
- BA.debugLineNum = 20;BA.debugLine="Activity.LoadLayout(\"Layout_Cadastro\")";
-Debug.ShouldStop(524288);
+ //BA.debugLineNum = 19;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 20;BA.debugLine="Activity.LoadLayout(\"Layout_Cadastro\")";
 mostCurrent._activity.LoadLayout("Layout_Cadastro",mostCurrent.activityBA);
- BA.debugLineNum = 21;BA.debugLine="End Sub";
-Debug.ShouldStop(1048576);
+ //BA.debugLineNum = 21;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (cadastro) ","cadastro",1,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 27;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(67108864);
- BA.debugLineNum = 29;BA.debugLine="End Sub";
-Debug.ShouldStop(268435456);
+ //BA.debugLineNum = 27;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 29;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (cadastro) ","cadastro",1,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 23;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(4194304);
- BA.debugLineNum = 25;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
+ //BA.debugLineNum = 23;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 25;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _button_salvar_click() throws Exception{
-		Debug.PushSubsStack("Button_Salvar_Click (cadastro) ","cadastro",1,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 35;BA.debugLine="Sub Button_Salvar_Click";
-Debug.ShouldStop(4);
- BA.debugLineNum = 36;BA.debugLine="Main.Pers.Initialize";
-Debug.ShouldStop(8);
-mostCurrent._main._pers._initialize(processBA);
- BA.debugLineNum = 37;BA.debugLine="If Main.Pers.Criar_Login(Nome.Text, Username.Text, Senha.Text, Senha_Repetida.Text) Then";
-Debug.ShouldStop(16);
+ //BA.debugLineNum = 35;BA.debugLine="Sub Button_Salvar_Click";
+ //BA.debugLineNum = 36;BA.debugLine="If Nome.Text = \"\" OR Username.Text = \"\" OR Senha.Text = \"\" OR Senha_Repetida.Text = \"\" Then";
+if ((mostCurrent._nome.getText()).equals("") || (mostCurrent._username.getText()).equals("") || (mostCurrent._senha.getText()).equals("") || (mostCurrent._senha_repetida.getText()).equals("")) { 
+ //BA.debugLineNum = 37;BA.debugLine="Msgbox2(\"Dados preenchidos incorretamente!\",\"Fine\",\"Ok\",\"\",\"\",LoadBitmap(File.DirAssets,\"fineico.png\"))";
+anywheresoftware.b4a.keywords.Common.Msgbox2("Dados preenchidos incorretamente!","Fine","Ok","","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"fineico.png").getObject()),mostCurrent.activityBA);
+ }else if((mostCurrent._senha.getText()).equals(mostCurrent._senha_repetida.getText()) == false) { 
+ //BA.debugLineNum = 39;BA.debugLine="Msgbox2(\"Senhas não conferem!\",\"Fine\",\"Ok\",\"\",\"\",LoadBitmap(File.DirAssets,\"fineico.png\"))";
+anywheresoftware.b4a.keywords.Common.Msgbox2("Senhas não conferem!","Fine","Ok","","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"fineico.png").getObject()),mostCurrent.activityBA);
+ }else {
+ //BA.debugLineNum = 41;BA.debugLine="If Main.Pers.Criar_Login(Nome.Text, Username.Text, Senha.Text, Senha_Repetida.Text) Then";
 if (mostCurrent._main._pers._criar_login(mostCurrent._nome.getText(),mostCurrent._username.getText(),mostCurrent._senha.getText(),mostCurrent._senha_repetida.getText())) { 
- BA.debugLineNum = 38;BA.debugLine="Msgbox(\"Nome: \" & Nome.Text & CRLF & \"Username: \" & Username.Text,\"Cadastrado com Sucesso!\")";
-Debug.ShouldStop(32);
-anywheresoftware.b4a.keywords.Common.Msgbox("Nome: "+mostCurrent._nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Username: "+mostCurrent._username.getText(),"Cadastrado com Sucesso!",mostCurrent.activityBA);
- BA.debugLineNum = 39;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(64);
+ //BA.debugLineNum = 42;BA.debugLine="Msgbox2(\"Nome: \" & Nome.Text & CRLF & \"Username: \" & Username.Text&CRLF&\"Cadastrado com Sucesso!\",\"Fine\",\"Ok\",\"\",\"\",LoadBitmap(File.DirAssets,\"fineico.png\"))";
+anywheresoftware.b4a.keywords.Common.Msgbox2("Nome: "+mostCurrent._nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Username: "+mostCurrent._username.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Cadastrado com Sucesso!","Fine","Ok","","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"fineico.png").getObject()),mostCurrent.activityBA);
+ //BA.debugLineNum = 43;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  };
- BA.debugLineNum = 41;BA.debugLine="End Sub";
-Debug.ShouldStop(256);
+ };
+ //BA.debugLineNum = 46;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (cadastro) ","cadastro",1,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 31;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(1073741824);
- BA.debugLineNum = 32;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(-2147483648);
+ //BA.debugLineNum = 31;BA.debugLine="Sub Button_Voltar_Click";
+ //BA.debugLineNum = 32;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- BA.debugLineNum = 33;BA.debugLine="End Sub";
-Debug.ShouldStop(1);
+ //BA.debugLineNum = 33;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 10;BA.debugLine="Sub Globals";
  //BA.debugLineNum = 11;BA.debugLine="Dim Nome As EditText";

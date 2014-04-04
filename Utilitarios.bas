@@ -78,8 +78,14 @@ Sub Button_Exportar_Click
 		arr(2) = linha4
 		lista.add(arr)
 	Next
+
+	If Not(File.Exists(File.DirRootExternal,"Fine")) Then
+		File.MakeDir(File.DirRootExternal,"Fine")
+		str.SaveCSV2(File.DirRootExternal&"/Fine","Transacoes.csv",",",lista,headers)
+		Msgbox2("Dados exportados com sucesso!","Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
+	Else
+		str.SaveCSV2(File.DirRootExternal&"/Fine","Transacoes.csv",",",lista,headers)
+		Msgbox2("Dados exportados com sucesso!","Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
+	End If
 	
-	str.SaveCSV2(File.DirRootExternal,"Transacoes.csv",",",lista,headers)
-	
-	Msgbox2("Dados exportados com sucesso!","Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
 End Sub

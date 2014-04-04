@@ -279,9 +279,8 @@ public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
 public Financas.Pessoais.editar _editar = null;
-  public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Voltar",mostCurrent._button_voltar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"Editar",Debug.moduleToString(Financas.Pessoais.editar.class),"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"Label_Total",mostCurrent._label_total,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
-}
+public Financas.Pessoais.charts _charts = null;
+public Financas.Pessoais.graficos _graficos = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -291,80 +290,31 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (total) ","total",5,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 15;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(16384);
- BA.debugLineNum = 16;BA.debugLine="Activity.LoadLayout(\"Layout_Saldo\")";
-Debug.ShouldStop(32768);
+ //BA.debugLineNum = 15;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 16;BA.debugLine="Activity.LoadLayout(\"Layout_Saldo\")";
 mostCurrent._activity.LoadLayout("Layout_Saldo",mostCurrent.activityBA);
- BA.debugLineNum = 17;BA.debugLine="Label_Total.Text = Label_Total.Text &\" \"& NumberFormat2(Main.Pers.GetSaldo,1,2,2,True)";
-Debug.ShouldStop(65536);
+ //BA.debugLineNum = 17;BA.debugLine="Label_Total.Text = Label_Total.Text &\" \"& NumberFormat2(Main.Pers.GetSaldo,1,2,2,True)";
 mostCurrent._label_total.setText((Object)(mostCurrent._label_total.getText()+" "+anywheresoftware.b4a.keywords.Common.NumberFormat2((double)(Double.parseDouble(mostCurrent._main._pers._getsaldo())),(int) (1),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.True)));
- BA.debugLineNum = 18;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
+ //BA.debugLineNum = 18;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (total) ","total",5,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 24;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 26;BA.debugLine="End Sub";
-Debug.ShouldStop(33554432);
+ //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 26;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (total) ","total",5,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 20;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 22;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ //BA.debugLineNum = 20;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 22;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _button_voltar_click() throws Exception{
-		Debug.PushSubsStack("Button_Voltar_Click (total) ","total",5,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 28;BA.debugLine="Sub Button_Voltar_Click";
-Debug.ShouldStop(134217728);
- BA.debugLineNum = 29;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(268435456);
+ //BA.debugLineNum = 28;BA.debugLine="Sub Button_Voltar_Click";
+ //BA.debugLineNum = 29;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- BA.debugLineNum = 30;BA.debugLine="End Sub";
-Debug.ShouldStop(536870912);
+ //BA.debugLineNum = 30;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 10;BA.debugLine="Sub Globals";
  //BA.debugLineNum = 11;BA.debugLine="Dim Button_Voltar As Button";

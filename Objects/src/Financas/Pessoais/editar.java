@@ -289,9 +289,8 @@ public Financas.Pessoais.extrato _extrato = null;
 public Financas.Pessoais.excluir _excluir = null;
 public Financas.Pessoais.addcategoria _addcategoria = null;
 public Financas.Pessoais.remover_categoria _remover_categoria = null;
-  public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"AddCategoria",Debug.moduleToString(Financas.Pessoais.addcategoria.class),"Button_Cancelar",mostCurrent._button_cancelar,"Button_Salvar",mostCurrent._button_salvar,"Cadastro",Debug.moduleToString(Financas.Pessoais.cadastro.class),"Calculadora",Debug.moduleToString(Financas.Pessoais.calculadora.class),"CheckBox_AlterarSenha",mostCurrent._checkbox_alterarsenha,"Creditos",Debug.moduleToString(Financas.Pessoais.creditos.class),"Debitos",Debug.moduleToString(Financas.Pessoais.debitos.class),"EditText_Nome",mostCurrent._edittext_nome,"EditText_NovaSenha1",mostCurrent._edittext_novasenha1,"EditText_NovaSenha2",mostCurrent._edittext_novasenha2,"EditText_SenhaAntiga",mostCurrent._edittext_senhaantiga,"EditText_UserName",mostCurrent._edittext_username,"Excluir",Debug.moduleToString(Financas.Pessoais.excluir.class),"Extrato",Debug.moduleToString(Financas.Pessoais.extrato.class),"Financeiro",Debug.moduleToString(Financas.Pessoais.financeiro.class),"linha1",mostCurrent._linha1,"linha2",mostCurrent._linha2,"linha3",mostCurrent._linha3,"linha4",mostCurrent._linha4,"Main",Debug.moduleToString(Financas.Pessoais.main.class),"Menu",Debug.moduleToString(Financas.Pessoais.menu.class),"Remover_Categoria",Debug.moduleToString(Financas.Pessoais.remover_categoria.class),"Total",Debug.moduleToString(Financas.Pessoais.total.class),"Utilitarios",Debug.moduleToString(Financas.Pessoais.utilitarios.class)};
-}
+public Financas.Pessoais.charts _charts = null;
+public Financas.Pessoais.graficos _graficos = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -301,219 +300,127 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-		Debug.PushSubsStack("Activity_Create (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 23;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(4194304);
- BA.debugLineNum = 24;BA.debugLine="Activity.LoadLayout(\"Layout_Editar\")";
-Debug.ShouldStop(8388608);
+ //BA.debugLineNum = 22;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 23;BA.debugLine="Activity.LoadLayout(\"Layout_Editar\")";
 mostCurrent._activity.LoadLayout("Layout_Editar",mostCurrent.activityBA);
- BA.debugLineNum = 26;BA.debugLine="linha1 = Main.Pers.GetUsuario(Main.Pers.Logado)";
-Debug.ShouldStop(33554432);
+ //BA.debugLineNum = 24;BA.debugLine="linha1 = Main.Pers.GetUsuario(Main.Pers.Logado)";
 mostCurrent._linha1 = BA.ObjectToString(mostCurrent._main._pers._getusuario(mostCurrent._main._pers._logado()));
- BA.debugLineNum = 27;BA.debugLine="linha2 = linha1.SubString2(0,linha1.IndexOf(\";\"))";
-Debug.ShouldStop(67108864);
+ //BA.debugLineNum = 25;BA.debugLine="linha2 = linha1.SubString2(0,linha1.IndexOf(\";\"))";
 mostCurrent._linha2 = mostCurrent._linha1.substring((int) (0),mostCurrent._linha1.indexOf(";"));
- BA.debugLineNum = 28;BA.debugLine="linha3 = linha1.SubString2(linha1.IndexOf(\";\")+1,linha1.LastIndexOf(\";\"))";
-Debug.ShouldStop(134217728);
+ //BA.debugLineNum = 26;BA.debugLine="linha3 = linha1.SubString2(linha1.IndexOf(\";\")+1,linha1.LastIndexOf(\";\"))";
 mostCurrent._linha3 = mostCurrent._linha1.substring((int) (mostCurrent._linha1.indexOf(";")+1),mostCurrent._linha1.lastIndexOf(";"));
- BA.debugLineNum = 29;BA.debugLine="linha4 = linha1.SubString(linha1.LastIndexOf(\";\")+1)";
-Debug.ShouldStop(268435456);
+ //BA.debugLineNum = 27;BA.debugLine="linha4 = linha1.SubString(linha1.LastIndexOf(\";\")+1)";
 mostCurrent._linha4 = mostCurrent._linha1.substring((int) (mostCurrent._linha1.lastIndexOf(";")+1));
- BA.debugLineNum = 31;BA.debugLine="EditText_Nome.Text = linha4";
-Debug.ShouldStop(1073741824);
+ //BA.debugLineNum = 29;BA.debugLine="EditText_Nome.Text = linha4";
 mostCurrent._edittext_nome.setText((Object)(mostCurrent._linha4));
- BA.debugLineNum = 32;BA.debugLine="EditText_UserName.Text = linha2";
-Debug.ShouldStop(-2147483648);
+ //BA.debugLineNum = 30;BA.debugLine="EditText_UserName.Text = linha2";
 mostCurrent._edittext_username.setText((Object)(mostCurrent._linha2));
- BA.debugLineNum = 33;BA.debugLine="End Sub";
-Debug.ShouldStop(1);
+ //BA.debugLineNum = 31;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-		Debug.PushSubsStack("Activity_Pause (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 39;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(64);
- BA.debugLineNum = 41;BA.debugLine="End Sub";
-Debug.ShouldStop(256);
+ //BA.debugLineNum = 37;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 39;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _activity_resume() throws Exception{
-		Debug.PushSubsStack("Activity_Resume (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 35;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(4);
- BA.debugLineNum = 37;BA.debugLine="End Sub";
-Debug.ShouldStop(16);
+ //BA.debugLineNum = 33;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 35;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _button_cancelar_click() throws Exception{
-		Debug.PushSubsStack("Button_Cancelar_Click (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 77;BA.debugLine="Sub Button_Cancelar_Click";
-Debug.ShouldStop(4096);
- BA.debugLineNum = 78;BA.debugLine="StartActivity(\"Menu\")";
-Debug.ShouldStop(8192);
+ //BA.debugLineNum = 77;BA.debugLine="Sub Button_Cancelar_Click";
+ //BA.debugLineNum = 78;BA.debugLine="StartActivity(\"Menu\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
- BA.debugLineNum = 79;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(16384);
+ //BA.debugLineNum = 79;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- BA.debugLineNum = 80;BA.debugLine="End Sub";
-Debug.ShouldStop(32768);
+ //BA.debugLineNum = 80;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _button_salvar_click() throws Exception{
-		Debug.PushSubsStack("Button_Salvar_Click (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
-try {
- BA.debugLineNum = 53;BA.debugLine="Sub Button_Salvar_Click";
-Debug.ShouldStop(1048576);
- BA.debugLineNum = 54;BA.debugLine="If CheckBox_AlterarSenha.Checked = True Then";
-Debug.ShouldStop(2097152);
+ //BA.debugLineNum = 51;BA.debugLine="Sub Button_Salvar_Click";
+ //BA.debugLineNum = 52;BA.debugLine="If CheckBox_AlterarSenha.Checked = True Then";
 if (mostCurrent._checkbox_alterarsenha.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
- BA.debugLineNum = 55;BA.debugLine="If EditText_SenhaAntiga.Text = linha3 Then";
-Debug.ShouldStop(4194304);
+ //BA.debugLineNum = 53;BA.debugLine="If EditText_SenhaAntiga.Text = linha3 Then";
 if ((mostCurrent._edittext_senhaantiga.getText()).equals(mostCurrent._linha3)) { 
- BA.debugLineNum = 56;BA.debugLine="If Main.Pers.Excluir_Login(linha2,linha3) AND	Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_NovaSenha1.Text,EditText_NovaSenha2.Text) Then";
-Debug.ShouldStop(8388608);
+ //BA.debugLineNum = 54;BA.debugLine="If Main.Pers.Excluir_Login(linha2,linha3) AND Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_NovaSenha1.Text,EditText_NovaSenha2.Text) Then";
 if (mostCurrent._main._pers._excluir_login(mostCurrent._linha2,mostCurrent._linha3) && mostCurrent._main._pers._criar_login(mostCurrent._edittext_nome.getText(),mostCurrent._edittext_username.getText(),mostCurrent._edittext_novasenha1.getText(),mostCurrent._edittext_novasenha2.getText())) { 
- BA.debugLineNum = 57;BA.debugLine="Msgbox(\"Nome: \"&EditText_Nome.Text & CRLF & \"Username: \"&EditText_UserName.Text, \"Alterado com sucesso!\")";
-Debug.ShouldStop(16777216);
+ //BA.debugLineNum = 55;BA.debugLine="Msgbox(\"Nome: \"&EditText_Nome.Text & CRLF & \"Username: \"&EditText_UserName.Text, \"Alterado com sucesso!\")";
 anywheresoftware.b4a.keywords.Common.Msgbox("Nome: "+mostCurrent._edittext_nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Username: "+mostCurrent._edittext_username.getText(),"Alterado com sucesso!",mostCurrent.activityBA);
- BA.debugLineNum = 58;BA.debugLine="StartActivity(\"Menu\")";
-Debug.ShouldStop(33554432);
+ //BA.debugLineNum = 56;BA.debugLine="Main.Pers.Atualizar_Username(EditText_UserName.Text)";
+mostCurrent._main._pers._atualizar_username(mostCurrent._edittext_username.getText());
+ //BA.debugLineNum = 57;BA.debugLine="StartActivity(\"Menu\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
- BA.debugLineNum = 59;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(67108864);
+ //BA.debugLineNum = 58;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  };
  }else {
- BA.debugLineNum = 62;BA.debugLine="Msgbox(\"Senha incorreta!\", \"Atenção!\")";
-Debug.ShouldStop(536870912);
+ //BA.debugLineNum = 61;BA.debugLine="Msgbox(\"Senha incorreta!\", \"Atenção!\")";
 anywheresoftware.b4a.keywords.Common.Msgbox("Senha incorreta!","Atenção!",mostCurrent.activityBA);
  };
  }else {
- BA.debugLineNum = 65;BA.debugLine="If EditText_SenhaAntiga.Text = linha3 Then";
-Debug.ShouldStop(1);
+ //BA.debugLineNum = 64;BA.debugLine="If EditText_SenhaAntiga.Text = linha3 Then";
 if ((mostCurrent._edittext_senhaantiga.getText()).equals(mostCurrent._linha3)) { 
- BA.debugLineNum = 66;BA.debugLine="If Main.Pers.Excluir_Login(linha2,linha3) AND	Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_SenhaAntiga.Text,EditText_SenhaAntiga.Text) Then";
-Debug.ShouldStop(2);
+ //BA.debugLineNum = 65;BA.debugLine="If Main.Pers.Excluir_Login(linha2,linha3) AND Main.Pers.Criar_Login(EditText_Nome.Text,EditText_UserName.Text,EditText_SenhaAntiga.Text,EditText_SenhaAntiga.Text) Then";
 if (mostCurrent._main._pers._excluir_login(mostCurrent._linha2,mostCurrent._linha3) && mostCurrent._main._pers._criar_login(mostCurrent._edittext_nome.getText(),mostCurrent._edittext_username.getText(),mostCurrent._edittext_senhaantiga.getText(),mostCurrent._edittext_senhaantiga.getText())) { 
- BA.debugLineNum = 67;BA.debugLine="Msgbox(\"Nome: \"&EditText_Nome.Text & CRLF & \"Username: \"&EditText_UserName.Text, \"Alterado com sucesso!\")";
-Debug.ShouldStop(4);
+ //BA.debugLineNum = 66;BA.debugLine="Msgbox(\"Nome: \"&EditText_Nome.Text & CRLF & \"Username: \"&EditText_UserName.Text, \"Alterado com sucesso!\")";
 anywheresoftware.b4a.keywords.Common.Msgbox("Nome: "+mostCurrent._edittext_nome.getText()+anywheresoftware.b4a.keywords.Common.CRLF+"Username: "+mostCurrent._edittext_username.getText(),"Alterado com sucesso!",mostCurrent.activityBA);
- BA.debugLineNum = 68;BA.debugLine="StartActivity(\"Menu\")";
-Debug.ShouldStop(8);
+ //BA.debugLineNum = 67;BA.debugLine="Main.Pers.Atualizar_Username(EditText_UserName.Text)";
+mostCurrent._main._pers._atualizar_username(mostCurrent._edittext_username.getText());
+ //BA.debugLineNum = 68;BA.debugLine="StartActivity(\"Menu\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("Menu"));
- BA.debugLineNum = 69;BA.debugLine="Activity.Finish";
-Debug.ShouldStop(16);
+ //BA.debugLineNum = 69;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  };
  }else {
- BA.debugLineNum = 72;BA.debugLine="Msgbox(\"Senha incorreta!\", \"Atenção!\")";
-Debug.ShouldStop(128);
+ //BA.debugLineNum = 72;BA.debugLine="Msgbox(\"Senha incorreta!\", \"Atenção!\")";
 anywheresoftware.b4a.keywords.Common.Msgbox("Senha incorreta!","Atenção!",mostCurrent.activityBA);
  };
  };
- BA.debugLineNum = 75;BA.debugLine="End Sub";
-Debug.ShouldStop(1024);
+ //BA.debugLineNum = 75;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _checkbox_alterarsenha_checkedchange(boolean _checked) throws Exception{
-		Debug.PushSubsStack("CheckBox_AlterarSenha_CheckedChange (editar) ","editar",14,mostCurrent.activityBA,mostCurrent);
-try {
-Debug.locals.put("Checked", _checked);
- BA.debugLineNum = 43;BA.debugLine="Sub CheckBox_AlterarSenha_CheckedChange(Checked As Boolean)";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 44;BA.debugLine="If CheckBox_AlterarSenha.Checked Then";
-Debug.ShouldStop(2048);
+ //BA.debugLineNum = 41;BA.debugLine="Sub CheckBox_AlterarSenha_CheckedChange(Checked As Boolean)";
+ //BA.debugLineNum = 42;BA.debugLine="If CheckBox_AlterarSenha.Checked Then";
 if (mostCurrent._checkbox_alterarsenha.getChecked()) { 
- BA.debugLineNum = 45;BA.debugLine="EditText_NovaSenha1.Visible = True";
-Debug.ShouldStop(4096);
+ //BA.debugLineNum = 43;BA.debugLine="EditText_NovaSenha1.Visible = True";
 mostCurrent._edittext_novasenha1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 46;BA.debugLine="EditText_NovaSenha2.Visible = True";
-Debug.ShouldStop(8192);
+ //BA.debugLineNum = 44;BA.debugLine="EditText_NovaSenha2.Visible = True";
 mostCurrent._edittext_novasenha2.setVisible(anywheresoftware.b4a.keywords.Common.True);
  }else {
- BA.debugLineNum = 48;BA.debugLine="EditText_NovaSenha1.Visible = False";
-Debug.ShouldStop(32768);
+ //BA.debugLineNum = 46;BA.debugLine="EditText_NovaSenha1.Visible = False";
 mostCurrent._edittext_novasenha1.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 49;BA.debugLine="EditText_NovaSenha2.Visible = False";
-Debug.ShouldStop(65536);
+ //BA.debugLineNum = 47;BA.debugLine="EditText_NovaSenha2.Visible = False";
 mostCurrent._edittext_novasenha2.setVisible(anywheresoftware.b4a.keywords.Common.False);
  };
- BA.debugLineNum = 51;BA.debugLine="End Sub";
-Debug.ShouldStop(262144);
+ //BA.debugLineNum = 49;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 10;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 12;BA.debugLine="Private EditText_Nome As EditText";
+ //BA.debugLineNum = 11;BA.debugLine="Private EditText_Nome As EditText";
 mostCurrent._edittext_nome = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 13;BA.debugLine="Private CheckBox_AlterarSenha As CheckBox";
+ //BA.debugLineNum = 12;BA.debugLine="Private CheckBox_AlterarSenha As CheckBox";
 mostCurrent._checkbox_alterarsenha = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
- //BA.debugLineNum = 14;BA.debugLine="Private EditText_SenhaAntiga As EditText";
+ //BA.debugLineNum = 13;BA.debugLine="Private EditText_SenhaAntiga As EditText";
 mostCurrent._edittext_senhaantiga = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 15;BA.debugLine="Private EditText_NovaSenha1 As EditText";
+ //BA.debugLineNum = 14;BA.debugLine="Private EditText_NovaSenha1 As EditText";
 mostCurrent._edittext_novasenha1 = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 16;BA.debugLine="Private EditText_NovaSenha2 As EditText";
+ //BA.debugLineNum = 15;BA.debugLine="Private EditText_NovaSenha2 As EditText";
 mostCurrent._edittext_novasenha2 = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 17;BA.debugLine="Private Button_Salvar As Button";
+ //BA.debugLineNum = 16;BA.debugLine="Private Button_Salvar As Button";
 mostCurrent._button_salvar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 18;BA.debugLine="Private Button_Cancelar As Button";
+ //BA.debugLineNum = 17;BA.debugLine="Private Button_Cancelar As Button";
 mostCurrent._button_cancelar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Private EditText_UserName As EditText";
+ //BA.debugLineNum = 18;BA.debugLine="Private EditText_UserName As EditText";
 mostCurrent._edittext_username = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Dim linha1,linha2,linha3,linha4 As String";
+ //BA.debugLineNum = 19;BA.debugLine="Dim linha1,linha2,linha3,linha4 As String";
 mostCurrent._linha1 = "";
 mostCurrent._linha2 = "";
 mostCurrent._linha3 = "";
 mostCurrent._linha4 = "";
- //BA.debugLineNum = 21;BA.debugLine="End Sub";
+ //BA.debugLineNum = 20;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{

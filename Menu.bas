@@ -3,7 +3,7 @@ Version=3.2
 @EndOfDesignText@
 #Region  Activity Attributes 
 	#FullScreen: False
-	#IncludeTitle: True
+	#IncludeTitle: False
 #End Region
 
 Sub Process_Globals
@@ -49,6 +49,7 @@ End Sub
 
 Sub Button_Logout_Click
 	Main.Fazer_logout = True
+	File.Delete(File.DirInternal,"logado.txt")
 	StartActivity("Main")
 	Activity.Finish
 End Sub

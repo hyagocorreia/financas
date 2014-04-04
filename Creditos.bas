@@ -46,7 +46,7 @@ Sub Button_Creditar_Click
 		
 		Main.Pers.Salvar_Transacao(Main.Pers.Logado,Valor_final, Data.Text, Categoria.SelectedItem, "Crédito")
 		
-		result = Msgbox2("Deseja fazer outra operação?","Aviso!","Sim","","Nao",Null)
+		result = Msgbox2("Deseja fazer outra operação?","Fine","Sim","","Nao",LoadBitmap(File.DirAssets,"fineico.png"))
 			
 		If result = DialogResponse.POSITIVE Then
 			StartActivity("Creditos")
@@ -63,4 +63,6 @@ End Sub
 
 Sub Button_add_Click
 	StartActivity("AddCategoria")
+	AddCategoria.tipo ="creditos"
+	Activity.Finish
 End Sub
