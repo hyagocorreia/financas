@@ -15,17 +15,17 @@ Module6=Utilitarios
 ModuleVisible6=1
 Module7=Menu
 ModuleVisible7=1
-Module8=Calculadora
+Module8=Persistencia
 ModuleVisible8=1
-Module9=Persistencia
+Module9=Calculadora
 ModuleVisible9=1
 Module10=Extrato
 ModuleVisible10=1
 Module11=Excluir
 ModuleVisible11=1
-Module12=AddCategoria
+Module12=Remover_Categoria
 ModuleVisible12=1
-Module13=Remover_Categoria
+Module13=AddCategoria
 ModuleVisible13=1
 Module14=Editar
 ModuleVisible14=1
@@ -35,10 +35,10 @@ Module16=Charts
 ModuleVisible16=1
 Module17=Graficos
 ModuleVisible17=1
-Package=Financas.Pessoais
+Package=br.com.Fine
 DoNotOverwriteManifest=False
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
-UserTypesHint=
+UserTypesHint=BarData,LineData,LinePoint,Graph,GraphInternal,PieData,PieItem,SearchView,Persistencia
 NumberOfFiles=14
 File1=Layout_AddCategoria.bal
 File2=Layout_Cadastro.bal
@@ -90,7 +90,10 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Pers.Initialize
-	If File.Exists(File.DirInternal,"logado.txt") Then
+	If Not(File.Exists(File.DirRootExternal,"Fine/Data")) Then
+		File.MakeDir(File.DirRootExternal,"Fine/Data")
+	End If
+	If File.Exists(File.DirRootExternal&"/Fine/Data","logado.txt") Then
 		StartActivity("Menu")
 		Activity.Finish
 	Else If FirstTime Then
@@ -121,7 +124,7 @@ Sub Button_entrar_Click
 	Pers.Initialize
 	If Pers.Fazer_Login(Username.Text, Senha.Text) Then
 		Dim TextWriter1 As TextWriter
-		TextWriter1.Initialize(File.OpenOutput(File.DirInternal,"logado.txt",True))
+		TextWriter1.Initialize(File.OpenOutput(File.DirRootExternal&"/Fine/Data","logado.txt",True))
 		TextWriter1.Write(Username.Text)
 		TextWriter1.Close
 		StartActivity("Menu")

@@ -36,7 +36,7 @@ Sub CriarBotaoVoltar
 	Button_Voltar.Background = Cor
 	Button_Voltar.TextSize = 18
 	Button_Voltar.Text = "Voltar"
-	Activity.AddView(Button_Voltar, 170dip, 350dip, 140dip, 50dip)
+	Activity.AddView(Button_Voltar, 170dip, 95%y-40dip, 140dip, 50dip)
 End Sub
 
 Sub CriarGraficoTrans_por_Mes

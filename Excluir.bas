@@ -33,9 +33,9 @@ Sub Button_Excluir_Click
 	Dim user As String
 	user = Main.Pers.Logado
 	If Main.Pers.Excluir_Login(Username.Text, Senha.Text) Then
-		File.Delete(File.DirInternal,user&"saldo.txt")
-		File.Delete(File.DirInternal,user&"categ.txt")
-		File.Delete(File.DirInternal,user&"transacoes.txt")
+		File.Delete(File.DirRootExternal&"/Fine/Data",user&"saldo.txt")
+		File.Delete(File.DirRootExternal&"/Fine/Data",user&"categ.txt")
+		File.Delete(File.DirRootExternal&"/Fine/Data",user&"transacoes.txt")
 		Msgbox2("Dados excluidos!","Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
 		Main.Fazer_logout = True
 		StartActivity("Main")

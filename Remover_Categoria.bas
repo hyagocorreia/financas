@@ -39,12 +39,12 @@ End Sub
 Sub ListView_Categorias_ItemClick (Position As Int, Value As Object)
 	If Msgbox2("Deseja excluir a categoria?", "Excluir", "Sim", "", "Não", Null) = DialogResponse.POSITIVE Then
 		If Main.Pers.Deletar_Categoria(Value) = "True" Then
-			Msgbox("Categoria: " & Value & " foi removida com sucesso!", "Fine")
+			Msgbox2("Categoria: " & Value & " foi removida com sucesso!","Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
 			ListView_Categorias.RemoveAt(Position)
 		Else If Main.Pers.Deletar_Categoria(Value) = "False" Then
-			Msgbox("Categorias predefinidas não podem ser deletadas: " & Value, "ATENÇÃO!")
+			Msgbox2("Categorias predefinidas não podem ser deletadas: " & Value,"Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
 		Else 
-			Msgbox("Existe uma Transação associada a categoria:" & Value, "ATENÇÃO!")
+			Msgbox2("Existe uma Transação associada a categoria:" & Value,"ATENÇÃO!","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
 		End If
 	End If	
 End Sub

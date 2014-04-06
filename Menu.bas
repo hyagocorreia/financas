@@ -49,7 +49,7 @@ End Sub
 
 Sub Button_Logout_Click
 	Main.Fazer_logout = True
-	File.Delete(File.DirInternal,"logado.txt")
+	File.Delete(File.DirRootExternal&"/Fine/Data","logado.txt")
 	StartActivity("Main")
 	Activity.Finish
 End Sub

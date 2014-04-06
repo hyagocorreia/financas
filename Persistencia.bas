@@ -7,7 +7,7 @@ Sub Class_Globals
 End Sub
 
 Public Sub Initialize
-	caminho = File.DirInternal
+	caminho = File.DirRootExternal&"/Fine/Data"
 End Sub
 
 Public Sub Fazer_Login (Username As String, Senha As String) As Boolean
@@ -182,6 +182,7 @@ Public Sub Logado As String
 	TextReader1.Initialize(File.OpenInput(caminho,"logado.txt"))
 	Dim usuario As String
 	usuario = TextReader1.ReadLine
+	TextReader1.Close
 	Return usuario
 End Sub
 
@@ -196,6 +197,7 @@ Public Sub GetTransacoes(Usuario As String) As List
 	Dim transacoes As List
 	transacoes.Initialize
 	transacoes = TextReader1.ReadList
+	TextReader1.Close
 	Return transacoes
 End Sub
 
@@ -301,6 +303,16 @@ Public Sub Deletar_Categoria(Categoria As String) As String
 		
 		File.Delete(caminho,Logado&"categ.txt")
 		
+		Dim i As Int = 0
+		For Each categ As String In Lista
+			Dim str As String
+			str = categ.SubString(categ.LastIndexOf(";")+1)
+			If Categoria = str Then
+				Lista.RemoveAt(i) 
+			End If
+			i=i+1
+		Next
+		
 		TextWriter1.Initialize(File.OpenOutput(caminho,Logado&"categ.txt",True))
 		TextWriter1.WriteList(Lista)
 		TextWriter1.Close
@@ -327,9 +339,6 @@ Public Sub GetCategorias As List
 End Sub
 
 Public Sub Atualizar_Username(uNovo As String)
-	Dim caminho As String
-	caminho = caminho
-	
 	If File.Exists(caminho, Logado&"saldo.txt") Then
 		RenameFile(caminho&"/"&Logado&"saldo.txt",caminho&"/"&uNovo&"saldo.txt")
 		File.Delete(caminho,Logado&"saldo.txt")
@@ -347,11 +356,16 @@ Public Sub Atualizar_Username(uNovo As String)
 	
 	If File.Exists(caminho,"logado.txt") Then
 		File.Delete(caminho,"logado.txt")
+		Dim TextWriter1 As TextWriter
+		TextWriter1.Initialize(File.OpenOutput(caminho,"logado.txt",True))
+		TextWriter1.Write(uNovo)
+		TextWriter1.Close
+	Else
+		Dim TextWriter1 As TextWriter
+		TextWriter1.Initialize(File.OpenOutput(caminho,"logado.txt",True))
+		TextWriter1.Write(uNovo)
+		TextWriter1.Close
 	End If
-	Dim TextWriter1 As TextWriter
-	TextWriter1.Initialize(File.OpenOutput(caminho,"logado.txt",True))
-	TextWriter1.Write(uNovo)
-	TextWriter1.Close
 End Sub
 
 Private Sub RenameFile(OriginalFileName As String, NewFileName As String) As Boolean
