@@ -58,34 +58,35 @@ Sub Button_Voltar_Click
 End Sub
 
 Sub Button_Exportar_Click
-	Dim str As StringUtils
 	Dim headers,trans,lista As List
 	headers.Initialize
 	trans.Initialize
 	lista.Initialize
-	headers.AddAll(Array As String("Valor","Data","Categoria"))
+	headers.Add("Valor,Data,Categoria")
 	trans = Main.Pers.GetTransacoes(Main.Pers.Logado)
 	
 	For i = 0 To trans.Size -1
 		Dim linha1,linha2,linha3,linha4 As String
-		Dim arr(3) As String
 		linha1 = trans.Get(i)
 		linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
 		linha3 = linha1.SubString2(linha1.IndexOf(";")+1,linha1.LastIndexOf(";"))
 		linha4 = linha1.SubString(linha1.LastIndexOf(";")+1)
-		arr(0) = linha2
-		arr(1) = linha3
-		arr(2) = linha4
-		lista.add(arr)
+		lista.Add(linha2&","&linha3&","&linha4)
 	Next
-
+	
+	Dim tw1 As TextWriter
+	
 	If Not(File.Exists(File.DirRootExternal,"Fine")) Then
 		File.MakeDir(File.DirRootExternal,"Fine")
-		str.SaveCSV2(File.DirRootExternal&"/Fine","Transacoes.csv",",",lista,headers)
+		tw1.Initialize(File.OpenOutput(File.DirRootExternal&"/Fine","Transacoes.csv",True))
+		tw1.WriteList(headers)
+		tw1.WriteList(lista)
 		Msgbox2("Dados exportados com sucesso!","Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
 	Else
-		str.SaveCSV2(File.DirRootExternal&"/Fine","Transacoes.csv",",",lista,headers)
+		tw1.Initialize(File.OpenOutput(File.DirRootExternal&"/Fine","Transacoes.csv",True))
+		tw1.WriteList(headers)
+		tw1.WriteList(lista)
 		Msgbox2("Dados exportados com sucesso!","Fine","Ok","","",LoadBitmap(File.DirAssets,"fineico.png"))
 	End If
-	
+	tw1.Close
 End Sub

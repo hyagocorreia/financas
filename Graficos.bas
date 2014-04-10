@@ -49,42 +49,73 @@ Sub CriarGraficoTrans_por_Mes
 	LD.Target = pnlLine1
 	Charts.AddLineColor(LD, Colors.Red)
 	
-	Dim linha1, mes_linha As String
-	Dim x, j1,j2,j3,j4,j5,j6,j7,j8,j9,j10,j11,j12, mes As Int
+	Dim linha1,linha2, mes_linha As String
+	Dim x, mes As Int
+	Dim j1,j2,j3,j4,j5,j6,j7,j8,j9,j10,j11,j12,x1,x2 As Float
 	Dim lista As List
 	lista = Main.Pers.GetTransacoes(Main.Pers.Logado)
 	x = lista.Size
-	
+	x1=0
+	x2=0
 	For i = 0 To x -1
 		linha1 = lista.Get(i)
 		mes_linha = linha1.SubString2(linha1.IndexOf("/")+1,linha1.LastIndexOf("/"))
 		mes = mes_linha
+		linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
 		If mes = 1 Then
-			j1 = j1+1
+			j1 = j1+linha2
 		Else If mes = 2 Then
-			j2 = j2+1
+			j2 = j2+linha2
 		Else If mes = 3 Then
-			j3 = j3+1
+			j3 = j3+linha2
 		Else If mes = 4 Then
-			j4 = j4+1
+			j4 = j4+linha2
 		Else If mes = 5 Then
-			j5 = j5+1
+			j5 = j5+linha2
 		Else If mes = 6 Then
-			j6 = j6+1
+			j6 = j6+linha2
 		Else If mes = 7 Then
-			j7 = j7+1
+			j7 = j7+linha2
 		Else If mes = 8 Then
-			j8 = j8+1
+			j8 = j8+linha2
 		Else If mes = 9 Then
-			j9 = j9+1
+			j9 = j9+linha2
 		Else If mes = 10 Then
-			j10 = j10+1
+			j10 = j10+linha2
 		Else If mes = 11 Then
-			j11 = j11+1
+			j11 = j11+linha2
 		Else If mes = 12 Then
-			j12 = j12+1
+			j12 = j12+linha2
 		End If
 	Next
+	
+	Dim maximo,minimo As Float
+	maximo = Max(j1,j2)
+	maximo = Max(maximo, j3)
+	maximo = Max(maximo, j4)
+	maximo = Max(maximo, j4)
+	maximo = Max(maximo, j5)
+	maximo = Max(maximo, j6)
+	maximo = Max(maximo, j7)
+	maximo = Max(maximo, j8)
+	maximo = Max(maximo, j9)
+	maximo = Max(maximo, j10)
+	maximo = Max(maximo, j11)
+	maximo = Max(maximo, j12)
+	
+	minimo = Min(j1,j2)
+	minimo = Min(minimo, j3)
+	minimo = Min(minimo, j4)
+	minimo = Min(minimo, j4)
+	minimo = Min(minimo, j5)
+	minimo = Min(minimo, j6)
+	minimo = Min(minimo, j7)
+	minimo = Min(minimo, j8)
+	minimo = Min(minimo, j9)
+	minimo = Min(minimo, j10)
+	minimo = Min(minimo, j11)
+	minimo = Min(minimo, j12)
+	
 	
 	Charts.AddLinePoint(LD, "Jan", j1, True)
 	Charts.AddLinePoint(LD, "Fev", j2, True)
@@ -103,10 +134,10 @@ Sub CriarGraficoTrans_por_Mes
 	G.Initialize
 	G.Title = "Transações por Mês"
 	G.XAxis = ""
-	G.YAxis = "Qtde de Transações"
-	G.YStart = 0
-	G.YEnd = x + 1
-	G.YInterval = 1
+	G.YAxis = ""
+	G.YStart = minimo
+	G.YEnd = maximo+100
+	G.YInterval = 100
 	G.AxisColor = Colors.White
 	Charts.DrawLineChart(G, LD, Colors.Black)
 End Sub
@@ -121,18 +152,27 @@ Sub CriarGraficoTrans_por_Categ
 	LD.Target = pnlLine2
 	Charts.AddLineColor(LD, Colors.Red)
 	
-	Dim j1 As Int
+	Dim linha1,linha2 As String
+	Dim j1,j2,j3 As Float
 	Dim listaCateg, listaTrans As List
 	listaCateg = Main.Pers.GetCategorias
 	listaTrans = Main.Pers.GetTransacoes(Main.Pers.Logado)
-	
+	j2=0
+	j3=0
 	For Each categ As String In listaCateg
 		j1 = 0
 		For Each trans As String In listaTrans
 			Dim str As String
 			str = trans.SubString(trans.LastIndexOf(";")+1)
 			If categ = str Then
-				j1 = j1+1
+				linha1 = trans
+				linha2 = linha1.SubString2(0,linha1.IndexOf(";"))
+				j1 = j1+ linha2
+				If j1 > j2 Then
+					j2 = j1
+				Else If j1 < j3 Then
+					j3 = j1
+				End If
 			End If
 		Next
 		If categ = "Selecione a categoria" Then
@@ -146,10 +186,10 @@ Sub CriarGraficoTrans_por_Categ
 	G.Initialize
 	G.Title = "Transações por Categoria"
 	G.XAxis = ""
-	G.YAxis = "Qtde de Transações"
-	G.YStart = 0
-	G.YEnd = listaTrans.Size+1
-	G.YInterval = 1
+	G.YAxis = ""
+	G.YStart = j3 - 200
+	G.YEnd = j2 + 200
+	G.YInterval = 200
 	G.AxisColor = Colors.White
 	Charts.DrawLineChart(G, LD, Colors.Black)
 End Sub

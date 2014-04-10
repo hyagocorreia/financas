@@ -343,7 +343,6 @@ anywheresoftware.b4a.keywords.Common.Msgbox2("Dados excluidos","Fine","Ok","",""
 return "";
 }
 public static String  _button_exportar_click() throws Exception{
-anywheresoftware.b4a.objects.StringUtils _str = null;
 anywheresoftware.b4a.objects.collections.List _headers = null;
 anywheresoftware.b4a.objects.collections.List _trans = null;
 anywheresoftware.b4a.objects.collections.List _lista = null;
@@ -352,70 +351,71 @@ String _linha1 = "";
 String _linha2 = "";
 String _linha3 = "";
 String _linha4 = "";
-String[] _arr = null;
+anywheresoftware.b4a.objects.streams.File.TextWriterWrapper _tw1 = null;
  //BA.debugLineNum = 57;BA.debugLine="Sub Button_Exportar_Click";
- //BA.debugLineNum = 58;BA.debugLine="Dim str As StringUtils";
-_str = new anywheresoftware.b4a.objects.StringUtils();
- //BA.debugLineNum = 59;BA.debugLine="Dim headers,trans,lista As List";
+ //BA.debugLineNum = 58;BA.debugLine="Dim headers,trans,lista As List";
 _headers = new anywheresoftware.b4a.objects.collections.List();
 _trans = new anywheresoftware.b4a.objects.collections.List();
 _lista = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 60;BA.debugLine="headers.Initialize";
+ //BA.debugLineNum = 59;BA.debugLine="headers.Initialize";
 _headers.Initialize();
- //BA.debugLineNum = 61;BA.debugLine="trans.Initialize";
+ //BA.debugLineNum = 60;BA.debugLine="trans.Initialize";
 _trans.Initialize();
- //BA.debugLineNum = 62;BA.debugLine="lista.Initialize";
+ //BA.debugLineNum = 61;BA.debugLine="lista.Initialize";
 _lista.Initialize();
- //BA.debugLineNum = 63;BA.debugLine="headers.AddAll(Array As String(\"Valor\",\"Data\",\"Categoria\"))";
-_headers.AddAll(anywheresoftware.b4a.keywords.Common.ArrayToList(new String[]{"Valor","Data","Categoria"}));
- //BA.debugLineNum = 64;BA.debugLine="trans = Main.Pers.GetTransacoes(Main.Pers.Logado)";
+ //BA.debugLineNum = 62;BA.debugLine="headers.Add(\"Valor,Data,Categoria\")";
+_headers.Add((Object)("Valor,Data,Categoria"));
+ //BA.debugLineNum = 63;BA.debugLine="trans = Main.Pers.GetTransacoes(Main.Pers.Logado)";
 _trans = mostCurrent._main._pers._gettransacoes(mostCurrent._main._pers._logado());
- //BA.debugLineNum = 66;BA.debugLine="For i = 0 To trans.Size -1";
+ //BA.debugLineNum = 65;BA.debugLine="For i = 0 To trans.Size -1";
 {
-final int step45 = 1;
-final int limit45 = (int) (_trans.getSize()-1);
-for (_i = (int) (0); (step45 > 0 && _i <= limit45) || (step45 < 0 && _i >= limit45); _i = ((int)(0 + _i + step45))) {
- //BA.debugLineNum = 67;BA.debugLine="Dim linha1,linha2,linha3,linha4 As String";
+final int step44 = 1;
+final int limit44 = (int) (_trans.getSize()-1);
+for (_i = (int) (0); (step44 > 0 && _i <= limit44) || (step44 < 0 && _i >= limit44); _i = ((int)(0 + _i + step44))) {
+ //BA.debugLineNum = 66;BA.debugLine="Dim linha1,linha2,linha3,linha4 As String";
 _linha1 = "";
 _linha2 = "";
 _linha3 = "";
 _linha4 = "";
- //BA.debugLineNum = 68;BA.debugLine="Dim arr(3) As String";
-_arr = new String[(int) (3)];
-java.util.Arrays.fill(_arr,"");
- //BA.debugLineNum = 69;BA.debugLine="linha1 = trans.Get(i)";
+ //BA.debugLineNum = 67;BA.debugLine="linha1 = trans.Get(i)";
 _linha1 = BA.ObjectToString(_trans.Get(_i));
- //BA.debugLineNum = 70;BA.debugLine="linha2 = linha1.SubString2(0,linha1.IndexOf(\";\"))";
+ //BA.debugLineNum = 68;BA.debugLine="linha2 = linha1.SubString2(0,linha1.IndexOf(\";\"))";
 _linha2 = _linha1.substring((int) (0),_linha1.indexOf(";"));
- //BA.debugLineNum = 71;BA.debugLine="linha3 = linha1.SubString2(linha1.IndexOf(\";\")+1,linha1.LastIndexOf(\";\"))";
+ //BA.debugLineNum = 69;BA.debugLine="linha3 = linha1.SubString2(linha1.IndexOf(\";\")+1,linha1.LastIndexOf(\";\"))";
 _linha3 = _linha1.substring((int) (_linha1.indexOf(";")+1),_linha1.lastIndexOf(";"));
- //BA.debugLineNum = 72;BA.debugLine="linha4 = linha1.SubString(linha1.LastIndexOf(\";\")+1)";
+ //BA.debugLineNum = 70;BA.debugLine="linha4 = linha1.SubString(linha1.LastIndexOf(\";\")+1)";
 _linha4 = _linha1.substring((int) (_linha1.lastIndexOf(";")+1));
- //BA.debugLineNum = 73;BA.debugLine="arr(0) = linha2";
-_arr[(int) (0)] = _linha2;
- //BA.debugLineNum = 74;BA.debugLine="arr(1) = linha3";
-_arr[(int) (1)] = _linha3;
- //BA.debugLineNum = 75;BA.debugLine="arr(2) = linha4";
-_arr[(int) (2)] = _linha4;
- //BA.debugLineNum = 76;BA.debugLine="lista.add(arr)";
-_lista.Add((Object)(_arr));
+ //BA.debugLineNum = 71;BA.debugLine="lista.Add(linha2&\",\"&linha3&\",\"&linha4)";
+_lista.Add((Object)(_linha2+","+_linha3+","+_linha4));
  }
 };
- //BA.debugLineNum = 79;BA.debugLine="If Not(File.Exists(File.DirRootExternal,\"Fine\")) Then";
+ //BA.debugLineNum = 74;BA.debugLine="Dim tw1 As TextWriter";
+_tw1 = new anywheresoftware.b4a.objects.streams.File.TextWriterWrapper();
+ //BA.debugLineNum = 76;BA.debugLine="If Not(File.Exists(File.DirRootExternal,\"Fine\")) Then";
 if (anywheresoftware.b4a.keywords.Common.Not(anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Fine"))) { 
- //BA.debugLineNum = 80;BA.debugLine="File.MakeDir(File.DirRootExternal,\"Fine\")";
+ //BA.debugLineNum = 77;BA.debugLine="File.MakeDir(File.DirRootExternal,\"Fine\")";
 anywheresoftware.b4a.keywords.Common.File.MakeDir(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Fine");
- //BA.debugLineNum = 81;BA.debugLine="str.SaveCSV2(File.DirRootExternal&\"/Fine\",\"Transacoes.csv\",\",\",lista,headers)";
-_str.SaveCSV2(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/Fine","Transacoes.csv",BA.ObjectToChar(","),_lista,_headers);
- //BA.debugLineNum = 82;BA.debugLine="Msgbox2(\"Dados exportados com sucesso!\",\"Fine\",\"Ok\",\"\",\"\",LoadBitmap(File.DirAssets,\"fineico.png\"))";
+ //BA.debugLineNum = 78;BA.debugLine="tw1.Initialize(File.OpenOutput(File.DirRootExternal&\"/Fine\",\"Transacoes.csv\",True))";
+_tw1.Initialize((java.io.OutputStream)(anywheresoftware.b4a.keywords.Common.File.OpenOutput(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/Fine","Transacoes.csv",anywheresoftware.b4a.keywords.Common.True).getObject()));
+ //BA.debugLineNum = 79;BA.debugLine="tw1.WriteList(headers)";
+_tw1.WriteList(_headers);
+ //BA.debugLineNum = 80;BA.debugLine="tw1.WriteList(lista)";
+_tw1.WriteList(_lista);
+ //BA.debugLineNum = 81;BA.debugLine="Msgbox2(\"Dados exportados com sucesso!\",\"Fine\",\"Ok\",\"\",\"\",LoadBitmap(File.DirAssets,\"fineico.png\"))";
 anywheresoftware.b4a.keywords.Common.Msgbox2("Dados exportados com sucesso!","Fine","Ok","","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"fineico.png").getObject()),mostCurrent.activityBA);
  }else {
- //BA.debugLineNum = 84;BA.debugLine="str.SaveCSV2(File.DirRootExternal&\"/Fine\",\"Transacoes.csv\",\",\",lista,headers)";
-_str.SaveCSV2(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/Fine","Transacoes.csv",BA.ObjectToChar(","),_lista,_headers);
- //BA.debugLineNum = 85;BA.debugLine="Msgbox2(\"Dados exportados com sucesso!\",\"Fine\",\"Ok\",\"\",\"\",LoadBitmap(File.DirAssets,\"fineico.png\"))";
+ //BA.debugLineNum = 83;BA.debugLine="tw1.Initialize(File.OpenOutput(File.DirRootExternal&\"/Fine\",\"Transacoes.csv\",True))";
+_tw1.Initialize((java.io.OutputStream)(anywheresoftware.b4a.keywords.Common.File.OpenOutput(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/Fine","Transacoes.csv",anywheresoftware.b4a.keywords.Common.True).getObject()));
+ //BA.debugLineNum = 84;BA.debugLine="tw1.WriteList(headers)";
+_tw1.WriteList(_headers);
+ //BA.debugLineNum = 85;BA.debugLine="tw1.WriteList(lista)";
+_tw1.WriteList(_lista);
+ //BA.debugLineNum = 86;BA.debugLine="Msgbox2(\"Dados exportados com sucesso!\",\"Fine\",\"Ok\",\"\",\"\",LoadBitmap(File.DirAssets,\"fineico.png\"))";
 anywheresoftware.b4a.keywords.Common.Msgbox2("Dados exportados com sucesso!","Fine","Ok","","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"fineico.png").getObject()),mostCurrent.activityBA);
  };
- //BA.debugLineNum = 88;BA.debugLine="End Sub";
+ //BA.debugLineNum = 88;BA.debugLine="tw1.Close";
+_tw1.Close();
+ //BA.debugLineNum = 89;BA.debugLine="End Sub";
 return "";
 }
 public static String  _button_graficos_click() throws Exception{
